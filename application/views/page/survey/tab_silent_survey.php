@@ -1,7 +1,9 @@
 <section class="content">
     <div class="container-fluid">
         <div class="card-body">    
-                    
+
+		<div id="informan_code" hidden></div>
+
             <div class="form-group row" style="margin-top:25px;">
                 <div class="col-sm-12">
                     <div class="col-sm-9">
@@ -421,6 +423,7 @@
                     <div class="col-sm-9">
                         <div class="col-sm-4">
                             <button class="btn" type="button" id="add-informan-silent-survey"><span class="fa fa-plus"></span> Add Informan </button>
+							<div id="btnAddInforman" hidden value="0"></div>
 							<button class="btn" type="button" id="remove-informan-silent-survey"><span class="fa fa-minus"></span> Remove Informan </button>
                         </div>
                     </div>

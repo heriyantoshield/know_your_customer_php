@@ -51,159 +51,429 @@ app.Survey = {
 
 		$('#btn-save-silent-survey').click(function(){
 			file.uploadDocumentSilentSurvey(informan);
-			if(document.getElementById("lokasirumah").checked==false&&
-				document.getElementById("lokasiusaha").checked==false){
-				$('#err-lokasi').html('Lokasi Proses Survey wajib Diisi');
-				$('#err-lokasi').prop("hidden",false);
-			}
-			else if(document.getElementById("lokasirumah").checked!=false||
-			document.getElementById("lokasiusaha").checked!=false){
-				$('#err-lokasi').html('');
-				$('#err-lokasi').prop("hidden",true);
-			}
-
-			if(document.getElementById("radiofotorumah").checked==false&&
-				document.getElementById("radiofotousaha").checked==false&&
-				document.getElementById("radiofotorumahusaha").checked==false){
-				$('#err-fotorumah').html('Foto Rumah/Tempat Usaha wajib Diisi');
-				$('#err-fotorumah').prop("hidden",false);
-				// $('.error-fotorumah').css({"border-color":"red"});
-			}
-			else if(document.getElementById("radiofotorumah").checked!=false||
-			document.getElementById("radiofotousaha").checked!=false||
-			document.getElementById("radiofotorumahusaha").checked!=false){
-				$('#err-fotorumah').html('');
-				$('#err-fotorumah').prop("hidden",true);
-			}
-
-			if(document.getElementById("radiojalanrumah").checked==false&&
-				document.getElementById("radiojalanusaha").checked==false&&
-				document.getElementById("radiojalanrumahusaha").checked==false){
-				$('#err-fotojalan').html('Foto Jalan/Lingkungan Sekitar Rumah/Tempat Usaha Nasabah wajib Diisi');
-				$('#err-fotojalan').prop("hidden",false);
-				// $('.error-fotorumah').css({"border-color":"red"});
-			}
-			else if(document.getElementById("radiofotorumah").checked!=false ||
-			document.getElementById("radiofotousaha").checked!=false ||
-			document.getElementById("radiofotorumahusaha").checked!=false){
-				$('#err-fotojalan').html('');
-				$('#err-fotojalan').prop("hidden",true);
-			}
-
-			if($('#namainforman').val()==''||$('#namainforman').val()==null){
-				$('#err-namainforman').html('Nama Informan Wajib Diisi');
-				$('#err-namainforman').prop("hidden",false);
-				$('.error-namainforman').css({"border-color":"red"});
-			}
-			else if($('#namainforman').val()!=''||$('#namainforman').val()!=null){
-				$('#err-namainforman').html('');
-				$('#err-namainforman').prop("hidden",true);
-				$('.error-namainforman').css({"border-color":""});
-			}
-
-			if($('#hubungan-informan-dengan-nasabah option:selected').val()==''||$('#hubungan-informan-dengan-nasabah option:selected').val()==null){
-				$('#err-hubunganinforman').html('Hubungan Informan dengan Nasabah Wajib Diisi');
-				$('#err-hubunganinforman').prop("hidden",false);
-				$('.error-hubunganinforman').css({"border-color":"red"});
-			}
-			else if($('#hubungan-informan-dengan-nasabah option:selected').val()==''||$('#hubungan-informan-dengan-nasabah option:selected').val()==null){
-				$('#err-hubunganinforman').html('');
-				$('#err-hubunganinforman').prop("hidden",true);
-				$('.error-hubunganinforman').css({"border-color":""});
-			}
-
-			if(document.getElementById("radiodebtiya").checked==false&&
-			document.getElementById("radiodebttidak").checked==false){
-				$('#err-debtcollector').html('Kolom Nasabah dikenal bersosialisasi dengan warga? Wajib Diisi');
-				$('#err-debtcollector').prop("hidden",false);
-				$('.error-debtcollector').css({"border-color":""});
-			}
-			else if(document.getElementById("radiodebtiya").checked!=false||
-			document.getElementById("radiodebttidak").checked!=false){
-				$('#err-debtcollector').html('');
-				$('#err-debtcollector').prop("hidden",true);
-				$('.error-debtcollector').css({"border-color":""});
-			}
-
-			if(document.getElementById("radiososialiya").checked==false&&
-			document.getElementById("radiososialtidak").checked==false){
-				$('#err-sosialisasi').html('Kolom Nasabah dikenal bersosialisasi dengan warga? Wajib Diisi');
-				$('#err-sosialisasi').prop("hidden",false);
-				$('.error-sosialisasi').css({"border-color":""});
-			}
-			else if(document.getElementById("radiososialiya").checked!=false||
-			document.getElementById("radiososialtidak").checked!=false){
-				$('#err-sosialisasi').html('');
-				$('#err-sosialisasi').prop("hidden",true);
-				$('.error-sosialisasi').css({"border-color":""});
-			}
-
-			if(document.getElementById("radiolsmiya").checked==false&&
-			document.getElementById("radiolsmtidak").checked==false){
-				$('#err-lsm').html('Kolom Nasabah terlibat di keanggotaan LSM Wajib Diisi');
-				$('#err-lsm').prop("hidden",false);
-				$('.error-lsm').css({"border-color":""});
-			}
-			else if(document.getElementById("radiolsmiya").checked!=false||
-			document.getElementById("radiolsmtidak").checked!=false){
-				$('#err-lsm').html('');
-				$('#err-lsm').prop("hidden",true);
-				$('.error-lsm').css({"border-color":""});
-			}
-
-			if(document.getElementById("radiokepemilikansesuai").checked==false&&
-				document.getElementById("radiokepemilikantidaksesuai").checked==false){
-					$('#err-statusradio').html('Status Kepemilikan Rumah Wajib Diisi');
-					$('#err-statusradio').prop("hidden",false);
-					$('.error-statusradio').css({"border-color":"red"});
-			}
-			else if(document.getElementById("radiokepemilikansesuai").checked!=false||
-			document.getElementById("radiokepemilikantidaksesuai").checked!=false){
-				$('#err-statusradio').html('');
-				$('#err-statusradio').prop("hidden",true);
-				$('.error-statusradio').css({"border-color":""});
-			}
-
-			if(document.getElementById("radiokepemilikantidaksesuai").checked==true){
-				if($('#slc-statustidaksesuai option:selected').val()==''
-				|| $('#slc-statustidaksesuai option:selected').val()==null){
-					$('#err-statustidaksesuai').html('Informasi Tidak Sesuai Wajib Diisi');
-					$('#err-statustidaksesuai').prop("hidden",false);
-					$('.error-statustidaksesuai').css({"border-color":"red"});
+			if($('#informan_code').val()=="002"){
+				if($('#btnAddInforman').val()==0){
+					alert_error("Informasi Informan harus diisi minimal 2")
 				}
-				else if($('#slc-statustidaksesuai option:selected').val()!=''
-				|| $('#slc-statustidaksesuai option:selected').val()!=null){
-					$('#err-statustidaksesuai').html('');
-					$('#err-statustidaksesuai').prop("hidden",true);
-					$('.error-statustidaksesuai').css({"border-color":""});
-				}
-			}
+				else if($('#btnAddInforman').val()==1){
+					if(document.getElementById("lokasirumah").checked==false&&
+						document.getElementById("lokasiusaha").checked==false){
+						$('#err-lokasi').html('Lokasi Proses Survey wajib Diisi');
+						$('#err-lokasi').prop("hidden",false);
+					}
+					else if(document.getElementById("lokasirumah").checked!=false||
+					document.getElementById("lokasiusaha").checked!=false){
+						$('#err-lokasi').html('');
+						$('#err-lokasi').prop("hidden",true);
+					}
+		
+					if(document.getElementById("radiofotorumah").checked==false&&
+						document.getElementById("radiofotousaha").checked==false&&
+						document.getElementById("radiofotorumahusaha").checked==false){
+						$('#err-fotorumah').html('Foto Rumah/Tempat Usaha wajib Diisi');
+						$('#err-fotorumah').prop("hidden",false);
+						// $('.error-fotorumah').css({"border-color":"red"});
+					}
+					else if(document.getElementById("radiofotorumah").checked!=false||
+					document.getElementById("radiofotousaha").checked!=false||
+					document.getElementById("radiofotorumahusaha").checked!=false){
+						$('#err-fotorumah').html('');
+						$('#err-fotorumah').prop("hidden",true);
+					}
+		
+					if(document.getElementById("radiojalanrumah").checked==false&&
+						document.getElementById("radiojalanusaha").checked==false&&
+						document.getElementById("radiojalanrumahusaha").checked==false){
+						$('#err-fotojalan').html('Foto Jalan/Lingkungan Sekitar Rumah/Tempat Usaha Nasabah wajib Diisi');
+						$('#err-fotojalan').prop("hidden",false);
+						// $('.error-fotorumah').css({"border-color":"red"});
+					}
+					else if(document.getElementById("radiofotorumah").checked!=false ||
+					document.getElementById("radiofotousaha").checked!=false ||
+					document.getElementById("radiofotorumahusaha").checked!=false){
+						$('#err-fotojalan').html('');
+						$('#err-fotojalan').prop("hidden",true);
+					}
+		
+					if($('#namainforman').val()==''||$('#namainforman').val()==null){
+						$('#err-namainforman').html('Nama Informan Wajib Diisi');
+						$('#err-namainforman').prop("hidden",false);
+						$('.error-namainforman').css({"border-color": "red"});
+					}
+					else if($('#namainforman').val()!=''||$('#namainforman').val()!=null){
+						$('#err-namainforman').html('');
+						$('#err-namainforman').prop("hidden",true);
+						$('.error-namainforman').css({"border-color":""});
+					}
+		
+					if($('#hubungan-informan-dengan-nasabah option:selected').val()==''||$('#hubungan-informan-dengan-nasabah option:selected').val()==null){
+						$('#err-hubunganinforman').html('Hubungan Informan dengan Nasabah Wajib Diisi');
+						$('#err-hubunganinforman').prop("hidden",false);
+						$('.error-hubunganinforman').css({"border-color":"red"});
+					}
+					else if($('#hubungan-informan-dengan-nasabah option:selected').val()==''||$('#hubungan-informan-dengan-nasabah option:selected').val()==null){
+						$('#err-hubunganinforman').html('');
+						$('#err-hubunganinforman').prop("hidden",true);
+						$('.error-hubunganinforman').css({"border-color":""});
+					}
+		
+					if(document.getElementById("radiodebtiya").checked==false&&
+					document.getElementById("radiodebttidak").checked==false){
+						$('#err-debtcollector').html('Kolom Nasabah dikenal bersosialisasi dengan warga? Wajib Diisi');
+						$('#err-debtcollector').prop("hidden",false);
+						$('.error-debtcollector').css({"border-color":""});
+					}
+					else if(document.getElementById("radiodebtiya").checked!=false||
+					document.getElementById("radiodebttidak").checked!=false){
+						$('#err-debtcollector').html('');
+						$('#err-debtcollector').prop("hidden",true);
+						$('.error-debtcollector').css({"border-color":""});
+					}
+		
+					if(document.getElementById("radiososialiya").checked==false&&
+					document.getElementById("radiososialtidak").checked==false){
+						$('#err-sosialisasi').html('Kolom Nasabah dikenal bersosialisasi dengan warga? Wajib Diisi');
+						$('#err-sosialisasi').prop("hidden",false);
+						$('.error-sosialisasi').css({"border-color":""});
+					}
+					else if(document.getElementById("radiososialiya").checked!=false||
+					document.getElementById("radiososialtidak").checked!=false){
+						$('#err-sosialisasi').html('');
+						$('#err-sosialisasi').prop("hidden",true);
+						$('.error-sosialisasi').css({"border-color":""});
+					}
+		
+					if(document.getElementById("radiolsmiya").checked==false&&
+					document.getElementById("radiolsmtidak").checked==false){
+						$('#err-lsm').html('Kolom Nasabah terlibat di keanggotaan LSM Wajib Diisi');
+						$('#err-lsm').prop("hidden",false);
+						$('.error-lsm').css({"border-color":""});
+					}
+					else if(document.getElementById("radiolsmiya").checked!=false||
+					document.getElementById("radiolsmtidak").checked!=false){
+						$('#err-lsm').html('');
+						$('#err-lsm').prop("hidden",true);
+						$('.error-lsm').css({"border-color":""});
+					}
+		
+					if(document.getElementById("radiokepemilikansesuai").checked==false&&
+						document.getElementById("radiokepemilikantidaksesuai").checked==false){
+							$('#err-statusradio').html('Status Kepemilikan Rumah Wajib Diisi');
+							$('#err-statusradio').prop("hidden",false);
+							$('.error-statusradio').css({"border-color":"red"});
+					}
+					else if(document.getElementById("radiokepemilikansesuai").checked!=false||
+					document.getElementById("radiokepemilikantidaksesuai").checked!=false){
+						$('#err-statusradio').html('');
+						$('#err-statusradio').prop("hidden",true);
+						$('.error-statusradio').css({"border-color":""});
+					}
+		
+					if(document.getElementById("radiokepemilikantidaksesuai").checked==true){
+						if($('#slc-statustidaksesuai option:selected').val()==''
+						|| $('#slc-statustidaksesuai option:selected').val()==null){
+							$('#err-statustidaksesuai').html('Informasi Tidak Sesuai Wajib Diisi');
+							$('#err-statustidaksesuai').prop("hidden",false);
+							$('.error-statustidaksesuai').css({"border-color":"red"});
+						}
+						else if($('#slc-statustidaksesuai option:selected').val()!=''
+						|| $('#slc-statustidaksesuai option:selected').val()!=null){
+							$('#err-statustidaksesuai').html('');
+							$('#err-statustidaksesuai').prop("hidden",true);
+							$('.error-statustidaksesuai').css({"border-color":""});
+						}
+					}
+		
+					if(document.getElementById("radiotinggalsesuai").checked==false&&
+						document.getElementById("radiotinggaltidaksesuai").checked==false){
+							$('#err-lamatinggal').html('Lama tinggal/menempati rumah sesuai Wajib Diisi');
+							$('#err-lamatinggal').prop("hidden",false);
+					}
+					else if(document.getElementById("radiotinggalsesuai").checked!=false||
+					document.getElementById("radiotinggaltidaksesuai").checked!=false){
+						$('#err-lamatinggal').html('');
+						$('#err-lamatinggal').prop("hidden",true);
+					}
+		
+					if(document.getElementById("radiotinggaltidaksesuai").checked==true){
+						if($('#tahuntidaksesuai').val()==''&& $('#bulantidaksesuai').val()==''){
+							$('#err-lamatinggaltidaksesuai').html('Informasi Lama tinggal/menempati rumah Tidak Sesuai Wajib Diisi');
+							$('#err-lamatinggaltidaksesuai').prop("hidden",false);
+							$('.error-lamatinggaltidaksesuai').css({"border-color":"red"});
+						}
+						else if($('tahuntidaksesuai').val()!=''
+						|| $('#bulantidaksesuai').val()!=null){
+							$('#err-lamatinggaltidaksesuai').html('');
+							$('#err-lamatinggaltidaksesuai').prop("hidden",true);
+						}
+					}
 
-			if(document.getElementById("radiotinggalsesuai").checked==false&&
-				document.getElementById("radiotinggaltidaksesuai").checked==false){
-					$('#err-lamatinggal').html('Lama tinggal/menempati rumah sesuai Wajib Diisi');
-					$('#err-lamatinggal').prop("hidden",false);
-			}
-			else if(document.getElementById("radiotinggalsesuai").checked!=false||
-			document.getElementById("radiotinggaltidaksesuai").checked!=false){
-				$('#err-lamatinggal').html('');
-				$('#err-lamatinggal').prop("hidden",true);
-			}
-
-			if(document.getElementById("radiotinggaltidaksesuai").checked==true){
-				if($('#tahuntidaksesuai').val()==''&& $('#bulantidaksesuai').val()==''){
-					$('#err-lamatinggaltidaksesuai').html('Informasi Lama tinggal/menempati rumah Tidak Sesuai Wajib Diisi');
-					$('#err-lamatinggaltidaksesuai').prop("hidden",false);
-					$('.error-lamatinggaltidaksesuai').css({"border-color":"red"});
+					if($('#namainforman2').val()==''||$('#namainforman2').val()==null){
+						$('#err-namainforman2').html('Nama Informan 2 Wajib Diisi');
+						$('#err-namainforman2').prop("hidden",false);
+						$('.error-namainforman').css({"border-color":"red"});
+					}
+					else if($('#namainforman2').val()!=''||$('#namainforman2').val()!=null){
+						$('#err-namainforman2').html('');
+						$('#err-namainforman2').prop("hidden",true);
+						$('.error-namainforman').css({"border-color":""});
+					}
+		
+					if($('#hubungan-informan-dengan-nasabah2 option:selected').val()==''||$('#hubungan-informan-dengan-nasabah2 option:selected').val()==null){
+						$('#err-hubunganinforman2').html('Hubungan Informan 2 dengan Nasabah Wajib Diisi');
+						$('#err-hubunganinforman2').prop("hidden",false);
+						$('.error-hubunganinforman').css({"border-color":"red"});
+					}
+					else if($('#hubungan-informan-dengan-nasabah2 option:selected').val()==''||$('#hubungan-informan-dengan-nasabah2 option:selected').val()==null){
+						$('#err-hubunganinforman2').html('');
+						$('#err-hubunganinforman2').prop("hidden",true);
+						$('.error-hubunganinforman').css({"border-color":""});
+					}
+		
+					if(document.getElementById("radiodebtiya2").checked==false&&
+					document.getElementById("radiodebttidak2").checked==false){
+						$('#err-debtcollector2').html('Kolom Nasabah dikenal bersosialisasi dengan warga? Wajib Diisi');
+						$('#err-debtcollector2').prop("hidden",false);
+						$('.error-debtcollector').css({"border-color":""});
+					}
+					else if(document.getElementById("radiodebtiya2").checked!=false||
+					document.getElementById("radiodebttidak2").checked!=false){
+						$('#err-debtcollector2').html('');
+						$('#err-debtcollector2').prop("hidden",true);
+						$('.error-debtcollector2').css({"border-color":""});
+					}
+		
+					if(document.getElementById("radiososialiya2").checked==false&&
+					document.getElementById("radiososialtidak2").checked==false){
+						$('#err-sosialisasi2').html('Kolom Nasabah dikenal bersosialisasi dengan warga? Wajib Diisi');
+						$('#err-sosialisasi2').prop("hidden",false);
+						$('.error-sosialisasi').css({"border-color":""});
+					}
+					else if(document.getElementById("radiososialiya2").checked!=false||
+					document.getElementById("radiososialtidak2").checked!=false){
+						$('#err-sosialisasi2').html('');
+						$('#err-sosialisasi2').prop("hidden",true);
+						$('.error-sosialisasi').css({"border-color":""});
+					}
+		
+					if(document.getElementById("radiolsmiya2").checked==false&&
+					document.getElementById("radiolsmtidak2").checked==false){
+						$('#err-lsm2').html('Kolom Nasabah terlibat di keanggotaan LSM Wajib Diisi');
+						$('#err-lsm2').prop("hidden",false);
+						$('.error-lsm').css({"border-color":""});
+					}
+					else if(document.getElementById("radiolsmiya2").checked!=false||
+					document.getElementById("radiolsmtidak").checked!=false){
+						$('#err-lsm2').html('');
+						$('#err-lsm2').prop("hidden",true);
+						$('.error-lsm').css({"border-color":""});
+					}
+		
+					if(document.getElementById("radiokepemilikansesuai2").checked==false&&
+						document.getElementById("radiokepemilikantidaksesuai2").checked==false){
+							$('#err-statusradio2').html('Status Kepemilikan Rumah Wajib Diisi');
+							$('#err-statusradio2').prop("hidden",false);
+							$('.error-statusradio').css({"border-color":"red"});
+					}
+					else if(document.getElementById("radiokepemilikansesuai2").checked!=false||
+					document.getElementById("radiokepemilikantidaksesuai2").checked!=false){
+						$('#err-statusradio2').html('');
+						$('#err-statusradio2').prop("hidden",true);
+						$('.error-statusradio').css({"border-color":""});
+					}
+					
+					if(document.getElementById("radiokepemilikantidaksesuai2").checked==true){
+						if($('#slc-statustidaksesuai2 option:selected').val()==''
+						|| $('#slc-statustidaksesuai2 option:selected').val()==null){
+							$('#err-statustidaksesuai2').html('Informasi Tidak Sesuai Wajib Diisi');
+							$('#err-statustidaksesuai2').prop("hidden",false);
+							$('.error-statustidaksesuai').css({"border-color":"red"});
+						}
+						else if($('#slc-statustidaksesuai2 option:selected').val()!=''
+						|| $('#slc-statustidaksesuai2 option:selected').val()!=null){
+							$('#err-statustidaksesuai2').html('');
+							$('#err-statustidaksesuai2').prop("hidden",true);
+							$('.error-statustidaksesuai').css({"border-color":""});
+						}
+					}
+		
+					if(document.getElementById("radiotinggalsesuai2").checked==false&&
+						document.getElementById("radiotinggaltidaksesuai2").checked==false){
+							$('#err-lamatinggal2').html('Lama tinggal/menempati rumah sesuai Wajib Diisi');
+							$('#err-lamatinggal2').prop("hidden",false);
+					}
+					else if(document.getElementById("radiotinggalsesuai2").checked!=false||
+					document.getElementById("radiotinggaltidaksesuai2").checked!=false){
+						$('#err-lamatinggal2').html('');
+						$('#err-lamatinggal2').prop("hidden",true);
+					}
+		
+					if(document.getElementById("radiotinggaltidaksesuai2").checked==true){
+						if($('#tahuntidaksesuai2').val()==''&& $('#bulantidaksesuai2').val()==''){
+							$('#err-lamatinggaltidaksesuai2').html('Informasi Lama tinggal/menempati rumah Tidak Sesuai Wajib Diisi');
+							$('#err-lamatinggaltidaksesuai2').prop("hidden",false);
+							$('.error-lamatinggaltidaksesuai').css({"border-color":"red"});
+						}
+						else if($('tahuntidaksesuai2').val()!=''
+						|| $('#bulantidaksesuai2').val()!=null){
+							$('#err-lamatinggaltidaksesuai2').html('');
+							$('#err-lamatinggaltidaksesuai2').prop("hidden",true);
+						}
+					}		
 				}
-				else if($('#slc-statustidaksesuai option:selected').val()!=''
-				|| $('#slc-statustidaksesuai option:selected').val()!=null){
-					$('#err-lamatinggaltidaksesuai').html('');
-					$('#err-lamatinggaltidaksesuai').prop("hidden",true);
+			} else {
+				if(document.getElementById("lokasirumah").checked==false&&
+						document.getElementById("lokasiusaha").checked==false){
+						$('#err-lokasi').html('Lokasi Proses Survey wajib Diisi');
+						$('#err-lokasi').prop("hidden",false);
+					}
+				else if(document.getElementById("lokasirumah").checked!=false||
+				document.getElementById("lokasiusaha").checked!=false){
+					$('#err-lokasi').html('');
+					$('#err-lokasi').prop("hidden",true);
+				}
+	
+				if(document.getElementById("radiofotorumah").checked==false&&
+					document.getElementById("radiofotousaha").checked==false&&
+					document.getElementById("radiofotorumahusaha").checked==false){
+					$('#err-fotorumah').html('Foto Rumah/Tempat Usaha wajib Diisi');
+					$('#err-fotorumah').prop("hidden",false);
+					// $('.error-fotorumah').css({"border-color":"red"});
+				}
+				else if(document.getElementById("radiofotorumah").checked!=false||
+				document.getElementById("radiofotousaha").checked!=false||
+				document.getElementById("radiofotorumahusaha").checked!=false){
+					$('#err-fotorumah').html('');
+					$('#err-fotorumah').prop("hidden",true);
+				}
+	
+				if(document.getElementById("radiojalanrumah").checked==false&&
+					document.getElementById("radiojalanusaha").checked==false&&
+					document.getElementById("radiojalanrumahusaha").checked==false){
+					$('#err-fotojalan').html('Foto Jalan/Lingkungan Sekitar Rumah/Tempat Usaha Nasabah wajib Diisi');
+					$('#err-fotojalan').prop("hidden",false);
+					// $('.error-fotorumah').css({"border-color":"red"});
+				}
+				else if(document.getElementById("radiofotorumah").checked!=false ||
+				document.getElementById("radiofotousaha").checked!=false ||
+				document.getElementById("radiofotorumahusaha").checked!=false){
+					$('#err-fotojalan').html('');
+					$('#err-fotojalan').prop("hidden",true);
+				}
+	
+				if($('#namainforman').val()==''||$('#namainforman').val()==null){
+					$('#err-namainforman').html('Nama Informan Wajib Diisi');
+					$('#err-namainforman').prop("hidden",false);
+					$('.error-namainforman').css({"border-color": "red"});
+				}
+				else if($('#namainforman').val()!=''||$('#namainforman').val()!=null){
+					$('#err-namainforman').html('');
+					$('#err-namainforman').prop("hidden",true);
+					$('.error-namainforman').css({"border-color":""});
+				}
+	
+				if($('#hubungan-informan-dengan-nasabah option:selected').val()==''||$('#hubungan-informan-dengan-nasabah option:selected').val()==null){
+					$('#err-hubunganinforman').html('Hubungan Informan dengan Nasabah Wajib Diisi');
+					$('#err-hubunganinforman').prop("hidden",false);
+					$('.error-hubunganinforman').css({"border-color":"red"});
+				}
+				else if($('#hubungan-informan-dengan-nasabah option:selected').val()==''||$('#hubungan-informan-dengan-nasabah option:selected').val()==null){
+					$('#err-hubunganinforman').html('');
+					$('#err-hubunganinforman').prop("hidden",true);
+					$('.error-hubunganinforman').css({"border-color":""});
+				}
+	
+				if(document.getElementById("radiodebtiya").checked==false&&
+				document.getElementById("radiodebttidak").checked==false){
+					$('#err-debtcollector').html('Kolom Nasabah dikenal bersosialisasi dengan warga? Wajib Diisi');
+					$('#err-debtcollector').prop("hidden",false);
+					$('.error-debtcollector').css({"border-color":""});
+				}
+				else if(document.getElementById("radiodebtiya").checked!=false||
+				document.getElementById("radiodebttidak").checked!=false){
+					$('#err-debtcollector').html('');
+					$('#err-debtcollector').prop("hidden",true);
+					$('.error-debtcollector').css({"border-color":""});
+				}
+	
+				if(document.getElementById("radiososialiya").checked==false&&
+				document.getElementById("radiososialtidak").checked==false){
+					$('#err-sosialisasi').html('Kolom Nasabah dikenal bersosialisasi dengan warga? Wajib Diisi');
+					$('#err-sosialisasi').prop("hidden",false);
+					$('.error-sosialisasi').css({"border-color":""});
+				}
+				else if(document.getElementById("radiososialiya").checked!=false||
+				document.getElementById("radiososialtidak").checked!=false){
+					$('#err-sosialisasi').html('');
+					$('#err-sosialisasi').prop("hidden",true);
+					$('.error-sosialisasi').css({"border-color":""});
+				}
+	
+				if(document.getElementById("radiolsmiya").checked==false&&
+				document.getElementById("radiolsmtidak").checked==false){
+					$('#err-lsm').html('Kolom Nasabah terlibat di keanggotaan LSM Wajib Diisi');
+					$('#err-lsm').prop("hidden",false);
+					$('.error-lsm').css({"border-color":""});
+				}
+				else if(document.getElementById("radiolsmiya").checked!=false||
+				document.getElementById("radiolsmtidak").checked!=false){
+					$('#err-lsm').html('');
+					$('#err-lsm').prop("hidden",true);
+					$('.error-lsm').css({"border-color":""});
+				}
+	
+				if(document.getElementById("radiokepemilikansesuai").checked==false&&
+					document.getElementById("radiokepemilikantidaksesuai").checked==false){
+						$('#err-statusradio').html('Status Kepemilikan Rumah Wajib Diisi');
+						$('#err-statusradio').prop("hidden",false);
+						$('.error-statusradio').css({"border-color":"red"});
+				}
+				else if(document.getElementById("radiokepemilikansesuai").checked!=false||
+				document.getElementById("radiokepemilikantidaksesuai").checked!=false){
+					$('#err-statusradio').html('');
+					$('#err-statusradio').prop("hidden",true);
+					$('.error-statusradio').css({"border-color":""});
+				}
+	
+				if(document.getElementById("radiokepemilikantidaksesuai").checked==true){
+					if($('#slc-statustidaksesuai option:selected').val()==''
+					|| $('#slc-statustidaksesuai option:selected').val()==null){
+						$('#err-statustidaksesuai').html('Informasi Tidak Sesuai Wajib Diisi');
+						$('#err-statustidaksesuai').prop("hidden",false);
+						$('.error-statustidaksesuai').css({"border-color":"red"});
+					}
+					else if($('#slc-statustidaksesuai option:selected').val()!=''
+					|| $('#slc-statustidaksesuai option:selected').val()!=null){
+						$('#err-statustidaksesuai').html('');
+						$('#err-statustidaksesuai').prop("hidden",true);
+						$('.error-statustidaksesuai').css({"border-color":""});
+					}
+				}
+	
+				if(document.getElementById("radiotinggalsesuai").checked==false&&
+					document.getElementById("radiotinggaltidaksesuai").checked==false){
+						$('#err-lamatinggal').html('Lama tinggal/menempati rumah sesuai Wajib Diisi');
+						$('#err-lamatinggal').prop("hidden",false);
+				}
+				else if(document.getElementById("radiotinggalsesuai").checked!=false||
+				document.getElementById("radiotinggaltidaksesuai").checked!=false){
+					$('#err-lamatinggal').html('');
+					$('#err-lamatinggal').prop("hidden",true);
+				}
+	
+				if(document.getElementById("radiotinggaltidaksesuai").checked==true){
+					if($('#tahuntidaksesuai').val()==''&& $('#bulantidaksesuai').val()==''){
+						$('#err-lamatinggaltidaksesuai').html('Informasi Lama tinggal/menempati rumah Tidak Sesuai Wajib Diisi');
+						$('#err-lamatinggaltidaksesuai').prop("hidden",false);
+						$('.error-lamatinggaltidaksesuai').css({"border-color":"red"});
+					}
+					else if($('tahuntidaksesuai').val()!=''
+					|| $('#bulantidaksesuai').val()!=null){
+						$('#err-lamatinggaltidaksesuai').html('');
+						$('#err-lamatinggaltidaksesuai').prop("hidden",true);
+					}
 				}
 			}
-			
-			
 		});
 
 		document.getElementById("remove-informan-silent-survey").onclick = function(){removeInforman()}
@@ -434,10 +704,29 @@ app.Survey = {
                 $('#newinformansilentsurvey').append(html);
 				file.getHubunganInformanNasabah1(informan);
 				file.getDetailTeleSurvey1(order_id,informan);
+				file.informanTidakSesuai(informan);
+				$('#btnAddInforman').val("1")
                 informan++;
         }
     },
 	
+	informanTidakSesuai:function(informan){
+		$('#radiokepemilikantidaksesuai'+informan+'').change(function(){
+			$('#statustidaksesuai'+informan+'').prop("hidden",false);
+		});
+
+		$('#radiokepemilikansesuai'+informan+'').change(function(){
+			$('#statustidaksesuai'+informan+'').prop("hidden",true);
+		});
+
+		$('input[type=radio][id=radiotinggalsesuai'+informan+']').change(function(){
+			$('#tinggaltidaksesuai'+informan+'').prop("hidden",true);
+		});
+
+		$('input[type=radio][id=radiotinggaltidaksesuai'+informan+']').change(function(){
+			$('#tinggaltidaksesuai'+informan+'').prop("hidden",false);
+		});
+	},
     getHubunganInformanNasabah: function() {
         var file = app.Survey;
 
@@ -537,290 +826,16 @@ app.Survey = {
 					$('#inp-cabang-kyc-survey').val(data.data.branch_desc);
 					$('#lamatinggaltahun').val(data.data.detail.data_kepemilikan.year_of_living);
 					$('#lamatinggalbulan').val(data.data.detail.data_kepemilikan.month_of_living);
+					$('#informan_code').val(data.data.detail.object_pembiayaan.obj_group_code);
 
+					console.log($('#informan_code').val())
 					console.log($("#inp-nomor-aplikasi-survey").val())
 
 	                var kepemilikan_rumah = $("<option selected='selected'></option>").val(data.data.detail.data_kepemilikan.house_of_status_id).text(data.data.detail.data_kepemilikan.house_of_status_desc);
  					$("#slc-status-kepemilikan-rumah").append(kepemilikan_rumah).trigger('change');
 	                console.log($("#slc-status-kepemilikan-rumah").val());
 
-					if(data.data.detail.object_pembiayaan.obj_code == "002"){
 					
-						// if($('#') == undefined){
-						// 	alert_error("Isi informan 2")
-						// }
-						// else{
-						// 	$('#btn-save-silent-survey').click(function(){
-						// 		var file = app.Survey
-						// 		file.uploadDocumentSilentSurvey();
-						// 		if(document.getElementById("lokasirumah").checked==false&&
-						// 			document.getElementById("lokasiusaha").checked==false){
-						// 			$('#err-lokasi').html('Lokasi Proses Survey wajib Diisi');
-						// 			$('#err-lokasi').prop("hidden",false);
-						// 		}
-						// 		else if(document.getElementById("lokasirumah").checked!=false||
-						// 		document.getElementById("lokasiusaha").checked!=false){
-						// 			$('#err-lokasi').html('');
-						// 			$('#err-lokasi').prop("hidden",true);
-						// 		}
-					
-						// 		if(document.getElementById("radiofotorumah").checked==false&&
-						// 			document.getElementById("radiofotousaha").checked==false&&
-						// 			document.getElementById("radiofotorumahusaha").checked==false){
-						// 			$('#err-fotorumah').html('Foto Rumah/Tempat Usaha wajib Diisi');
-						// 			$('#err-fotorumah').prop("hidden",false);
-						// 			// $('.error-fotorumah').css({"border-color":"red"});
-						// 		}
-						// 		else if(document.getElementById("radiofotorumah").checked!=false||
-						// 		document.getElementById("radiofotousaha").checked!=false||
-						// 		document.getElementById("radiofotorumahusaha").checked!=false){
-						// 			$('#err-fotorumah').html('');
-						// 			$('#err-fotorumah').prop("hidden",true);
-						// 		}
-					
-						// 		if(document.getElementById("radiojalanrumah").checked==false&&
-						// 			document.getElementById("radiojalanusaha").checked==false&&
-						// 			document.getElementById("radiojalanrumahusaha").checked==false){
-						// 			$('#err-fotojalan').html('Foto Jalan/Lingkungan Sekitar Rumah/Tempat Usaha Nasabah wajib Diisi');
-						// 			$('#err-fotojalan').prop("hidden",false);
-						// 			// $('.error-fotorumah').css({"border-color":"red"});
-						// 		}
-						// 		else if(document.getElementById("radiofotorumah").checked!=false ||
-						// 		document.getElementById("radiofotousaha").checked!=false ||
-						// 		document.getElementById("radiofotorumahusaha").checked!=false){
-						// 			$('#err-fotojalan').html('');
-						// 			$('#err-fotojalan').prop("hidden",true);
-						// 		}
-					
-						// 		if($('#namainforman').val()==''||$('#namainforman').val()==null){
-						// 			$('#err-namainforman').html('Nama Informan Wajib Diisi');
-						// 			$('#err-namainforman').prop("hidden",false);
-						// 			$('.error-namainforman').css({"border-color":"red"});
-						// 		}
-						// 		else if($('#namainforman').val()!=''||$('#namainforman').val()!=null){
-						// 			$('#err-namainforman').html('');
-						// 			$('#err-namainforman').prop("hidden",true);
-						// 			$('.error-namainforman').css({"border-color":""});
-						// 		}
-					
-						// 		if($('#hubungan-informan-dengan-nasabah option:selected').val()==''||$('#hubungan-informan-dengan-nasabah option:selected').val()==null){
-						// 			$('#err-hubunganinforman').html('Hubungan Informan dengan Nasabah Wajib Diisi');
-						// 			$('#err-hubunganinforman').prop("hidden",false);
-						// 			$('.error-hubunganinforman').css({"border-color":"red"});
-						// 		}
-						// 		else if($('#hubungan-informan-dengan-nasabah option:selected').val()==''||$('#hubungan-informan-dengan-nasabah option:selected').val()==null){
-						// 			$('#err-hubunganinforman').html('');
-						// 			$('#err-hubunganinforman').prop("hidden",true);
-						// 			$('.error-hubunganinforman').css({"border-color":""});
-						// 		}
-					
-						// 		if(document.getElementById("radiodebtiya").checked==false&&
-						// 		document.getElementById("radiodebttidak").checked==false){
-						// 			$('#err-debtcollector').html('Kolom Nasabah dikenal bersosialisasi dengan warga? Wajib Diisi');
-						// 			$('#err-debtcollector').prop("hidden",false);
-						// 			$('.error-debtcollector').css({"border-color":""});
-						// 		}
-						// 		else if(document.getElementById("radiodebtiya").checked!=false||
-						// 		document.getElementById("radiodebttidak").checked!=false){
-						// 			$('#err-debtcollector').html('');
-						// 			$('#err-debtcollector').prop("hidden",true);
-						// 			$('.error-debtcollector').css({"border-color":""});
-						// 		}
-					
-						// 		if(document.getElementById("radiososialiya").checked==false&&
-						// 		document.getElementById("radiososialtidak").checked==false){
-						// 			$('#err-sosialisasi').html('Kolom Nasabah dikenal bersosialisasi dengan warga? Wajib Diisi');
-						// 			$('#err-sosialisasi').prop("hidden",false);
-						// 			$('.error-sosialisasi').css({"border-color":""});
-						// 		}
-						// 		else if(document.getElementById("radiososialiya").checked!=false||
-						// 		document.getElementById("radiososialtidak").checked!=false){
-						// 			$('#err-sosialisasi').html('');
-						// 			$('#err-sosialisasi').prop("hidden",true);
-						// 			$('.error-sosialisasi').css({"border-color":""});
-						// 		}
-					
-						// 		if(document.getElementById("radiolsmiya").checked==false&&
-						// 		document.getElementById("radiolsmtidak").checked==false){
-						// 			$('#err-lsm').html('Kolom Nasabah terlibat di keanggotaan LSM Wajib Diisi');
-						// 			$('#err-lsm').prop("hidden",false);
-						// 			$('.error-lsm').css({"border-color":""});
-						// 		}
-						// 		else if(document.getElementById("radiolsmiya").checked!=false||
-						// 		document.getElementById("radiolsmtidak").checked!=false){
-						// 			$('#err-lsm').html('');
-						// 			$('#err-lsm').prop("hidden",true);
-						// 			$('.error-lsm').css({"border-color":""});
-						// 		}
-					
-						// 		if(document.getElementById("radiokepemilikansesuai").checked==false&&
-						// 			document.getElementById("radiokepemilikantidaksesuai").checked==false){
-						// 				$('#err-statusradio').html('Status Kepemilikan Rumah Wajib Diisi');
-						// 				$('#err-statusradio').prop("hidden",false);
-						// 				$('.error-statusradio').css({"border-color":"red"});
-						// 		}
-						// 		else if(document.getElementById("radiokepemilikansesuai").checked!=false||
-						// 		document.getElementById("radiokepemilikantidaksesuai").checked!=false){
-						// 			$('#err-statusradio').html('');
-						// 			$('#err-statusradio').prop("hidden",true);
-						// 			$('.error-statusradio').css({"border-color":""});
-						// 		}
-					
-						// 		if(document.getElementById("radiokepemilikantidaksesuai").checked==true){
-						// 			if($('#slc-statustidaksesuai option:selected').val()==''
-						// 			|| $('#slc-statustidaksesuai option:selected').val()==null){
-						// 				$('#err-statustidaksesuai').html('Informasi Tidak Sesuai Wajib Diisi');
-						// 				$('#err-statustidaksesuai').prop("hidden",false);
-						// 				$('.error-statustidaksesuai').css({"border-color":"red"});
-						// 			}
-						// 			else if($('#slc-statustidaksesuai option:selected').val()!=''
-						// 			|| $('#slc-statustidaksesuai option:selected').val()!=null){
-						// 				$('#err-statustidaksesuai').html('');
-						// 				$('#err-statustidaksesuai').prop("hidden",true);
-						// 				$('.error-statustidaksesuai').css({"border-color":""});
-						// 			}
-						// 		}
-					
-						// 		if(document.getElementById("radiotinggalsesuai").checked==false&&
-						// 			document.getElementById("radiotinggaltidaksesuai").checked==false){
-						// 				$('#err-lamatinggal').html('Lama tinggal/menempati rumah sesuai Wajib Diisi');
-						// 				$('#err-lamatinggal').prop("hidden",false);
-						// 		}
-						// 		else if(document.getElementById("radiotinggalsesuai").checked!=false||
-						// 		document.getElementById("radiotinggaltidaksesuai").checked!=false){
-						// 			$('#err-lamatinggal').html('');
-						// 			$('#err-lamatinggal').prop("hidden",true);
-						// 		}
-					
-						// 		if(document.getElementById("radiotinggaltidaksesuai").checked==true){
-						// 			if($('#tahuntidaksesuai').val()==''&& $('#bulantidaksesuai').val()==''){
-						// 				$('#err-lamatinggaltidaksesuai').html('Informasi Lama tinggal/menempati rumah Tidak Sesuai Wajib Diisi');
-						// 				$('#err-lamatinggaltidaksesuai').prop("hidden",false);
-						// 				$('.error-lamatinggaltidaksesuai').css({"border-color":"red"});
-						// 			}
-						// 			else if($('tahuntidaksesuai').val()!=''
-						// 			|| $('#bulantidaksesuai').val()!=null){
-						// 				$('#err-lamatinggaltidaksesuai').html('');
-						// 				$('#err-lamatinggaltidaksesuai').prop("hidden",true);
-						// 			}
-						// 		}
-	
-						// 		if($('#namainforman2').val()==''||$('#namainforman2').val()==null){
-						// 			$('#err-namainforman2').html('Nama Informan 2 Wajib Diisi');
-						// 			$('#err-namainforman2').prop("hidden",false);
-						// 			$('.error-namainforman').css({"border-color":"red"});
-						// 		}
-						// 		else if($('#namainforman2').val()!=''||$('#namainforman2').val()!=null){
-						// 			$('#err-namainforman2').html('');
-						// 			$('#err-namainforman2').prop("hidden",true);
-						// 			$('.error-namainforman').css({"border-color":""});
-						// 		}
-					
-						// 		if($('#hubungan-informan-dengan-nasabah2 option:selected').val()==''||$('#hubungan-informan-dengan-nasabah2 option:selected').val()==null){
-						// 			$('#err-hubunganinforman2').html('Hubungan Informan 2 dengan Nasabah Wajib Diisi');
-						// 			$('#err-hubunganinforman2').prop("hidden",false);
-						// 			$('.error-hubunganinforman').css({"border-color":"red"});
-						// 		}
-						// 		else if($('#hubungan-informan-dengan-nasabah2 option:selected').val()==''||$('#hubungan-informan-dengan-nasabah2 option:selected').val()==null){
-						// 			$('#err-hubunganinforman2').html('');
-						// 			$('#err-hubunganinforman2').prop("hidden",true);
-						// 			$('.error-hubunganinforman').css({"border-color":""});
-						// 		}
-					
-						// 		if(document.getElementById("radiodebtiya2").checked==false&&
-						// 		document.getElementById("radiodebttidak2").checked==false){
-						// 			$('#err-debtcollector2').html('Kolom Nasabah dikenal bersosialisasi dengan warga? Wajib Diisi');
-						// 			$('#err-debtcollector2').prop("hidden",false);
-						// 			$('.error-debtcollector').css({"border-color":""});
-						// 		}
-						// 		else if(document.getElementById("radiodebtiya2").checked!=false||
-						// 		document.getElementById("radiodebttidak2").checked!=false){
-						// 			$('#err-debtcollector2').html('');
-						// 			$('#err-debtcollector2').prop("hidden",true);
-						// 			$('.error-debtcollector2').css({"border-color":""});
-						// 		}
-					
-						// 		if(document.getElementById("radiososialiya2").checked==false&&
-						// 		document.getElementById("radiososialtidak2").checked==false){
-						// 			$('#err-sosialisasi2').html('Kolom Nasabah dikenal bersosialisasi dengan warga? Wajib Diisi');
-						// 			$('#err-sosialisasi2').prop("hidden",false);
-						// 			$('.error-sosialisasi').css({"border-color":""});
-						// 		}
-						// 		else if(document.getElementById("radiososialiya2").checked!=false||
-						// 		document.getElementById("radiososialtidak2").checked!=false){
-						// 			$('#err-sosialisasi2').html('');
-						// 			$('#err-sosialisasi2').prop("hidden",true);
-						// 			$('.error-sosialisasi').css({"border-color":""});
-						// 		}
-					
-						// 		if(document.getElementById("radiolsmiya2").checked==false&&
-						// 		document.getElementById("radiolsmtidak2").checked==false){
-						// 			$('#err-lsm2').html('Kolom Nasabah terlibat di keanggotaan LSM Wajib Diisi');
-						// 			$('#err-lsm2').prop("hidden",false);
-						// 			$('.error-lsm').css({"border-color":""});
-						// 		}
-						// 		else if(document.getElementById("radiolsmiya2").checked!=false||
-						// 		document.getElementById("radiolsmtidak").checked!=false){
-						// 			$('#err-lsm2').html('');
-						// 			$('#err-lsm2').prop("hidden",true);
-						// 			$('.error-lsm').css({"border-color":""});
-						// 		}
-					
-						// 		if(document.getElementById("radiokepemilikansesuai2").checked==false&&
-						// 			document.getElementById("radiokepemilikantidaksesuai2").checked==false){
-						// 				$('#err-statusradio2').html('Status Kepemilikan Rumah Wajib Diisi');
-						// 				$('#err-statusradio2').prop("hidden",false);
-						// 				$('.error-statusradio').css({"border-color":"red"});
-						// 		}
-						// 		else if(document.getElementById("radiokepemilikansesuai2").checked!=false||
-						// 		document.getElementById("radiokepemilikantidaksesuai2").checked!=false){
-						// 			$('#err-statusradio2').html('');
-						// 			$('#err-statusradio2').prop("hidden",true);
-						// 			$('.error-statusradio').css({"border-color":""});
-						// 		}
-								
-						// 		if(document.getElementById("radiokepemilikantidaksesuai2").checked==true){
-						// 			if($('#slc-statustidaksesuai2 option:selected').val()==''
-						// 			|| $('#slc-statustidaksesuai2 option:selected').val()==null){
-						// 				$('#err-statustidaksesuai2').html('Informasi Tidak Sesuai Wajib Diisi');
-						// 				$('#err-statustidaksesuai2').prop("hidden",false);
-						// 				$('.error-statustidaksesuai').css({"border-color":"red"});
-						// 			}
-						// 			else if($('#slc-statustidaksesuai2 option:selected').val()!=''
-						// 			|| $('#slc-statustidaksesuai2 option:selected').val()!=null){
-						// 				$('#err-statustidaksesuai2').html('');
-						// 				$('#err-statustidaksesuai2').prop("hidden",true);
-						// 				$('.error-statustidaksesuai').css({"border-color":""});
-						// 			}
-						// 		}
-					
-						// 		if(document.getElementById("radiotinggalsesuai2").checked==false&&
-						// 			document.getElementById("radiotinggaltidaksesuai2").checked==false){
-						// 				$('#err-lamatinggal2').html('Lama tinggal/menempati rumah sesuai Wajib Diisi');
-						// 				$('#err-lamatinggal2').prop("hidden",false);
-						// 		}
-						// 		else if(document.getElementById("radiotinggalsesuai2").checked!=false||
-						// 		document.getElementById("radiotinggaltidaksesuai2").checked!=false){
-						// 			$('#err-lamatinggal2').html('');
-						// 			$('#err-lamatinggal2').prop("hidden",true);
-						// 		}
-					
-						// 		if(document.getElementById("radiotinggaltidaksesuai2").checked==true){
-						// 			if($('#tahuntidaksesuai2').val()==''&& $('#bulantidaksesuai2').val()==''){
-						// 				$('#err-lamatinggaltidaksesuai2').html('Informasi Lama tinggal/menempati rumah Tidak Sesuai Wajib Diisi');
-						// 				$('#err-lamatinggaltidaksesuai2').prop("hidden",false);
-						// 				$('.error-lamatinggaltidaksesuai').css({"border-color":"red"});
-						// 			}
-						// 			else if($('tahuntidaksesuai2').val()!=''
-						// 			|| $('#bulantidaksesuai2').val()!=null){
-						// 				$('#err-lamatinggaltidaksesuai2').html('');
-						// 				$('#err-lamatinggaltidaksesuai2').prop("hidden",true);
-						// 			}
-						// 		}
-						// 	});
-						// }
-						
-					}
 
 	            } else {
 	                alert_warning(data);
@@ -1209,6 +1224,10 @@ app.Survey = {
 						} 
 					}
 				}
+				
+			}
+
+			else if(x==5){
 				
 			}
 		}
