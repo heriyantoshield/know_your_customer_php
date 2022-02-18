@@ -26,5 +26,5 @@ class Survey_api extends CI_Controller {
 		$data=$this->models->post_methode($param,$this->config->item('java_detail_tele_survey').$link);
 		$this->output->set_content_type('application/json');
 		$this->output->set_output(json_encode($data));
-	}
+	} 
 }
