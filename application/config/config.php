@@ -32,6 +32,7 @@ $config['java_redis_branch'] = 'http://redis-mst-branch-dev.apps.ocp4dev.muf.co.
 $config['java_postgre_eco_sector'] = 'http://master-economic-sector-java-dev.apps.ocp4dev.muf.co.id/';
 $config['java_hubungan_informan_nasabah'] = 'http://master-hubungan-informan-nasabah-java-dev.apps.ocp4dev.muf.co.id/';
 $config['java_detail_tele_survey'] = 'http://detail-tele-survey-java-dev.apps.ocp4dev.muf.co.id/';
+$config['java_kepemilikan_rumah'] = 'http://master-status-kepemilikan-rumah-java-dev.apps.ocp4dev.muf.co.id/';
 
 /*
 |--------------------------------------------------------------------------

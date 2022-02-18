@@ -27,4 +27,12 @@ class Survey_api extends CI_Controller {
 		$this->output->set_content_type('application/json');
 		$this->output->set_output(json_encode($data));
 	} 
+
+	public function getKepemilikanRumah()
+	{
+		$data=$this->models->get_methode($this->config->item('java_kepemilikan_rumah')."getAllStatusRumah");
+		$this->output->set_content_type('application/json');
+		$this->output->set_output(json_encode($data));
+	}
+	 
 }
