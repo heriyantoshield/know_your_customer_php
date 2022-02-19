@@ -10,9 +10,9 @@ app.Survey = {
 	init: function () {
         var file = app.Survey;
 		file.getHubunganInformanNasabah();
+		file.getKepemilikanRumah();
 		var order_id = '123456789011113';
 		file.getDetailTeleSurvey(order_id);
-		file.getHubunganInformanNasabah1();
         var informan = 2;
 
 		$('input[type=radio][id=radiokepemilikantidaksesuai]').change(function(){
@@ -322,6 +322,8 @@ app.Survey = {
 					}		
 				}
 			} else {
+				console.log($('#slc-statustidaksesuai').val());
+				console.log($('#hubungan-informan-dengan-nasabah').val())
 				if(document.getElementById("lokasirumah").checked==false&&
 						document.getElementById("lokasiusaha").checked==false){
 						$('#err-lokasi').html('Lokasi Proses Survey wajib Diisi');
@@ -705,6 +707,7 @@ app.Survey = {
 				file.getHubunganInformanNasabah1(informan);
 				file.getDetailTeleSurvey1(order_id,informan);
 				file.informanTidakSesuai(informan);
+				file.getKepemilikanRumah1(informan);
 				$('#btnAddInforman').val("1")
                 informan++;
         }
@@ -802,6 +805,82 @@ app.Survey = {
             }
         });
     },
+
+	getKepemilikanRumah: function(){
+		var file = app.Survey;
+		$.ajax({
+            url: app.base_url + file.api + "getKepemilikanRumah",
+            async: false,
+            success: function(response) {
+                if (response.status) {
+                    var kepemilikanRumah = response.data.map(function (res) {
+                        return {
+                            id: res.house_status_code,
+                            text: res.house_status_desc
+                        };
+                    });
+                }
+				console.log($('#slc-statustidaksesuai').val());
+
+                $('#slc-statustidaksesuai').select2({
+                    theme: 'bootstrap4',
+                    placeholder: "-PILIH-",
+                    allowClear: true,
+                    cache: true,
+                    data: kepemilikanRumah,
+                    // containerCssClass: "error-slc-cabang",
+                    processResults: function (response) {
+                        return {
+                            results: response.data.map(function (res) {
+                                return {
+                                    id: res.house_status_code,
+                          			text: res.house_status_desc
+                                };
+                            }) 
+                        };
+                    }
+                });
+            }
+        });
+	},
+
+	getKepemilikanRumah1: function(informan){
+		var file = app.Survey;
+		$.ajax({
+            url: app.base_url + file.api + "getKepemilikanRumah",
+            async: false,
+            success: function(response) {
+                if (response.status) {
+                    var kepemilikanRumah = response.data.map(function (res) {
+                        return {
+                            id: res.house_status_code,
+                            text: res.house_status_desc
+                        };
+                    });
+                }
+				console.log($('#slc-statustidaksesuai'+informan+'').val());
+
+                $('#slc-statustidaksesuai'+informan+'').select2({
+                    theme: 'bootstrap4',
+                    placeholder: "-PILIH-",
+                    allowClear: true,
+                    cache: true,
+                    data: kepemilikanRumah,
+                    // containerCssClass: "error-slc-cabang",
+                    processResults: function (response) {
+                        return {
+                            results: response.data.map(function (res) {
+                                return {
+                                    id: res.house_status_code,
+                          			text: res.house_status_desc
+                                };
+                            }) 
+                        };
+                    }
+                });
+            }
+        });
+	},
 
 	getDetailTeleSurvey: function(order_id) {
     	let param = [];

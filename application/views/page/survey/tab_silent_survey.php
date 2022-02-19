@@ -323,13 +323,9 @@
                             <label>Jika tidak sesuai, apa informasi dari informan<span style="color:red">*</span></label>
                         </div>
                         <div class="col-sm-4">
-                            <select class="form-control select2bs4" id="slc-statustidaksesuai">
-								<option>MILIK SENDIRI</option>
-								<option>MILIK KELUARGA</option>
-								<option>RUMAH SENDIRI/MILIK PERUSAHAAN</option>
-								<option>SEWA/KONTRAK/KOST TAHUNAN</option>
-								<option>SEWA/KONTRAK/KOST BULANAN</option>
-                            </select>
+								<select class="form-control select2bs4" id="slc-statustidaksesuai">
+									<option></option>
+								</select>
 							<label class="error-statustidaksesuai error-info" id="err-statustidaksesuai" hidden></label>
                         </div>
                     </div>
