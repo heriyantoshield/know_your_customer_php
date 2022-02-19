@@ -28,14 +28,14 @@
                                         <label>Nomor Aplikasi:</label>
                                     </div>
                                     <div class="col-sm-3">
-                                        <input type="input" class="form-control" id="inp-nomor-aplikasi-kyc-non-wiraswasta" readonly>
+                                        <input type="input" class="form-control" id="inp-nomor-aplikasi-kyc-wiraswasta" readonly>
                                     </div>
                                     <div class="col-sm-1"></div>
                                     <div class="col-sm-2 label-kyc">
                                         <label>Tanggal Aplikasi:</label>
                                     </div>
                                     <div class="col-sm-3">
-                                        <input type="input" class="form-control" id="inp-tanggal-aplikasi-kyc-non-wiraswasta" readonly>
+                                        <input type="input" class="form-control" id="inp-tanggal-aplikasi-kyc-wiraswasta" readonly>
                                     </div>
                                 </div>
                             </div>
@@ -50,14 +50,14 @@
                                         <label>Nama Sesuai KTP:</label>
                                     </div>
                                     <div class="col-sm-3">
-                                        <input type="input" class="form-control" id="inp-nama-sesuai-ktp-kyc-non-wiraswasta" readonly>
+                                        <input type="input" class="form-control" id="inp-nama-sesuai-ktp-kyc-wiraswasta" readonly>
                                     </div>
                                     <div class="col-sm-1"></div>
                                     <div class="col-sm-2 label-kyc">
                                         <label>Source Order:</label>
                                     </div>
                                     <div class="col-sm-3">
-                                        <input type="input" class="form-control" id="inp-source-order-kyc-non-wiraswasta" readonly>
+                                        <input type="input" class="form-control" id="inp-source-order-kyc-wiraswasta" readonly>
                                     </div>
                                 </div>
                             </div>
@@ -72,14 +72,14 @@
                                         <label>Tipe Nasabah:</label>
                                     </div>
                                     <div class="col-sm-3">
-                                        <input type="input" class="form-control" id="inp-tipe-nasabah-kyc-non-wiraswasta" readonly>
+                                        <input type="input" class="form-control" id="inp-tipe-nasabah-kyc-wiraswasta" readonly>
                                     </div>
                                     <div class="col-sm-1"></div>
                                     <div class="col-sm-2 label-kyc">
                                         <label>Cabang:</label>
                                     </div>
                                     <div class="col-sm-3">
-                                        <input type="input" class="form-control" id="inp-cabang-kyc-non-wiraswasta" readonly>
+                                        <input type="input" class="form-control" id="inp-cabang-kyc-wiraswasta" readonly>
                                     </div>
                                 </div>
                             </div>

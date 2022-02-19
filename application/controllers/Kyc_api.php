@@ -71,4 +71,17 @@ class Kyc_api extends CI_Controller {
 		$this->output->set_output(json_encode($data));
 	}
 
+	public function submitSilentSurveyWiraswasta()
+	{
+		$link = 'saveKyc';
+		@$data = array(
+			"pekerjaan_nasabah_silent_survey_wiraswasta" => $this->input->post('pekerjaan_nasabah_silent_survey_wiraswasta'),
+		);
+		var_dump($data);
+		die();
+		$result = $this->models->postSilentSurveyWiraswasta($data, $link);
+		$this->output->set_content_type('application/json');
+		$this->output->set_output(json_encode($result));
+	}
+
 }

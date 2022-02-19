@@ -14,16 +14,16 @@
                                     <label>Pekerjaan Nasabah</label>
                                 </div>
                                 <div class="col-lg-6">
-                                    <input type="input" class="form-control" id="inp-pekerjaan-nasabah-wiraswasta" disabled>
+                                    <input type="input" class="form-control" id="inp-pekerjaan-nasabah-silent-survey-wiraswasta" disabled>
                                 </div>
                                 <div class="col-lg-12" style="padding-left:20px;">
                                     <div class="input-group">
                                         <div class="col-lg-2" style="margin-top:5px;">
-                                            <input class="form-check-input" type="radio" name="radioSesuaiTidakSesuai" id="radiopekerjaannasabahsesuaiwiraswasta" value="">
+                                            <input class="form-check-input" type="radio" name="pekerjaannasabahsilentwiraswasta" id="radiopekerjaannasabahsesuaiwiraswasta" value="seusai">
                                             <label>Sesuai</label>
                                         </div>
                                         <div class="col-lg-2" style="margin-top:5px;">
-                                            <input class="form-check-input" type="radio" name="radioSesuaiTidakSesuai" id="radiopekerjaannasabahtidaksesuaiwiraswasta" value="">
+                                            <input class="form-check-input" type="radio" name="pekerjaannasabahsilentwiraswasta" id="radiopekerjaannasabahtidaksesuaiwiraswasta" value="tidak sesuai">
                                             <label>Tidak Sesuai</label>
                                         </div>
                                     </div>
@@ -39,7 +39,7 @@
                                     <label>Jenis Tempat Usaha</label>
                                 </div>
                                 <div class="col-lg-6">
-                                    <select class="form-control" style="width: 100%;" id="slc-jenis-tempat-usaha-wiraswasta" disabled>
+                                    <select class="form-control" style="width: 100%;" id="slc-jenis-tempat-usaha-silent-survey-wiraswasta" disabled>
                                         <option value="" class="form-control">- PILIHAN -</option>
                                     </select>
                                 </div>
@@ -54,16 +54,16 @@
                                     <label>Nama Tempat Usaha</label>
                                 </div>
                                 <div class="col-lg-6">
-                                    <input type="input" class="form-control" id="inp-nama-tempat-usaha-wiraswasta" disabled>
+                                    <input type="input" class="form-control" id="inp-nama-tempat-usaha-silent-survey-wiraswasta" disabled>
                                 </div>
                                 <div class="col-lg-12" style="padding-left:20px;">
                                     <div class="input-group">
                                         <div class="col-lg-2" style="margin-top:5px;">
-                                            <input class="form-check-input" type="radio" name="radioSesuaiTidakSesuai" id="radionamatempatusahasesuaiwiraswasta" value="">
+                                            <input class="form-check-input" type="radio" name="tempatusahasilentwiraswasta" id="radionamatempatusahasesuaiwiraswasta" value="sesuai">
                                             <label>Sesuai</label>
                                         </div>
                                         <div class="col-lg-2" style="margin-top:5px;">
-                                            <input class="form-check-input" type="radio" name="radioSesuaiTidakSesuai" id="radionamatempatusahatidaksesuaiwiraswasta" value="">
+                                            <input class="form-check-input" type="radio" name="tempatusahasilentwiraswasta" id="radionamatempatusahatidaksesuaiwiraswasta" value="tidak sesuai">
                                             <label>Tidak Sesuai</label>
                                         </div>
                                     </div>
@@ -79,16 +79,16 @@
                                     <label>Bidang Usaha</label>
                                 </div>
                                 <div class="col-lg-6">
-                                    <input type="input" class="form-control" id="inp-bidang-usaha-wiraswasta" disabled>
+                                    <input type="input" class="form-control" id="inp-bidang-usaha-silent-survey-wiraswasta" disabled>
                                 </div>
                                 <div class="col-lg-12" style="padding-left:20px;">
                                     <div class="input-group">
                                         <div class="col-lg-2" style="margin-top:5px;">
-                                            <input class="form-check-input" type="radio" name="radioSesuaiTidakSesuai" id="radiobidangusahasesuaiwiraswasta" value="">
+                                            <input class="form-check-input" type="radio" name="bidangusahasilentwiraswasta" id="radiobidangusahasesuaiwiraswasta" value="sesuai">
                                             <label>Sesuai</label>
                                         </div>
                                         <div class="col-lg-2" style="margin-top:5px;">
-                                            <input class="form-check-input" type="radio" name="radioSesuaiTidakSesuai" id="radiobidangusahatidaksesuaiwiraswasta" value="">
+                                            <input class="form-check-input" type="radio" name="bidangusahasilentwiraswasta" id="radiobidangusahatidaksesuaiwiraswasta" value="tidak sesuai">
                                             <label>Tidak Sesuai</label>
                                         </div>
                                     </div>
@@ -104,7 +104,7 @@
                                     <label>Sektor Tempat Usaha</label>
                                 </div>
                                 <div class="col-lg-6">
-                                    <input type="input" class="form-control" id="inp-sektor-tempat-usaha" disabled>
+                                    <input type="input" class="form-control" id="inp-sektor-tempat-usaha-silent-survey-wiraswasta" disabled>
                                 </div>
                             </div>
                         </div>
@@ -226,17 +226,6 @@
                             </div>
                         </div>
                     </div>
-
-                    <div id="base64-bukti-bekerja-silent-survey-wiraswasta-1" hidden value=""></div>
-                    <div id="base64-bukti-bekerja-silent-survey-wiraswasta-2" hidden value=""></div>
-                    <div id="base64-bukti-penghasilan-silent-survey-wiraswasta-1" hidden value=""></div>
-                    <div id="base64-bukti-penghasilan-silent-survey-wiraswasta-2" hidden value=""></div>
-                    <div id="base64-bukti-penghasilan-silent-survey-wiraswasta-3" hidden value=""></div>
-                    <div id="base64-bukti-penghasilan-silent-survey-wiraswasta-4" hidden value=""></div>
-                    <div id="base64-bukti-penghasilan-silent-survey-wiraswasta-5" hidden value=""></div>
-                    <div id="base64-bukti-penghasilan-silent-survey-wiraswasta-6" hidden value=""></div>
-                    <div id="base64-foto-tempat-usaha-silent-survey-wiraswasta" hidden value=""></div>
-                    <div id="base64-foto-selfie-silent-survey-wiraswasta" hidden value=""></div>
 
                     <div class="form-group row">
                         <div class="col-lg-12">

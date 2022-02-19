@@ -19,11 +19,11 @@
                                 <div class="col-lg-12" style="padding-left:20px;">
                                     <div class="input-group">
                                         <div class="col-lg-2" style="margin-top:5px;">
-                                            <input class="form-check-input" type="radio" name="radioSesuaiTidakSesuai" id="radiopekerjaannasabahsesuaiwiraswasta" value="">
+                                            <input class="form-check-input" type="radio" name="pekerjaannasabahinstantwiraswasta" id="radiopekerjaannasabahsesuaiwiraswasta" value="sesuai">
                                             <label>Sesuai</label>
                                         </div>
                                         <div class="col-lg-2" style="margin-top:5px;">
-                                            <input class="form-check-input" type="radio" name="radioSesuaiTidakSesuai" id="radiopekerjaannasabahtidaksesuaiwiraswasta" value="">
+                                            <input class="form-check-input" type="radio" name="pekerjaannasabahinstantwiraswasta" id="radiopekerjaannasabahtidaksesuaiwiraswasta" value="tidak sesuai">
                                             <label>Tidak Sesuai</label>
                                         </div>
                                     </div>
@@ -59,11 +59,11 @@
                                 <div class="col-lg-12" style="padding-left:20px;">
                                     <div class="input-group">
                                         <div class="col-lg-2" style="margin-top:5px;">
-                                            <input class="form-check-input" type="radio" name="radioSesuaiTidakSesuai" id="radionamatempatusahasesuaiwiraswasta" value="">
+                                            <input class="form-check-input" type="radio" name="namatempatusahainstantwiraswasta" id="radionamatempatusahasesuaiwiraswasta" value="sesuai">
                                             <label>Sesuai</label>
                                         </div>
                                         <div class="col-lg-2" style="margin-top:5px;">
-                                            <input class="form-check-input" type="radio" name="radioSesuaiTidakSesuai" id="radionamatempatusahatidaksesuaiwiraswasta" value="">
+                                            <input class="form-check-input" type="radio" name="namatempatusahainstantwiraswasta" id="radionamatempatusahatidaksesuaiwiraswasta" value="tidak sesuai">
                                             <label>Tidak Sesuai</label>
                                         </div>
                                     </div>
@@ -84,11 +84,11 @@
                                 <div class="col-lg-12" style="padding-left:20px;">
                                     <div class="input-group">
                                         <div class="col-lg-2" style="margin-top:5px;">
-                                            <input class="form-check-input" type="radio" name="radioSesuaiTidakSesuai" id="radiobidangusahasesuaiwiraswasta" value="">
+                                            <input class="form-check-input" type="radio" name="bidangusahainstantwiraswasta" id="radiobidangusahasesuaiwiraswasta" value="">
                                             <label>Sesuai</label>
                                         </div>
                                         <div class="col-lg-2" style="margin-top:5px;">
-                                            <input class="form-check-input" type="radio" name="radioSesuaiTidakSesuai" id="radiobidangusahatidaksesuaiwiraswasta" value="">
+                                            <input class="form-check-input" type="radio" name="bidangusahainstantwiraswasta" id="radiobidangusahatidaksesuaiwiraswasta" value="">
                                             <label>Tidak Sesuai</label>
                                         </div>
                                     </div>
