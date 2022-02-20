@@ -34,6 +34,7 @@ $config['java_hubungan_informan_nasabah'] = 'http://master-hubungan-informan-nas
 $config['java_detail_tele_survey'] = 'http://detail-tele-survey-java-dev.apps.ocp4dev.muf.co.id/';
 $config['java_kyc_publisher_kafka'] = 'http://kyc-publisher-kafka-dev.apps.ocp4dev.muf.co.id/';
 $config['java_kepemilikan_rumah'] = 'http://master-status-kepemilikan-rumah-java-dev.apps.ocp4dev.muf.co.id/';
+$config['java_submit_silent_survey'] = 'http://silentsurvey-publisher-kafka-dev.apps.ocp4dev.muf.co.id/';
 
 /*
 |--------------------------------------------------------------------------
