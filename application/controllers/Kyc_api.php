@@ -71,6 +71,19 @@ class Kyc_api extends CI_Controller {
 		$this->output->set_output(json_encode($data));
 	}
 
+	public function submitInstantApprovalWiraswasta()
+	{
+		$link = 'saveKyc';
+		@$data = array(
+			"pekerjaan_nasabah_instant_approval_wiraswasta" => $this->input->post('pekerjaan_nasabah_instant_approval_wiraswasta'),
+		);
+		var_dump($data);
+		die();
+		$result = $this->models->postWiraswasta($data, $link);
+		$this->output->set_content_type('application/json');
+		$this->output->set_output(json_encode($result));
+	}
+
 	public function submitSilentSurveyWiraswasta()
 	{
 		$link = 'saveKyc';
@@ -79,9 +92,62 @@ class Kyc_api extends CI_Controller {
 		);
 		var_dump($data);
 		die();
-		$result = $this->models->postSilentSurveyWiraswasta($data, $link);
+		$result = $this->models->postWiraswasta($data, $link);
 		$this->output->set_content_type('application/json');
 		$this->output->set_output(json_encode($result));
 	}
+
+	public function submitTeleSurveyWiraswasta()
+	{
+		$link = 'saveKyc';
+		@$data = array(
+			"pekerjaan_nasabah_tele_survey_wiraswasta" => $this->input->post('pekerjaan_nasabah_tele_survey_wiraswasta'),
+		);
+		var_dump($data);
+		die();
+		$result = $this->models->postWiraswasta($data, $link);
+		$this->output->set_content_type('application/json');
+		$this->output->set_output(json_encode($result));
+	}
+
+	public function submitInstantApprovalNonWiraswasta()
+	{
+		$link = 'saveKyc';
+		@$data = array(
+			"pekerjaan_nasabah_instant_approval_non_wiraswasta" => $this->input->post('pekerjaan_nasabah_instant_approval_non_wiraswasta'),
+		);
+		var_dump($data);
+		die();
+		$result = $this->models->postNonWiraswasta($data, $link);
+		$this->output->set_content_type('application/json');
+		$this->output->set_output(json_encode($result));
+	}
+
+	public function submitSilentSurveyNonWiraswasta()
+	{
+		$link = 'saveKyc';
+		@$data = array(
+			"pekerjaan_nasabah_silent_survey_non_wiraswasta" => $this->input->post('pekerjaan_nasabah_silent_survey_non_wiraswasta'),
+		);
+		var_dump($data);
+		die();
+		$result = $this->models->postNonWiraswasta($data, $link);
+		$this->output->set_content_type('application/json');
+		$this->output->set_output(json_encode($result));
+	}
+
+	public function submitTeleSurveyNonWiraswasta()
+	{
+		$link = 'saveKyc';
+		@$data = array(
+			"pekerjaan_nasabah_tele_survey_non_wiraswasta" => $this->input->post('pekerjaan_nasabah_tele_survey_non_wiraswasta'),
+		);
+		var_dump($data);
+		die();
+		$result = $this->models->postNonWiraswasta($data, $link);
+		$this->output->set_content_type('application/json');
+		$this->output->set_output(json_encode($result));
+	}
+
 
 }

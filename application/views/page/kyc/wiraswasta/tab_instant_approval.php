@@ -14,16 +14,16 @@
                                     <label>Pekerjaan Nasabah</label>
                                 </div>
                                 <div class="col-lg-6">
-                                    <input type="input" class="form-control" id="inp-pekerjaan-nasabah-wiraswasta" disabled>
+                                    <input type="input" class="form-control" id="inp-pekerjaan-nasabah-instant-approval-wiraswasta" disabled>
                                 </div>
                                 <div class="col-lg-12" style="padding-left:20px;">
                                     <div class="input-group">
                                         <div class="col-lg-2" style="margin-top:5px;">
-                                            <input class="form-check-input" type="radio" name="pekerjaannasabahinstantwiraswasta" id="radiopekerjaannasabahsesuaiwiraswasta" value="sesuai">
+                                            <input class="form-check-input" type="radio" name="pekerjaannasabahinstantwiraswasta" value="sesuai">
                                             <label>Sesuai</label>
                                         </div>
                                         <div class="col-lg-2" style="margin-top:5px;">
-                                            <input class="form-check-input" type="radio" name="pekerjaannasabahinstantwiraswasta" id="radiopekerjaannasabahtidaksesuaiwiraswasta" value="tidak sesuai">
+                                            <input class="form-check-input" type="radio" name="pekerjaannasabahinstantwiraswasta" value="tidak sesuai">
                                             <label>Tidak Sesuai</label>
                                         </div>
                                     </div>
@@ -39,7 +39,7 @@
                                     <label>Jenis Tempat Usaha</label>
                                 </div>
                                 <div class="col-lg-6">
-                                    <select class="form-control" style="width: 100%;" id="slc-jenis-tempat-usaha-wiraswasta" disabled>
+                                    <select class="form-control" style="width: 100%;" id="slc-jenis-tempat-usaha-instant-approval-wiraswasta" disabled>
                                         <option value="" class="form-control">- PILIHAN -</option>
                                     </select>
                                 </div>
@@ -54,16 +54,16 @@
                                     <label>Nama Tempat Usaha</label>
                                 </div>
                                 <div class="col-lg-6">
-                                    <input type="input" class="form-control" id="inp-nama-tempat-usaha-wiraswasta" disabled>
+                                    <input type="input" class="form-control" id="inp-nama-tempat-usaha-instant-approval-wiraswasta" disabled>
                                 </div>
                                 <div class="col-lg-12" style="padding-left:20px;">
                                     <div class="input-group">
                                         <div class="col-lg-2" style="margin-top:5px;">
-                                            <input class="form-check-input" type="radio" name="namatempatusahainstantwiraswasta" id="radionamatempatusahasesuaiwiraswasta" value="sesuai">
+                                            <input class="form-check-input" type="radio" name="tempatusahainstantwiraswasta" value="sesuai">
                                             <label>Sesuai</label>
                                         </div>
                                         <div class="col-lg-2" style="margin-top:5px;">
-                                            <input class="form-check-input" type="radio" name="namatempatusahainstantwiraswasta" id="radionamatempatusahatidaksesuaiwiraswasta" value="tidak sesuai">
+                                            <input class="form-check-input" type="radio" name="tempatusahainstantwiraswasta" value="tidak sesuai">
                                             <label>Tidak Sesuai</label>
                                         </div>
                                     </div>
@@ -79,16 +79,16 @@
                                     <label>Bidang Usaha</label>
                                 </div>
                                 <div class="col-lg-6">
-                                    <input type="input" class="form-control" id="inp-bidang-usaha-wiraswasta" disabled>
+                                    <input type="input" class="form-control" id="inp-bidang-usaha-instant-approval-wiraswasta" disabled>
                                 </div>
                                 <div class="col-lg-12" style="padding-left:20px;">
                                     <div class="input-group">
                                         <div class="col-lg-2" style="margin-top:5px;">
-                                            <input class="form-check-input" type="radio" name="bidangusahainstantwiraswasta" id="radiobidangusahasesuaiwiraswasta" value="">
+                                            <input class="form-check-input" type="radio" name="bidangusahainstantwiraswasta" value="sesuai">
                                             <label>Sesuai</label>
                                         </div>
                                         <div class="col-lg-2" style="margin-top:5px;">
-                                            <input class="form-check-input" type="radio" name="bidangusahainstantwiraswasta" id="radiobidangusahatidaksesuaiwiraswasta" value="">
+                                            <input class="form-check-input" type="radio" name="bidangusahainstantwiraswasta" value="tidak sesuai">
                                             <label>Tidak Sesuai</label>
                                         </div>
                                     </div>
@@ -104,7 +104,7 @@
                                     <label>Sektor Tempat Usaha</label>
                                 </div>
                                 <div class="col-lg-6">
-                                    <input type="input" class="form-control" id="inp-sektor-tempat-usaha" disabled>
+                                    <input type="input" class="form-control" id="inp-sektor-tempat-usaha-instant-approval-wiraswasta" disabled>
                                 </div>
                             </div>
                         </div>
@@ -226,17 +226,6 @@
                             </div>
                         </div>
                     </div>
-
-                    <div id="base64-bukti-usaha-instant-approval-wiraswasta-1" hidden value=""></div>
-                    <div id="base64-bukti-usaha-instant-approval-wiraswasta-2" hidden value=""></div>
-                    <div id="base64-bukti-keuangan-instant-approval-wiraswasta-1" hidden value=""></div>
-                    <div id="base64-bukti-keuangan-instant-approval-wiraswasta-2" hidden value=""></div>
-                    <div id="base64-bukti-keuangan-instant-approval-wiraswasta-3" hidden value=""></div>
-                    <div id="base64-bukti-keuangan-instant-approval-wiraswasta-4" hidden value=""></div>
-                    <div id="base64-bukti-keuangan-instant-approval-wiraswasta-5" hidden value=""></div>
-                    <div id="base64-bukti-keuangan-instant-approval-wiraswasta-6" hidden value=""></div>
-                    <div id="base64-foto-tempat-usaha-instant-approval-wiraswasta" hidden value=""></div>
-                    <div id="base64-foto-selfie-instant-approval-wiraswasta" hidden value=""></div>
 
                     <div class="form-group row">
                         <div class="col-lg-12">

@@ -14,16 +14,16 @@
                                     <label>Pekerjaan Nasabah</label>
                                 </div>
                                 <div class="col-lg-6">
-                                    <input type="input" class="form-control inp-nik-oid-gabungan" id="inp-nama-nasabah-todolist" disabled>
+                                    <input type="input" class="form-control" id="inp-pekerjaan-nasabah-instant-approval-non-wiraswasta" disabled>
                                 </div>
                                 <div class="col-lg-12" style="padding-left:20px;">
                                     <div class="input-group">
                                         <div class="col-lg-2" style="margin-top:5px;">
-                                            <input class="form-check-input" type="radio" name="radioButtonApproval" id="radiopekerjaannasabahsesuai" value="">
+                                            <input class="form-check-input" type="radio" name="pekerjaannasabahinstantnonwiraswasta" value="sesuai">
                                             <label>Sesuai</label>
                                         </div>
                                         <div class="col-lg-2" style="margin-top:5px;">
-                                            <input class="form-check-input" type="radio" name="radioButtonApproval" id="radiopekerjaannasabahtidaksesuai" value="">
+                                            <input class="form-check-input" type="radio" name="pekerjaannasabahinstantnonwiraswasta" value="tidak sesuai">
                                             <label>Tidak Sesuai</label>
                                         </div>
                                     </div>
@@ -39,7 +39,7 @@
                                     <label>Jenis Tempat Bekerja</label>
                                 </div>
                                 <div class="col-lg-6">
-                                    <select class="form-control" style="width: 100%;" id="slc-informasi-pekerjaan-nasabah" disabled>
+                                    <select class="form-control" style="width: 100%;" id="slc-jenis-tempat-bekerja-instant-approval-non-wiraswasta" disabled>
                                         <option value="" class="form-control">- PILIHAN -</option>
                                     </select>
                                 </div>
@@ -54,16 +54,16 @@
                                     <label>Nama Tempat Bekerja</label>
                                 </div>
                                 <div class="col-lg-6">
-                                    <input type="input" class="form-control inp-nik-oid-gabungan" id="inp-nama-nasabah-todolist" disabled>
+                                    <input type="input" class="form-control" id="inp-nama-tempat-bekerja-instant-approval-non-wiraswasta" disabled>
                                 </div>
                                 <div class="col-lg-12" style="padding-left:20px;">
                                     <div class="input-group">
                                         <div class="col-lg-2" style="margin-top:5px;">
-                                            <input class="form-check-input" type="radio" name="radioButtonApproval" id="radiopekerjaannasabahsesuai" value="">
+                                            <input class="form-check-input" type="radio" name="tempatbekerjainstantnonwiraswasta" value="sesuai">
                                             <label>Sesuai</label>
                                         </div>
                                         <div class="col-lg-2" style="margin-top:5px;">
-                                            <input class="form-check-input" type="radio" name="radioButtonApproval" id="radiopekerjaannasabahtidaksesuai" value="">
+                                            <input class="form-check-input" type="radio" name="tempatbekerjainstantnonwiraswasta" value="tidak sesuai">
                                             <label>Tidak Sesuai</label>
                                         </div>
                                     </div>
@@ -79,16 +79,16 @@
                                     <label>Jabatan Nasabah</label>
                                 </div>
                                 <div class="col-lg-6">
-                                    <input type="input" class="form-control inp-nik-oid-gabungan" id="inp-nama-nasabah-todolist" disabled>
+                                    <input type="input" class="form-control" id="inp-jabatan-nasabah-instant-approval-non-wiraswasta" disabled>
                                 </div>
                                 <div class="col-lg-12" style="padding-left:20px;">
                                     <div class="input-group">
                                         <div class="col-lg-2" style="margin-top:5px;">
-                                            <input class="form-check-input" type="radio" name="radioButtonApproval" id="radiopekerjaannasabahsesuai" value="">
+                                            <input class="form-check-input" type="radio" name="jabatannasabahinstantnonwiraswasta" value="sesuai">
                                             <label>Sesuai</label>
                                         </div>
                                         <div class="col-lg-2" style="margin-top:5px;">
-                                            <input class="form-check-input" type="radio" name="radioButtonApproval" id="radiopekerjaannasabahtidaksesuai" value="">
+                                            <input class="form-check-input" type="radio" name="jabatannasabahinstantnonwiraswasta" value="tidak sesuai">
                                             <label>Tidak Sesuai</label>
                                         </div>
                                     </div>
@@ -104,7 +104,7 @@
                                     <label>Sektor Tempat Bekerja</label>
                                 </div>
                                 <div class="col-lg-6">
-                                    <input type="input" class="form-control inp-nik-oid-gabungan" id="inp-nama-nasabah-todolist" disabled>
+                                    <input type="input" class="form-control" id="inp-sektor-tempat-bekerja-instant-approval-non-wiraswasta" disabled>
                                 </div>
                             </div>
                         </div>
@@ -193,21 +193,12 @@
                                     <input type="file" class="form-control-file" accept="application/pdf, image/jpg, image/jpeg, image/png" id="dokumen-bukti-penghasilan-instant-approval-non-wiraswasta">
                                     <label class="error-dokumen-bukti-penghasilan-instant-approval-non-wiraswasta error-info" id="err-dokumen-bukti-penghasilan-instant-approval-non-wiraswasta" hidden></label>
                                 </div>
-                                <div id="newdokbuktipenhasilaninstantapproval"></div>
+                                <div id="newdokbuktipenghasilaninstantapproval"></div>
                                 <button class="btn" type="button" id="add-document-bukti-penghasilan-instant-approval-non-wiraswasta"><span class="fa fa-plus"></span> Add Document </button>
                             </div>
                         </div>
                     </div>
-
-                    <div id="base64-bukti-bekerja-instant-approval-non-wiraswasta-1" hidden value=""></div>
-                    <div id="base64-bukti-bekerja-instant-approval-non-wiraswasta-2" hidden value=""></div>
-                    <div id="base64-bukti-penghasilan-instant-approval-non-wiraswasta-1" hidden value=""></div>
-                    <div id="base64-bukti-penghasilan-instant-approval-non-wiraswasta-2" hidden value=""></div>
-                    <div id="base64-bukti-penghasilan-instant-approval-non-wiraswasta-3" hidden value=""></div>
-                    <div id="base64-bukti-penghasilan-instant-approval-non-wiraswasta-4" hidden value=""></div>
-                    <div id="base64-bukti-penghasilan-instant-approval-non-wiraswasta-5" hidden value=""></div>
-                    <div id="base64-bukti-penghasilan-instant-approval-non-wiraswasta-6" hidden value=""></div>
-
+                    
                     <div class="form-group row">
                         <div class="col-lg-12">
                             <div class="col-lg-8">
@@ -216,7 +207,7 @@
                                 </div>
                                 <div class="input-group">
                                     <div class="col-lg-1">
-                                        <input type="input" class="form-control inp-nik-oid-gabungan" id="inp-jarak-nasabah-ke-muf-instant-approval-non-wiraswasta">
+                                        <input type="input" class="form-control" id="inp-jarak-nasabah-ke-muf-instant-approval-non-wiraswasta">
                                     </div>
                                     <div class="col-lg-1" style="margin-top:7px;">
                                         <label>KM</lable>
