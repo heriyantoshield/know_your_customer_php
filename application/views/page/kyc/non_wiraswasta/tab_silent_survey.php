@@ -1,10 +1,10 @@
 <section class="content">
     <div class="container-fluid">
-        <div id="tittle-silent-survey-non-wiraswasta" class="use-bottom-border col-md-9">
-            <h4 class="use-bottom-border-h4"><span id="span-silent-survey-non-wiraswasta">Informasi Pekerjaan Nasabah<i class="fas fa-angle-right ml-2"></i></span></h4>
+        <div id="tittle-info-pkrj-nsbh-ss-non-wira" class="use-bottom-border col-md-9">
+            <h4 class="use-bottom-border-h4"><span id="span-info-pkrj-nsbh-ss-non-wira">Informasi Pekerjaan Nasabah<i class="fas fa-angle-right ml-2"></i></span></h4>
         </div>
         <div class="card-body">
-            <div class="row" id="content-silent-survey-non-wiraswasta">
+            <div class="row" id="content-info-pkrj-nsbh-ss-non-wira">
                 <div class="col-md-12">        
 
                     <div class="form-group row">
@@ -14,16 +14,16 @@
                                     <label>Pekerjaan Nasabah</label>
                                 </div>
                                 <div class="col-lg-6">
-                                    <input type="input" class="form-control" id="inp-pekerjaan-nasabah-silent-survey-non-wiraswasta" disabled>
+                                    <input type="input" class="form-control" id="inp-pkrj-nsbh-ss-non-wira" disabled>
                                 </div>
                                 <div class="col-lg-12" style="padding-left:20px;">
                                     <div class="input-group">
                                         <div class="col-lg-2" style="margin-top:5px;">
-                                            <input class="form-check-input" type="radio" name="pekerjaannasabahsilentnonwiraswasta" value="sesuai">
+                                            <input class="form-check-input" type="radio" name="pkrj-nsbh-ss-non-wira" value="sesuai">
                                             <label>Sesuai</label>
                                         </div>
                                         <div class="col-lg-2" style="margin-top:5px;">
-                                            <input class="form-check-input" type="radio" name="pekerjaannasabahsilentnonwiraswasta" value="tidak sesuai">
+                                            <input class="form-check-input" type="radio" name="pkrj-nsbh-ss-non-wira" value="tidak sesuai">
                                             <label>Tidak Sesuai</label>
                                         </div>
                                     </div>
@@ -39,7 +39,7 @@
                                     <label>Jenis Tempat Bekerja</label>
                                 </div>
                                 <div class="col-lg-6">
-                                    <select class="form-control" style="width: 100%;" id="slc-jenis-tempat-bekerja-silent-survey-non-wiraswasta" disabled>
+                                    <select class="form-control" style="width: 100%;" id="slc-pkrj-nsbh-jns-tmpt-bkrj-ss-non-wira" disabled>
                                         <option value="" class="form-control">- PILIHAN -</option>
                                     </select>
                                 </div>
@@ -54,16 +54,16 @@
                                     <label>Nama Tempat Bekerja</label>
                                 </div>
                                 <div class="col-lg-6">
-                                    <input type="input" class="form-control" id="inp-nama-tempat-bekerja-silent-survey-non-wiraswasta" disabled>
+                                    <input type="input" class="form-control" id="inp-pkrj-nsbh-nm-tmpt-bkrj-ss-non-wira" disabled>
                                 </div>
                                 <div class="col-lg-12" style="padding-left:20px;">
                                     <div class="input-group">
                                         <div class="col-lg-2" style="margin-top:5px;">
-                                            <input class="form-check-input" type="radio" name="tempatbekerjasilentnonwiraswasta" value="sesuai">
+                                            <input class="form-check-input" type="radio" name="tmptbkrjssnonwira" value="sesuai">
                                             <label>Sesuai</label>
                                         </div>
                                         <div class="col-lg-2" style="margin-top:5px;">
-                                            <input class="form-check-input" type="radio" name="tempatbekerjasilentnonwiraswasta" value="tidak sesuai">
+                                            <input class="form-check-input" type="radio" name="tmptbkrjssnonwira" value="tidak sesuai">
                                             <label>Tidak Sesuai</label>
                                         </div>
                                     </div>
@@ -79,16 +79,16 @@
                                     <label>Jabatan Nasabah</label>
                                 </div>
                                 <div class="col-lg-6">
-                                    <input type="input" class="form-control" id="inp-jabatan-nasabah-silent-survey-non-wiraswasta" disabled>
+                                    <input type="input" class="form-control" id="inp-pkrj-nsbh-jbtn-nsbh-ss-non-wira" disabled>
                                 </div>
                                 <div class="col-lg-12" style="padding-left:20px;">
                                     <div class="input-group">
                                         <div class="col-lg-2" style="margin-top:5px;">
-                                            <input class="form-check-input" type="radio" name="jabatannasabahsilentnonwiraswasta" value="sesuai">
+                                            <input class="form-check-input" type="radio" name="jbtnnsbhssnonwira" value="sesuai">
                                             <label>Sesuai</label>
                                         </div>
                                         <div class="col-lg-2" style="margin-top:5px;">
-                                            <input class="form-check-input" type="radio" name="jabatannasabahsilentnonwiraswasta" value="tidak sesuai">
+                                            <input class="form-check-input" type="radio" name="jbtnnsbhssnonwira" value="tidak sesuai">
                                             <label>Tidak Sesuai</label>
                                         </div>
                                     </div>
@@ -104,7 +104,7 @@
                                     <label>Sektor Tempat Bekerja</label>
                                 </div>
                                 <div class="col-lg-6">
-                                    <input type="input" class="form-control" id="inp-sektor-tempat-bekerja-silent-survey-non-wiraswasta" disabled>
+                                    <input type="input" class="form-control" id="inp-pkrj-nsbh-sktr-tmpt-bkrj-ss-non-wira" disabled>
                                 </div>
                             </div>
                         </div>
@@ -118,10 +118,10 @@
                                 </div>
                                 <div class="col-lg-6 display-icon-search">
                                     <div class="input-group" style="margin-right:-5px;">
-                                        <select class="form-control select2bs4" style="width: 100%;" id="slc-sektor-ekonomi-level-1-silent-survey-non-wiraswasta">
+                                        <select class="form-control select2bs4" style="width: 100%;" id="slc-pkrj-nsbh-sktr-eknm-lvl-1-ss-non-wira">
                                             <option selected disabled=""></option>
                                         </select>
-                                        <label class="error-slc-sektor-ekonomi-level-1-silent-survey-non-wiraswasta error-info" id="err-slc-sektor-ekonomi-level-1-silent-survey-non-wiraswasta" hidden></label>
+                                        <label class="error-slc-pkrj-nsbh-sktr-eknm-lvl-1-ss-non-wira error-info" id="err-slc-pkrj-nsbh-sktr-eknm-lvl-1-ss-non-wira" hidden></label>
                                     </div>
                                     <span class="fa fa-search style-icon-search"></span>
                                 </div>
@@ -137,10 +137,10 @@
                                 </div>
                                 <div class="col-lg-6 display-icon-search">
                                     <div class="input-group mandatory" style="margin-right:-5px;">
-                                        <select class="form-control select2bs4" style="width: 100%;" id="slc-sektor-ekonomi-level-2-silent-survey-non-wiraswasta">
+                                        <select class="form-control select2bs4" style="width: 100%;" id="slc-pkrj-nsbh-sktr-eknm-lvl-2-ss-non-wira">
                                             <option selected disabled=""></option>
                                         </select>
-                                        <label class="error-slc-sektor-ekonomi-level-2-silent-survey-non-wiraswasta error-info" id="err-slc-sektor-ekonomi-level-2-silent-survey-non-wiraswasta" hidden></label>
+                                        <label class="error-slc-pkrj-nsbh-sktr-eknm-lvl-2-ss-non-wira error-info" id="err-slc-pkrj-nsbh-sktr-eknm-lvl-2-ss-non-wira" hidden></label>
                                     </div>
                                     <span class="fa fa-search style-icon-search"></span>
                                 </div>
@@ -156,10 +156,10 @@
                                 </div>
                                 <div class="col-lg-6 display-icon-search">
                                     <div class="input-group mandatory" style="margin-right:-5px;">
-                                        <select class="form-control select2bs4" style="width: 100%;" id="slc-sektor-ekonomi-level-3-silent-survey-non-wiraswasta">
+                                        <select class="form-control select2bs4" style="width: 100%;" id="slc-pkrj-nsbh-sktr-eknm-lvl-3-ss-non-wira">
                                             <option selected disabled=""></option>
                                         </select>
-                                        <label class="error-slc-sektor-ekonomi-level-3-silent-survey-non-wiraswasta error-info" id="err-slc-sektor-ekonomi-level-3-silent-survey-non-wiraswasta" hidden></label>
+                                        <label class="error-slc-pkrj-nsbh-sktr-eknm-lvl-3-ss-non-wira error-info" id="err-slc-pkrj-nsbh-sktr-eknm-lvl-3-ss-non-wira" hidden></label>
                                     </div>
                                     <span class="fa fa-search style-icon-search"></span>
                                 </div>
@@ -174,8 +174,8 @@
                                     <label>Dokumen Bukti Bekerja<span style="color:red">*</span> (ID Card, Slip Gaji, Suket Kerja/Pengangkatan, dll)</label>
                                 </div>
                                 <div class="col-lg-6">
-                                    <input type="file" class="form-control-file" id="dokumen-bukti-bekerja-silent-survey-non-wiraswasta">
-                                    <label class="error-dokumen-bukti-bekerja-silent-survey-non-wiraswasta error-info" id="err-dokumen-bukti-bekerja-silent-survey-non-wiraswasta" hidden></label>
+                                    <input type="file" class="form-control-file" id="pkrj-nsbh-doc-bkt-bkrj-ss-non-wira">
+                                    <label class="error-pkrj-nsbh-doc-bkt-bkrj-ss-non-wira error-info" id="err-pkrj-nsbh-doc-bkt-bkrj-ss-non-wira" hidden></label>
                                 </div>
                                 <div id="newdokbuktibekerjasilentsurvey"></div>
                                 <button class="btn" type="button" id="add-document-bukti-bekerja-silent-survey-non-wiraswasta"><span class="fa fa-plus"></span> Add Document </button>
@@ -190,8 +190,8 @@
                                     <label>Dokumen Bukti Penghasilan/Keuangan<span style="color:red">*</span> (Rek Tab/Koran)</label>
                                 </div>
                                 <div class="col-lg-6">
-                                    <input type="file" class="form-control-file" id="dokumen-bukti-penghasilan-silent-survey-non-wiraswasta">
-                                    <label class="error-dokumen-bukti-penghasilan-silent-survey-non-wiraswasta error-info" id="err-dokumen-bukti-penghasilan-silent-survey-non-wiraswasta" hidden></label>
+                                    <input type="file" class="form-control-file" id="pkrj-nsbh-doc-bkt-phsln-ss-non-wira">
+                                    <label class="error-pkrj-nsbh-doc-bkt-phsln-ss-non-wira error-info" id="err-pkrj-nsbh-doc-bkt-phsln-ss-non-wira" hidden></label>
                                 </div>
                                 <div id="newdokbuktipenghasilansilentsurvey"></div>
                                 <button class="btn" type="button" id="add-document-bukti-penghasilan-silent-survey-non-wiraswasta"><span class="fa fa-plus"></span> Add Document </button>
@@ -207,13 +207,13 @@
                                 </div>
                                 <div class="input-group">
                                     <div class="col-lg-1">
-                                        <input type="input" class="form-control" id="inp-jarak-nasabah-ke-muf-silent-survey-non-wiraswasta">
+                                        <input type="input" class="form-control" id="inp-pkrj-nsbh-jrk-nsbh-ke-muf-ss-non-wira">
                                     </div>
                                     <div class="col-lg-1" style="margin-top:7px;">
                                         <label>KM</lable>
                                     </div>
                                 </div>
-                                <label class="error-info" id="err-inp-jarak-nasabah-ke-muf-silent-survey-non-wiraswasta" style="padding-left: 10px;" hidden></label>
+                                <label class="error-info" id="err-inp-pkrj-nsbh-jrk-nsbh-ke-muf-ss-non-wira" style="padding-left: 10px;" hidden></label>
                             </div>
                         </div>
                     </div>
@@ -221,7 +221,7 @@
                     <div class="float-left" style="margin-top: 20px;">
                         <div class="col-lg-12">
                             <div class="col-lg-8">
-                                <button class="btn btn-primary" id="btn-save-silent-survey-non-wiraswasta">Save</button>
+                                <button class="btn btn-primary" id="btn-save-pkrj-nsbh-ss-non-wira">Save</button>
                             </div>
                         </div>
                     </div>

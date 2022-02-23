@@ -20,7 +20,10 @@ class Kyc extends CI_Controller {
 	public function kyc_non_wiraswasta()
 	{
 		$session_data['menu'] = [
-			'kyc/kyc_non_wiraswasta'
+			'kyc/kyc_non_wiraswasta',
+			'kyc/informasi_pekerjaan_nasabah/non_wiraswasta/tab_instant_approval',
+			'kyc/informasi_pekerjaan_nasabah/non_wiraswasta/tab_silent_survey',
+			'kyc/informasi_pekerjaan_nasabah/non_wiraswasta/tab_tele_survey'
 		];
 		$this->load->view('page/kyc/kyc_non_wiraswasta', $session_data);
 	}
@@ -28,7 +31,10 @@ class Kyc extends CI_Controller {
 	public function kyc_wiraswasta()
 	{
 		$session_data['menu'] = [
-			'kyc/kyc_wiraswasta'
+			'kyc/kyc_wiraswasta',
+			'kyc/informasi_pekerjaan_nasabah/wiraswasta/tab_instant_approval',
+			'kyc/informasi_pekerjaan_nasabah/wiraswasta/tab_silent_survey',
+			'kyc/informasi_pekerjaan_nasabah/wiraswasta/tab_tele_survey'
 		];
 		$this->load->view('page/kyc/kyc_wiraswasta', $session_data);
 	}

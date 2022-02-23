@@ -1,10 +1,10 @@
 <section class="content">
     <div class="container-fluid">
-        <div id="tittle-instant-approval-non-wiraswasta" class="use-bottom-border col-md-9">
-            <h4 class="use-bottom-border-h4"><span id="span-instant-approval-non-wiraswasta">Informasi Pekerjaan Nasabah<i class="fas fa-angle-right ml-2"></i></span></h4>
+        <div id="tittle-info-pkrj-nsbh-ia-non-wira" class="use-bottom-border col-md-9">
+            <h4 class="use-bottom-border-h4"><span id="span-info-pkrj-nsbh-ia-non-wira">Informasi Pekerjaan Nasabah<i class="fas fa-angle-right ml-2"></i></span></h4>
         </div>
         <div class="card-body">
-            <div class="row" id="content-instant-approval-non-wiraswasta">
+            <div class="row" id="content-info-pkrj-nsbh-ia-non-wira">
                 <div class="col-md-12">
 
                     <div class="form-group row">
@@ -14,16 +14,16 @@
                                     <label>Pekerjaan Nasabah</label>
                                 </div>
                                 <div class="col-lg-6">
-                                    <input type="input" class="form-control" id="inp-pekerjaan-nasabah-instant-approval-non-wiraswasta" disabled>
+                                    <input type="input" class="form-control" id="inp-pkrj-nsbh-ia-non-wira" disabled>
                                 </div>
                                 <div class="col-lg-12" style="padding-left:20px;">
                                     <div class="input-group">
                                         <div class="col-lg-2" style="margin-top:5px;">
-                                            <input class="form-check-input" type="radio" name="pekerjaannasabahinstantnonwiraswasta" value="sesuai">
+                                            <input class="form-check-input" type="radio" name="pkrj-nsbh-ia-non-wira" value="sesuai">
                                             <label>Sesuai</label>
                                         </div>
                                         <div class="col-lg-2" style="margin-top:5px;">
-                                            <input class="form-check-input" type="radio" name="pekerjaannasabahinstantnonwiraswasta" value="tidak sesuai">
+                                            <input class="form-check-input" type="radio" name="pkrj-nsbh-ia-non-wira" value="tidak sesuai">
                                             <label>Tidak Sesuai</label>
                                         </div>
                                     </div>
@@ -39,7 +39,7 @@
                                     <label>Jenis Tempat Bekerja</label>
                                 </div>
                                 <div class="col-lg-6">
-                                    <select class="form-control" style="width: 100%;" id="slc-jenis-tempat-bekerja-instant-approval-non-wiraswasta" disabled>
+                                    <select class="form-control" style="width: 100%;" id="slc-pkrj-nsbh-jns-tmpt-bkrj-ia-non-wira" disabled>
                                         <option value="" class="form-control">- PILIHAN -</option>
                                     </select>
                                 </div>
@@ -54,16 +54,16 @@
                                     <label>Nama Tempat Bekerja</label>
                                 </div>
                                 <div class="col-lg-6">
-                                    <input type="input" class="form-control" id="inp-nama-tempat-bekerja-instant-approval-non-wiraswasta" disabled>
+                                    <input type="input" class="form-control" id="inp-pkrj-nsbh-nm-tmpt-bkrj-ia-non-wira" disabled>
                                 </div>
                                 <div class="col-lg-12" style="padding-left:20px;">
                                     <div class="input-group">
                                         <div class="col-lg-2" style="margin-top:5px;">
-                                            <input class="form-check-input" type="radio" name="tempatbekerjainstantnonwiraswasta" value="sesuai">
+                                            <input class="form-check-input" type="radio" name="tmptbkrjianonwira" value="sesuai">
                                             <label>Sesuai</label>
                                         </div>
                                         <div class="col-lg-2" style="margin-top:5px;">
-                                            <input class="form-check-input" type="radio" name="tempatbekerjainstantnonwiraswasta" value="tidak sesuai">
+                                            <input class="form-check-input" type="radio" name="tmptbkrjianonwira" value="tidak sesuai">
                                             <label>Tidak Sesuai</label>
                                         </div>
                                     </div>
@@ -79,16 +79,16 @@
                                     <label>Jabatan Nasabah</label>
                                 </div>
                                 <div class="col-lg-6">
-                                    <input type="input" class="form-control" id="inp-jabatan-nasabah-instant-approval-non-wiraswasta" disabled>
+                                    <input type="input" class="form-control" id="inp-pkrj-nsbh-jbtn-nsbh-ia-non-wira" disabled>
                                 </div>
                                 <div class="col-lg-12" style="padding-left:20px;">
                                     <div class="input-group">
                                         <div class="col-lg-2" style="margin-top:5px;">
-                                            <input class="form-check-input" type="radio" name="jabatannasabahinstantnonwiraswasta" value="sesuai">
+                                            <input class="form-check-input" type="radio" name="jbtnnsbhianonwira" value="sesuai">
                                             <label>Sesuai</label>
                                         </div>
                                         <div class="col-lg-2" style="margin-top:5px;">
-                                            <input class="form-check-input" type="radio" name="jabatannasabahinstantnonwiraswasta" value="tidak sesuai">
+                                            <input class="form-check-input" type="radio" name="jbtnnsbhianonwira" value="tidak sesuai">
                                             <label>Tidak Sesuai</label>
                                         </div>
                                     </div>
@@ -104,7 +104,7 @@
                                     <label>Sektor Tempat Bekerja</label>
                                 </div>
                                 <div class="col-lg-6">
-                                    <input type="input" class="form-control" id="inp-sektor-tempat-bekerja-instant-approval-non-wiraswasta" disabled>
+                                    <input type="input" class="form-control" id="inp-pkrj-nsbh-sktr-tmpt-bkrj-ia-non-wira" disabled>
                                 </div>
                             </div>
                         </div>
@@ -118,10 +118,10 @@
                                 </div>
                                 <div class="col-lg-6 display-icon-search">
                                     <div class="input-group" style="margin-right:-5px;">
-                                        <select class="form-control select2bs4" style="width: 100%;" id="slc-sektor-ekonomi-level-1-instant-approval-non-wiraswasta">
+                                        <select class="form-control select2bs4" style="width: 100%;" id="slc-pkrj-nsbh-sktr-eknm-lvl-1-ia-non-wira">
                                             <option selected disabled=""></option>
                                         </select>
-                                        <label class="error-slc-sektor-ekonomi-level-1-instant-approval-non-wiraswasta error-info" id="err-slc-sektor-ekonomi-level-1-instant-approval-non-wiraswasta" hidden></label>
+                                        <label class="error-slc-pkrj-nsbh-sktr-eknm-lvl-1-ia-non-wira error-info" id="err-slc-pkrj-nsbh-sktr-eknm-lvl-1-ia-non-wira" hidden></label>
                                     </div>
                                     <span class="fa fa-search style-icon-search"></span>
                                 </div>
@@ -137,10 +137,10 @@
                                 </div>
                                 <div class="col-lg-6 display-icon-search">
                                     <div class="input-group" style="margin-right:-5px;">
-                                        <select class="form-control select2bs4" style="width: 100%;" id="slc-sektor-ekonomi-level-2-instant-approval-non-wiraswasta">
+                                        <select class="form-control select2bs4" style="width: 100%;" id="slc-pkrj-nsbh-sktr-eknm-lvl-2-ia-non-wira">
                                             <option selected disabled=""></option>
                                         </select>
-                                        <label class="error-slc-sektor-ekonomi-level-2-instant-approval-non-wiraswasta error-info" id="err-slc-sektor-ekonomi-level-2-instant-approval-non-wiraswasta" hidden></label>
+                                        <label class="error-slc-pkrj-nsbh-sktr-eknm-lvl-2-ia-non-wira error-info" id="err-slc-pkrj-nsbh-sktr-eknm-lvl-2-ia-non-wira" hidden></label>
                                     </div>
                                     <span class="fa fa-search style-icon-search"></span>
                                 </div>
@@ -156,10 +156,10 @@
                                 </div>
                                 <div class="col-lg-6 display-icon-search">
                                     <div class="input-group" style="margin-right:-5px;">
-                                        <select class="form-control select2bs4" style="width: 100%;" id="slc-sektor-ekonomi-level-3-instant-approval-non-wiraswasta">
+                                        <select class="form-control select2bs4" style="width: 100%;" id="slc-pkrj-nsbh-sktr-eknm-lvl-3-ia-non-wira">
                                             <option selected disabled=""></option>
                                         </select>
-                                        <label class="error-slc-sektor-ekonomi-level-3-instant-approval-non-wiraswasta error-info" id="err-slc-sektor-ekonomi-level-3-instant-approval-non-wiraswasta" hidden></label>
+                                        <label class="error-slc-pkrj-nsbh-sktr-eknm-lvl-3-ia-non-wira error-info" id="err-slc-pkrj-nsbh-sktr-eknm-lvl-3-ia-non-wira" hidden></label>
                                     </div>
                                     <span class="fa fa-search style-icon-search"></span>
                                 </div>
@@ -174,8 +174,8 @@
                                     <label>Dokumen Bukti Bekerja<span style="color:red">*</span> (ID Card, Slip Gaji, Suket Kerja/Pengangkatan, dll)</label>
                                 </div>
                                 <div class="col-lg-6">
-                                    <input type="file" class="form-control-file" accept="application/pdf, image/jpg, image/jpeg, image/png" id="dokumen-bukti-bekerja-instant-approval-non-wiraswasta">
-                                    <label class="error-dokumen-bukti-bekerja-instant-approval-non-wiraswasta error-info" id="err-dokumen-bukti-bekerja-instant-approval-non-wiraswasta" hidden></label>
+                                    <input type="file" class="form-control-file" accept="application/pdf, image/jpg, image/jpeg, image/png" id="pkrj-nsbh-doc-bkt-bkrj-ia-non-wira">
+                                    <label class="error-pkrj-nsbh-doc-bkt-bkrj-ia-non-wira error-info" id="err-pkrj-nsbh-doc-bkt-bkrj-ia-non-wira" hidden></label>
                                 </div>
                                 <div id="newdokbuktibekerjainstantapproval"></div>
                                 <button class="btn" type="button" id="add-document-bukti-bekerja-instant-approval-non-wiraswasta"><span class="fa fa-plus"></span> Add Document </button>
@@ -190,8 +190,8 @@
                                     <label>Dokumen Bukti Penghasilan/Keuangan<span style="color:red">*</span> (Rek Tab/Koran)</label>
                                 </div>
                                 <div class="col-lg-6">
-                                    <input type="file" class="form-control-file" accept="application/pdf, image/jpg, image/jpeg, image/png" id="dokumen-bukti-penghasilan-instant-approval-non-wiraswasta">
-                                    <label class="error-dokumen-bukti-penghasilan-instant-approval-non-wiraswasta error-info" id="err-dokumen-bukti-penghasilan-instant-approval-non-wiraswasta" hidden></label>
+                                    <input type="file" class="form-control-file" accept="application/pdf, image/jpg, image/jpeg, image/png" id="pkrj-nsbh-doc-bkt-phsln-ia-non-wira">
+                                    <label class="error-pkrj-nsbh-doc-bkt-phsln-ia-non-wira error-info" id="err-pkrj-nsbh-doc-bkt-phsln-ia-non-wira" hidden></label>
                                 </div>
                                 <div id="newdokbuktipenghasilaninstantapproval"></div>
                                 <button class="btn" type="button" id="add-document-bukti-penghasilan-instant-approval-non-wiraswasta"><span class="fa fa-plus"></span> Add Document </button>
@@ -207,13 +207,13 @@
                                 </div>
                                 <div class="input-group">
                                     <div class="col-lg-1">
-                                        <input type="input" class="form-control" id="inp-jarak-nasabah-ke-muf-instant-approval-non-wiraswasta">
+                                        <input type="input" class="form-control" id="inp-pkrj-nsbh-jrk-nsbh-ke-muf-ia-non-wira">
                                     </div>
                                     <div class="col-lg-1" style="margin-top:7px;">
                                         <label>KM</lable>
                                     </div>
                                 </div>
-                                <label class="error-info" id="err-inp-jarak-nasabah-ke-muf-instant-approval-non-wiraswasta" style="padding-left: 10px;" hidden></label>
+                                <label class="error-info" id="err-inp-pkrj-nsbh-jrk-nsbh-ke-muf-ia-non-wira" style="padding-left: 10px;" hidden></label>
                             </div>
                         </div>
                     </div>
@@ -221,7 +221,7 @@
                     <div class="float-left" style="margin-top: 20px;">
                         <div class="col-lg-12">
                             <div class="col-lg-8">
-                                <button class="btn btn-primary" id="btn-save-instant-approval-non-wiraswasta">Save</button>
+                                <button class="btn btn-primary" id="btn-save-pkrj-nsbh-ia-non-wira">Save</button>
                             </div>
                         </div>
                     </div>
