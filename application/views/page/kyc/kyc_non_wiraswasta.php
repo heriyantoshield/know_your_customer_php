@@ -106,7 +106,7 @@
                                     <span class="navbar-toggler-icon"></span>
                                 </button>
                                 <div class="collapse navbar-collapse" id="toggle-nav-tabs">
-                                    <ul class="nav nav-tabs col-md-12" id="nav-tab-screening-dua-digital" role="tablist">
+                                    <ul class="nav nav-tabs col-md-12" id="nav-tab-kyc-wiraswasta" role="tablist">
                                         <li class="nav-item" role="presentation">
                                             <a class="nav-link" data-toggle="tab" href="#instantapproval" id="tab-instantapproval" role="tab" aria-controls="instantapproval">Instant Approval</a>
                                         </li>

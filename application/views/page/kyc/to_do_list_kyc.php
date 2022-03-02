@@ -144,8 +144,8 @@
           </div>
 
           <div>
-          <button onclick="location.href='<?php echo base_url();?>Kyc/kyc_non_wiraswasta'">KYC Non Wiraswasta</button>
-          <button onclick="location.href='<?php echo base_url();?>Kyc/kyc_wiraswasta'">KYC Wiraswasta</button>
+          <button onclick="location.href='<?php echo base_url();?>Kyc/kyc_non_wiraswasta/'+app.paramUrl+''">KYC Non Wiraswasta</button>
+          <button onclick="location.href='<?php echo base_url();?>Kyc/kyc_wiraswasta/'+app.paramUrl+''">KYC Wiraswasta</button>
           </div>
           <div class="row" style="margin-top: 10px;">
             <div class="col-md-12">

@@ -1,6 +1,6 @@
 <section class="content">
     <div class="container-fluid">
-    <div id="tittle-info-pkrj-nsbh-ts-wira" class="use-bottom-border col-md-9">
+        <div id="tittle-info-pkrj-nsbh-ts-wira" class="use-bottom-border col-md-9">
             <h4 class="use-bottom-border-h4"><span id="span-info-pkrj-nsbh-ts-wira">Informasi Pekerjaan Nasabah<i class="fas fa-angle-right ml-2"></i></span></h4>
         </div>
         <div class="card-body">

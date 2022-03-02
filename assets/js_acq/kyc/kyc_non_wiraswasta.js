@@ -10,7 +10,11 @@ app.KycNonWiraswasta = {
 	init: function () {
 		var file = app.KycNonWiraswasta;
 		var condition = false;
-		var order_id = '1234569999';//'123456789011113'; //hardcode order_id      
+		// console.log(app.paramUrl);
+        var decrypt = file.decryptUrl(app.paramUrl);
+		var decrypt_parse = $.parseJSON(decrypt);
+		// console.log(decrypt_parse);
+		var order_id = decrypt_parse.order_id;//'1234569999';//'123456789011113'; //hardcode order_id      
         
         $('#content-info-pkrj-nsbh-ia-non-wira').hide();
         $('#content-info-pkrj-nsbh-ts-non-wira').hide();
@@ -61,16 +65,16 @@ app.KycNonWiraswasta = {
 			}
 		});
 
-		file.getDetailTeleSurvey(order_id);
+		file.getDetailKyc(order_id);
 
     },
 	
-    getDetailTeleSurvey: function(order_id) {
+    getDetailKyc: function(order_id) {
     	let param = [];
 	    var that = app.KycNonWiraswasta;
 
 	    $.ajax({
-	        url: app.base_url + that.api + "getDetailTeleSurvey",
+	        url: app.base_url + that.api + "getDetailKyc",
 	        type: 'POST',
 	        data: {
 	            order_id: order_id
@@ -80,12 +84,12 @@ app.KycNonWiraswasta = {
 	        success: function(response, error) {
 	            let data = JSON.parse(response);
 	            if (data.status) {
-                    //TESTING DATA SILENT SURVEY KE TELE SURVEY
-                    if(data.data.screening_2 == "NON-IA SILENT SURVEY"){
-                        data.data.screening_2 = "NON-IA TELE SURVEY";
-                    }
+                    // //TESTING DATA SILENT SURVEY KE TELE SURVEY
+                    // if(data.screening_2 == "NON-IA SILENT SURVEY"){
+                    //     data.screening_2 = "NON-IA TELE SURVEY";
+                    // }
 
-                    if(data.data.screening_2 == "INSTANT APPROVAL"){
+                    if(data.screening_2 == "INSTANT APPROVAL"){
 
                         //Hardcode Data Informasi Nasabah
                         var tipe_nasabah_non_wiraswasta = "BMRI";
@@ -101,24 +105,24 @@ app.KycNonWiraswasta = {
                         $("#tab-telesurvey").hide();
 
                         //Main Page
-                        $("#inp-nomor-aplikasi-kyc-non-wiraswasta").val(data.data.order_id);
-                        $("#inp-nama-sesuai-ktp-kyc-non-wiraswasta").val(data.data.detail.debitur.personal.deb_nama_sesuai_ktp);
+                        $("#inp-nomor-aplikasi-kyc-non-wiraswasta").val(data.order_id);
+                        $("#inp-nama-sesuai-ktp-kyc-non-wiraswasta").val(data.detail.debitur.personal.deb_nama_sesuai_ktp);
                         $("#inp-tipe-nasabah-kyc-non-wiraswasta").val(tipe_nasabah_non_wiraswasta);
                         $("#inp-tanggal-aplikasi-kyc-non-wiraswasta").val(tanggal_aplikasi_non_wiraswasta);
                         $("#inp-source-order-kyc-non-wiraswasta").val(source_order_non_wiraswasta);
                         $("#inp-cabang-kyc-non-wiraswasta").val(cabang_non_wiraswasta);
 
                         //Sub Tab Instant Approval
-                        $("#inp-pkrj-nsbh-ia-non-wira").val(data.data.detail.debitur.personal.occupation.occupation_pro.debitur.deb_occupation_desc);
-                        var jenis_tempat_bekerja = $("<option selected='selected'></option>").val(data.data.detail.debitur.personal.occupation.occupation_pro.debitur.deb_company_type_code).text(data.data.detail.debitur.personal.occupation.occupation_pro.debitur.deb_company_type_desc);
+                        $("#inp-pkrj-nsbh-ia-non-wira").val(data.detail.debitur.personal.occupation.occupation_pro.debitur.deb_occupation_desc);
+                        var jenis_tempat_bekerja = $("<option selected='selected'></option>").val(data.detail.debitur.personal.occupation.occupation_pro.debitur.deb_company_type_code).text(data.detail.debitur.personal.occupation.occupation_pro.debitur.deb_company_type_desc);
                         $("#slc-pkrj-nsbh-jns-tmpt-bkrj-ia-non-wira").append(jenis_tempat_bekerja).trigger('change');
-                        var nama_tempat_bekerja = data.data.detail.debitur.personal.occupation.occupation_pro.debitur.deb_name_of_workplace
+                        var nama_tempat_bekerja = data.detail.debitur.personal.occupation.occupation_pro.debitur.deb_name_of_workplace
                         $("#inp-pkrj-nsbh-nm-tmpt-bkrj-ia-non-wira").val(nama_tempat_bekerja.toUpperCase());
                         $("#inp-pkrj-nsbh-jbtn-nsbh-ia-non-wira").val(jabatan_nasabah_non_wiraswasta);
                         $("#inp-pkrj-nsbh-sktr-tmpt-bkrj-ia-non-wira").val(sektor_tempat_bekerja_non_wiraswasta);
                     }
 
-                    else if(data.data.screening_2 == "NON-IA SILENT SURVEY"){
+                    else if(data.screening_2 == "NON-IA SILENT SURVEY"){
 
                         //Hardcode Data Informasi Nasabah
                         var pekerjan_nasabah_non_wiraswasta = "NON-WIRASWASTA";
@@ -133,12 +137,12 @@ app.KycNonWiraswasta = {
                         $("#tab-telesurvey").hide();
                         
                         //Main Page
-                        $("#inp-nomor-aplikasi-kyc-non-wiraswasta").val(data.data.order_id);
-                        $("#inp-nama-sesuai-ktp-kyc-non-wiraswasta").val(data.data.detail.debitur.personal.nama_sesuai_ktp);
-                        $("#inp-tipe-nasabah-kyc-non-wiraswasta").val(data.data.customer_type_desc);
-                        $("#inp-tanggal-aplikasi-kyc-non-wiraswasta").val(data.data.order_created_date);
-                        $("#inp-source-order-kyc-non-wiraswasta").val(data.data.source_order_desc);
-                        $("#inp-cabang-kyc-non-wiraswasta").val(data.data.branch_desc);
+                        $("#inp-nomor-aplikasi-kyc-non-wiraswasta").val(data.order_id);
+                        $("#inp-nama-sesuai-ktp-kyc-non-wiraswasta").val(data.detail.debitur.personal.nama_sesuai_ktp);
+                        $("#inp-tipe-nasabah-kyc-non-wiraswasta").val(data.customer_type_desc);
+                        $("#inp-tanggal-aplikasi-kyc-non-wiraswasta").val(data.order_created_date);
+                        $("#inp-source-order-kyc-non-wiraswasta").val(data.source_order_desc);
+                        $("#inp-cabang-kyc-non-wiraswasta").val(data.branch_desc);
 
                         //Sub Tab Silent Survey
                         $("#inp-pkrj-nsbh-ss-non-wira").val(pekerjan_nasabah_non_wiraswasta);
@@ -150,7 +154,7 @@ app.KycNonWiraswasta = {
 
                     }
 
-                    else if(data.data.screening_2 == "NON-IA TELE SURVEY"){
+                    else if(data.screening_2 == "PHONE / TELE SURVEY"){
 
                         //Hardcode Data Informasi Nasabah
                         var pekerjan_nasabah_non_wiraswasta = "NON-WIRASWASTA";
@@ -165,12 +169,12 @@ app.KycNonWiraswasta = {
                         $("#tab-silentsurvey").hide();
                         
                         //Main Page
-                        $("#inp-nomor-aplikasi-kyc-non-wiraswasta").val(data.data.order_id);
-                        $("#inp-nama-sesuai-ktp-kyc-non-wiraswasta").val(data.data.detail.debitur.personal.nama_sesuai_ktp);
-                        $("#inp-tipe-nasabah-kyc-non-wiraswasta").val(data.data.customer_type_desc);
-                        $("#inp-tanggal-aplikasi-kyc-non-wiraswasta").val(data.data.order_created_date);
-                        $("#inp-source-order-kyc-non-wiraswasta").val(data.data.source_order_desc);
-                        $("#inp-cabang-kyc-non-wiraswasta").val(data.data.branch_desc);
+                        $("#inp-nomor-aplikasi-kyc-non-wiraswasta").val(data.order_id);
+                        $("#inp-nama-sesuai-ktp-kyc-non-wiraswasta").val(data.detail.debitur.personal.nama_sesuai_ktp);
+                        $("#inp-tipe-nasabah-kyc-non-wiraswasta").val(data.customer_type_desc);
+                        $("#inp-tanggal-aplikasi-kyc-non-wiraswasta").val(data.order_created_date);
+                        $("#inp-source-order-kyc-non-wiraswasta").val(data.source_order_desc);
+                        $("#inp-cabang-kyc-non-wiraswasta").val(data.branch_desc);
 
                         //Sub Tab Silent Survey
                         $("#inp-pkrj-nsbh-ts-non-wira").val(pekerjan_nasabah_non_wiraswasta);
@@ -188,5 +192,27 @@ app.KycNonWiraswasta = {
 	        }
 	    });
     },
+
+    decryptUrl: function (dataEncrypt) {
+
+		let ciphertext = dataEncrypt;
+		let key = app.aes128key;
+		let iv = app.aes128iv;
+		let ciphertextWA = CryptoJS.enc.Hex.parse(ciphertext);
+		let ivWA = CryptoJS.enc.Utf8.parse(iv);
+		let ciphertextCP = {
+			ciphertext: ciphertextWA
+		};
+		let keyWA = CryptoJS.enc.Utf8.parse(key);
+
+		let decrypted = CryptoJS.AES.decrypt(
+			ciphertextCP,
+			keyWA, {
+				iv: ivWA
+			}
+		);
+		return decrypted.toString(CryptoJS.enc.Utf8);
+
+	},
 
 }

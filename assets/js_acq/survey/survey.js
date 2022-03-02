@@ -1104,14 +1104,22 @@ app.Survey = {
 						var fileUploadDocument = FotoInforman;
 						
 						if(fileUploadDocument.size > 5120000){
-							alert_error("Ukuran file terlalu besar. Maksimal 5 MB");
+							Swal.fire(
+                            'ERROR',
+                            'Ukuran file terlalu besar. Maksimal 5 MB',
+                            'error'
+                        )
 						}
 						
 						else if(fileUploadDocument != undefined && fileUploadDocument.size <= 5120000){
 							var arrType = [];
 							arrType = fileUploadDocument.type.split("/");
 							if (arrType[1] != "jpg" && arrType[1] != "jpeg" && arrType[1] != "png") {
-								alert_error("Format foto tidak sesuai!");
+								Swal.fire(
+                                'ERROR',
+                                'Format foto tidak sesuai!',
+                                'error'
+                            )
 							}
 							
 							else {
@@ -1164,7 +1172,11 @@ app.Survey = {
 				if(FotoRumah1!=undefined){
 					var fileUploadDocument = FotoRumah1;
 					if(fileUploadDocument.size > 5120000){
-						alert_error("Ukuran file terlalu besar. Maksimal 5 MB");
+						Swal.fire(
+                            'ERROR',
+                            'Ukuran file terlalu besar. Maksimal 5 MB',
+                            'error'
+                        )
 					}
 					
 					else if(fileUploadDocument != undefined && fileUploadDocument.size <= 5120000){
@@ -1172,7 +1184,11 @@ app.Survey = {
 						arrType = fileUploadDocument.type.split("/");
 					
 						if (arrType[1] != "jpg" && arrType[1] != "jpeg" && arrType[1] != "png") {
-							alert_error("Format foto tidak sesuai!");
+							Swal.fire(
+                                'ERROR',
+                                'Format foto tidak sesuai!',
+                                'error'
+                            )
 						}
 						
 						else {
@@ -1219,7 +1235,11 @@ app.Survey = {
 				if(FotoRumah2 != undefined){
 					var fileUploadDocument = FotoRumah2;
 					if(fileUploadDocument.size > 5120000){
-						alert_error("Ukuran file terlalu besar. Maksimal 5 MB");
+						Swal.fire(
+                            'ERROR',
+                            'Ukuran file terlalu besar. Maksimal 5 MB',
+                            'error'
+                        )
 					}
 					
 					else if(fileUploadDocument != undefined && fileUploadDocument.size <= 5120000){
@@ -1227,7 +1247,11 @@ app.Survey = {
 						arrType = fileUploadDocument.type.split("/");
 					
 						if (arrType[1] != "jpg" && arrType[1] != "jpeg" && arrType[1] != "png") {
-							alert_error("Format foto tidak sesuai!");
+							Swal.fire(
+                                'ERROR',
+                                'Format foto tidak sesuai!',
+                                'error'
+                            )
 						}
 						
 						else {
@@ -1274,7 +1298,11 @@ app.Survey = {
 				if(FotoJalan1 != undefined){
 					var fileUploadDocument = FotoJalan1;
 					if(fileUploadDocument.size > 5120000){
-						alert_error("Ukuran file terlalu besar. Maksimal 5 MB");
+						Swal.fire(
+                            'ERROR',
+                            'Ukuran file terlalu besar. Maksimal 5 MB',
+                            'error'
+                        )
 					}
 					
 					else if(fileUploadDocument != undefined && fileUploadDocument.size <= 5120000){
@@ -1282,7 +1310,11 @@ app.Survey = {
 						arrType = fileUploadDocument.type.split("/");
 					
 						if (arrType[1] != "jpg" && arrType[1] != "jpeg" && arrType[1] != "png") {
-							alert_error("Format foto tidak sesuai!");
+							Swal.fire(
+                                'ERROR',
+                                'Format foto tidak sesuai!',
+                                'error'
+                            )
 						}
 						
 						else {
@@ -1329,7 +1361,11 @@ app.Survey = {
 				if(FotoJalan2 !=undefined){
 					var fileUploadDocument = FotoJalan2;
 					if(fileUploadDocument.size > 5120000){
-						alert_error("Ukuran file terlalu besar. Maksimal 5 MB");
+						Swal.fire(
+                            'ERROR',
+                            'Ukuran file terlalu besar. Maksimal 5 MB',
+                            'error'
+                        )
 					}
 					
 					else if(fileUploadDocument != undefined && fileUploadDocument.size <= 5120000){
@@ -1337,7 +1373,11 @@ app.Survey = {
 						arrType = fileUploadDocument.type.split("/");
 					
 						if (arrType[1] != "jpg" && arrType[1] != "jpeg" && arrType[1] != "png") {
-							alert_error("Format foto tidak sesuai!");
+							Swal.fire(
+                                'ERROR',
+                                'Format foto tidak sesuai!',
+                                'error'
+                            )
 						}
 						
 						else {
@@ -1384,7 +1424,11 @@ app.Survey = {
 				if(FotoInforman1 !=undefined){
 					var fileUploadDocument = FotoInforman1;
 					if(fileUploadDocument.size > 5120000){
-						alert_error("Ukuran file terlalu besar. Maksimal 5 MB");
+						Swal.fire(
+                            'ERROR',
+                            'Ukuran file terlalu besar. Maksimal 5 MB',
+                            'error'
+                        )
 					}
 					
 					else if(fileUploadDocument != undefined && fileUploadDocument.size <= 5120000){
@@ -1392,7 +1436,11 @@ app.Survey = {
 						arrType = fileUploadDocument.type.split("/");
 					
 						if (arrType[1] != "jpg" && arrType[1] != "jpeg" && arrType[1] != "png") {
-							alert_error("Format foto tidak sesuai!");
+							Swal.fire(
+                                'ERROR',
+                                'Format foto tidak sesuai!',
+                                'error'
+                            )
 						}
 						
 						else {

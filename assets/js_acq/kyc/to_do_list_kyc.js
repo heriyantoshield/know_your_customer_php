@@ -1,3 +1,9 @@
+let order_id = null;
+let nik = null;
+let branch = null;
+let role = null;
+let link_kyc = ''; 	
+
 $(document).ready(function() {
     app.ToDoListKYC.init();
 });
@@ -23,12 +29,11 @@ var tbl_list_approval_oid_gabungan_individu = $("#table-list-approval-oid-gabung
 });
 
 var currentdate = new Date();
+var Lastdate = new Date();
 function formatDate(currentdate)
 {	var tanggal = currentdate.getDate() +"-"+ currentdate.toLocaleString('default', { month: 'short' }) + "-" + currentdate.getFullYear();
 	return tanggal;
 }
-
-var Lastdate = new Date();
 var nextmonth = new Date(Lastdate.setMonth(Lastdate.getMonth()+1));
 function formatDate(nextmonth)
 {	
@@ -58,8 +63,26 @@ app.ToDoListKYC = {
 
 	init: function () {
 		var file = app.ToDoListKYC;
+		// console.log(app.paramUrl);
 		file.getCabang();
 
+		var decrypt = file.decryptUrl(app.paramUrl);
+		var decrypt_parse = $.parseJSON(decrypt);
+		console.log(decrypt_parse);
+
+		file.encryptAes128();
+		var param = {
+			order_id:"2202000910",
+			nik: decrypt_parse.nik,
+			branch: decrypt_parse.branch,
+			role: decrypt_parse.role
+		};
+
+		var string_param = JSON.stringify(param);
+		var encrypt = file.encryptAes128(string_param);
+		// console.log("ENCRYPT PARAM: ", encrypt);
+		app.paramUrl = encrypt.toUpperCase();
+				
 		$('input[type=radio][id=radionoaplikasi]').change(function () {
 			$('#inp-nomor-aplikasi-todolist').val("");
 			$('#inp-nomor-aplikasi-todolist').attr("disabled", false);
@@ -325,6 +348,57 @@ app.ToDoListKYC = {
 
     },
 
+	encryptAes128: function (wantToEncrypt) {
+		var file = app.ToDoListKYC;
+		let key = app.aes128key;
+		let iv = app.aes128iv;
+		// console.log(wantToEncrypt)
+
+		let ivWA = CryptoJS.enc.Utf8.parse(iv);
+		let keyWA = CryptoJS.enc.Utf8.parse(key);
+
+		let encryptedCP = CryptoJS.AES.encrypt(wantToEncrypt, keyWA, {
+			iv: ivWA
+		});
+		// console.log(encryptedCP)
+		let ciphertext = file.base64ToHexFunc(encryptedCP.toString());
+		// console.log("Encrypt  : " + ciphertext);
+
+		return ciphertext;
+	},
+
+	decryptUrl: function (dataEncrypt) {
+
+		let ciphertext = dataEncrypt;
+		let key = app.aes128key;
+		let iv = app.aes128iv;
+		let ciphertextWA = CryptoJS.enc.Hex.parse(ciphertext);
+		let ivWA = CryptoJS.enc.Utf8.parse(iv);
+		let ciphertextCP = {
+			ciphertext: ciphertextWA
+		};
+		let keyWA = CryptoJS.enc.Utf8.parse(key);
+
+		let decrypted = CryptoJS.AES.decrypt(
+			ciphertextCP,
+			keyWA, {
+				iv: ivWA
+			}
+		);
+		return decrypted.toString(CryptoJS.enc.Utf8);
+
+	},
+
+	base64ToHexFunc: function (data) {
+		const encodedData = atob(data);
+		let result = '';
+		for (let i = 0; i < encodedData.length; i++) {
+			const hex = encodedData.charCodeAt(i).toString(16);
+			result += (hex.length === 2 ? hex : '0' + hex);
+		}
+		return result;
+	},
+
 	getCabang: function() {
         var file = app.ToDoListKYC;
 
@@ -362,4 +436,5 @@ app.ToDoListKYC = {
             }
         });
     },
+	
 }

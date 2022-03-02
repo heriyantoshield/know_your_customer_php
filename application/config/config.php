@@ -35,6 +35,9 @@ $config['java_detail_tele_survey'] = 'http://detail-tele-survey-java-dev.apps.oc
 $config['java_kyc_publisher_kafka'] = 'http://kyc-publisher-kafka-dev.apps.ocp4dev.muf.co.id/';
 $config['java_kepemilikan_rumah'] = 'http://master-status-kepemilikan-rumah-java-dev.apps.ocp4dev.muf.co.id/';
 $config['java_submit_silent_survey'] = 'http://silentsurvey-publisher-kafka-dev.apps.ocp4dev.muf.co.id/';
+$config['aes128key'] = "12345abc67890def";//getenv('AES128KEY');
+$config['aes128iv'] = "abc12345def67890";//getenv('AES128IV');
+$config['java_detail_kyc'] = 'http://detail-kyc-java-dev.apps.ocp4dev.muf.co.id/';
 
 /*
 |--------------------------------------------------------------------------

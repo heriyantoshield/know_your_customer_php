@@ -1,192 +1,197 @@
 $(document).ready(function() {
-    app.KycWiraswastaTeleSurvey.init();
-    localStorage.setItem("bukti_usaha_tele_survey_wiraswasta", "");
-    localStorage.setItem("bukti_usaha_tele_survey_wiraswasta_2", "");
-    localStorage.setItem("bukti_keuangan_tele_survey_wiraswasta", "");
-    localStorage.setItem("bukti_keuangan_tele_survey_wiraswasta_2", "");
-    localStorage.setItem("bukti_keuangan_tele_survey_wiraswasta_3", "");
-    localStorage.setItem("bukti_keuangan_tele_survey_wiraswasta_4", "");
-    localStorage.setItem("bukti_keuangan_tele_survey_wiraswasta_5", "");
-    localStorage.setItem("bukti_keuangan_tele_survey_wiraswasta_6", "");
-    localStorage.setItem("foto_tempat_usaha_tele_survey_wiraswasta", "");
-    localStorage.setItem("foto_selfie_tele_survey_wiraswasta", "");
+    app.KycWiraswastaSilentSurvey.init();
+	localStorage.setItem("bukti_usaha_silent_survey_wiraswasta", "");
+    localStorage.setItem("bukti_usaha_silent_survey_wiraswasta_2", "");
+    localStorage.setItem("bukti_keuangan_silent_survey_wiraswasta", "");
+    localStorage.setItem("bukti_keuangan_silent_survey_wiraswasta_2", "");
+    localStorage.setItem("bukti_keuangan_silent_survey_wiraswasta_3", "");
+    localStorage.setItem("bukti_keuangan_silent_survey_wiraswasta_4", "");
+    localStorage.setItem("bukti_keuangan_silent_survey_wiraswasta_5", "");
+    localStorage.setItem("bukti_keuangan_silent_survey_wiraswasta_6", "");
+    localStorage.setItem("foto_tempat_usaha_silent_survey_wiraswasta", "");
+    localStorage.setItem("foto_selfie_silent_survey_wiraswasta", "");
 });
 
-app.KycWiraswastaTeleSurvey = {
+app.KycWiraswastaSilentSurvey = {
 	controller: 'Kyc/',
 	api: 'Kyc_api/',
 	elm: {},
 
 	init: function () {
-        var file = app.KycWiraswastaTeleSurvey;
-		var id_bukti_usaha_tele_survey = 2;
-        var id_bukti_keuangan_tele_survey = 2;
-
-		document.getElementById("add-pkrj-nsbh-doc-bkt-ush-ts-wira").onclick = function() {functionAddUsahaTeleSurvey()};
-        document.getElementById("add-pkrj-nsbh-doc-bkt-kungn-ts-wira").onclick = function() {functionAddKeuanganTeleSurvey()};
+        var file = app.KycWiraswastaSilentSurvey;
+		var id_bukti_usaha_silent_survey = 2;  
+        var id_bukti_keuangan_silent_survey = 2;
         
-		function functionAddUsahaTeleSurvey(){
-			if(id_bukti_usaha_tele_survey == 2){
-                $('#newdokbuktiusahatelesurvey').append('<div class="col-lg-4" style="margin-top:10px;"><input type="file" class="form-control-file pkrj-nsbh-doc-bkt-ush-ts-wira-'+id_bukti_usaha_tele_survey+'" accept="application/pdf, image/jpg, image/jpeg, image/png"></div>');
-                id_bukti_usaha_tele_survey++;
+		document.getElementById("add-pkrj-nsbh-doc-bkt-ush-ss-wira").onclick = function() {functionAddUsahaSilentSurvey()};
+        document.getElementById("add-pkrj-nsbh-doc-bkt-kungn-ss-wira").onclick = function() {functionAddKeuanganSilentSurvey()};
+        
+		function functionAddUsahaSilentSurvey(){
+            if(id_bukti_usaha_silent_survey == 2){
+                $('#newdokbuktiusahasilentsurvey').append('<div class="col-lg-4" style="margin-top:10px;"><input type="file" class="form-control-file pkrj-nsbh-doc-bkt-ush-ss-wira-'+id_bukti_usaha_silent_survey+'" accept="application/pdf, image/jpg, image/jpeg, image/png"></input></div>');
+                id_bukti_usaha_silent_survey++;
             }
         }
-        
-        function functionAddKeuanganTeleSurvey(){
-            if(id_bukti_keuangan_tele_survey <= 6){
-                $('#newdokbuktikeuangantelesurvey').append('<div class="col-lg-4" style="margin-top:10px;"><input type="file" class="form-control-file pkrj-nsbh-doc-bkt-kungn-ts-wira-'+id_bukti_keuangan_tele_survey+'" accept="application/pdf, image/jpg, image/jpeg, image/png"></div>');
-                id_bukti_keuangan_tele_survey++;
+		function functionAddKeuanganSilentSurvey(){
+            if(id_bukti_keuangan_silent_survey <= 6){
+                $('#newdokbuktikeuangansilentsurvey').append('<div class="col-lg-4" style="margin-top:10px;"><input type="file" class="form-control-file pkrj-nsbh-doc-bkt-kungn-ss-wira-'+id_bukti_keuangan_silent_survey+'" accept="application/pdf, image/jpg, image/jpeg, image/png"></div>');
+                id_bukti_keuangan_silent_survey++;
             }
         }
-		
-		$('#slc-pkrj-nsbh-sktr-eko-lvl-1-ts-wira').on('change', function() {
-            var file = app.KycWiraswastaTeleSurvey;
-            $("#slc-pkrj-nsbh-sktr-eko-lvl-2-ts-wira").val('').trigger('change');
-            file.getEconomicSectorLevel2TeleSurvey();
+
+		$('#slc-pkrj-nsbh-sktr-eko-lvl-1-ss-wira').on('change', function() {
+            var file = app.KycWiraswastaSilentSurvey;
+            $("#slc-pkrj-nsbh-sktr-eko-lvl-2-ss-wira").val('').trigger('change');
+            file.getEconomicSectorLevel2SilentSurvey();
         });
 
-        $('#slc-pkrj-nsbh-sktr-eko-lvl-2-ts-wira').on('change', function() {
-            var file = app.KycWiraswastaTeleSurvey;
-            $('#slc-pkrj-nsbh-sktr-eko-lvl-3-ts-wira').val('').trigger('change');
-            file.getEconomicSectorLevel3TeleSurvey();
-            file.getEconomicSectorFromLevel3ToLevel2andLevel1TeleSurvey();
+        $('#slc-pkrj-nsbh-sktr-eko-lvl-2-ss-wira').on('change', function() {
+            var file = app.KycWiraswastaSilentSurvey;
+            $('#slc-pkrj-nsbh-sktr-eko-lvl-3-ss-wira').val('').trigger('change');
+            file.getEconomicSectorLevel3SilentSurvey();
+            file.getEconomicSectorFromLevel3ToLevel2andLevel1SilentSurvey();
         });
 
-        $('#slc-pkrj-nsbh-sktr-eko-lvl-3-ts-wira').on('change', function() {
-            var file = app.KycWiraswastaTeleSurvey;
-            if($('#slc-pkrj-nsbh-sktr-eko-lvl-3-ts-wira').val() == null &&
-               $('#slc-pkrj-nsbh-sktr-eko-lvl-3-ts-wira').select2('data')[0]['text'] == null){
-                if($('#slc-pkrj-nsbh-sktr-eko-lvl-1-ts-wira').val() != '' && 
-                   $('#slc-pkrj-nsbh-sktr-eko-lvl-2-ts-wira').val() == null){
-                        $('#slc-pkrj-nsbh-sktr-eko-lvl-2-ts-wira').empty();
+        $('#slc-pkrj-nsbh-sktr-eko-lvl-3-ss-wira').on('change', function() {
+            var file = app.KycWiraswastaSilentSurvey;
+            if($('#slc-pkrj-nsbh-sktr-eko-lvl-3-ss-wira').val() == null &&
+               $('#slc-pkrj-nsbh-sktr-eko-lvl-3-ss-wira').select2('data')[0]['text'] == null){
+                if($('#slc-pkrj-nsbh-sktr-eko-lvl-1-ss-wira').val() != '' && 
+                   $('#slc-pkrj-nsbh-sktr-eko-lvl-2-ss-wira').val() == null){
+                        $('#slc-pkrj-nsbh-sktr-eko-lvl-2-ss-wira').empty();
                 }
-                else if ($('#slc-pkrj-nsbh-sktr-eko-lvl-1-ts-wira').val() != '' && 
-                         $('#slc-pkrj-nsbh-sktr-eko-lvl-2-ts-wira').val() != ''){
-                            $('#slc-pkrj-nsbh-sktr-eko-lvl-3-ts-wira').empty();
+                else if ($('#slc-pkrj-nsbh-sktr-eko-lvl-1-ss-wira').val() != '' && 
+                         $('#slc-pkrj-nsbh-sktr-eko-lvl-2-ss-wira').val() != ''){
+                            $('#slc-pkrj-nsbh-sktr-eko-lvl-3-ss-wira').empty();
                 }
             }
-            else if($('#slc-pkrj-nsbh-sktr-eko-lvl-3-ts-wira').val() != null &&
-                    $('#slc-pkrj-nsbh-sktr-eko-lvl-3-ts-wira').select2('data')[0]['text'] != null){
-                        $('#slc-pkrj-nsbh-sktr-eko-lvl-1-ts-wira').empty();
-                        $('#slc-pkrj-nsbh-sktr-eko-lvl-2-ts-wira').empty();
-                        file.getEconomicSectorFromLevel3ToLevel2andLevel1TeleSurvey();
+            else if($('#slc-pkrj-nsbh-sktr-eko-lvl-3-ss-wira').val() != null &&
+                    $('#slc-pkrj-nsbh-sktr-eko-lvl-3-ss-wira').select2('data')[0]['text'] != null){
+                        $('#slc-pkrj-nsbh-sktr-eko-lvl-1-ss-wira').empty();
+                        $('#slc-pkrj-nsbh-sktr-eko-lvl-2-ss-wira').empty();
+                        file.getEconomicSectorFromLevel3ToLevel2andLevel1SilentSurvey();
             }
         });
 
-		file.getEconomicSectorLevel1TeleSurvey();
-        file.getEconomicSectorLevel2TeleSurvey();
-        file.getEconomicSectorLevel3TeleSurvey();
-        file.getEconomicSectorFromLevel3ToLevel2andLevel1TeleSurvey();
+		file.getEconomicSectorLevel1SilentSurvey();
+        file.getEconomicSectorLevel2SilentSurvey();
+        file.getEconomicSectorLevel3SilentSurvey();
+        file.getEconomicSectorFromLevel3ToLevel2andLevel1SilentSurvey();
 
-		$('#btn-save-pkrj-nsbh-ts-wira').click(function () {
-            var file = app.KycWiraswastaTeleSurvey;
+		$('#btn-save-pkrj-nsbh-ss-wira').click(function () {
+            var file = app.KycWiraswastaSilentSurvey;
 
-            if($('#slc-pkrj-nsbh-sktr-eko-lvl-1-ts-wira option:selected').val() == null || 
-               $('#slc-pkrj-nsbh-sktr-eko-lvl-1-ts-wira option:selected').val() == ''){
-                $('#err-slc-pkrj-nsbh-sktr-eko-lvl-1-ts-wira').html('Sektor Ekonomi Level 1 Wajib Diisi');
-                $('#err-slc-pkrj-nsbh-sktr-eko-lvl-1-ts-wira').prop("hidden", false);
-                $('.error-slc-pkrj-nsbh-sktr-eko-lvl-1-ts-wira').css({"border-color": "red"});
+            //Validasi Button Silent Survey Wiraswasta
+            if($('#slc-pkrj-nsbh-sktr-eko-lvl-1-ss-wira option:selected').val() == null || 
+               $('#slc-pkrj-nsbh-sktr-eko-lvl-1-ss-wira option:selected').val() == ''){
+                $('#err-slc-pkrj-nsbh-sktr-eko-lvl-1-ss-wira').html('Sektor Ekonomi Level 1 Wajib Diisi');
+                $('#err-slc-pkrj-nsbh-sktr-eko-lvl-1-ss-wira').prop("hidden", false);
+                $('.error-slc-pkrj-nsbh-sktr-eko-lvl-1-ss-wira').css({"border-color": "red"});
             }
-            else if($('#slc-pkrj-nsbh-sktr-eko-lvl-1-ts-wira option:selected').val() != null || 
-                    $('#slc-pkrj-nsbh-sktr-eko-lvl-1-ts-wira option:selected').val() != ''){
-                        $('#err-slc-pkrj-nsbh-sktr-eko-lvl-1-ts-wira').html('');
-                        $('#err-slc-pkrj-nsbh-sktr-eko-lvl-1-ts-wira').prop("hidden", true);
-                        $('.error-slc-pkrj-nsbh-sktr-eko-lvl-1-ts-wira').css({"border-color": ""});
-            }
-
-            if($('#slc-pkrj-nsbh-sktr-eko-lvl-2-ts-wira option:selected').val() == null || 
-               $('#slc-pkrj-nsbh-sktr-eko-lvl-2-ts-wira option:selected').val() == ''){
-                $('#err-slc-pkrj-nsbh-sktr-eko-lvl-2-ts-wira').html('Sektor Ekonomi Level 2 Wajib Diisi');
-                $('#err-slc-pkrj-nsbh-sktr-eko-lvl-2-ts-wira').prop("hidden", false);
-                $('.error-slc-pkrj-nsbh-sktr-eko-lvl-2-ts-wira').css({"border-color": "red"});
-            }
-            else if($('#slc-pkrj-nsbh-sktr-eko-lvl-2-ts-wira option:selected').val() != null || 
-                    $('#slc-pkrj-nsbh-sktr-eko-lvl-2-ts-wira option:selected').val() != ''){
-                        $('#err-slc-pkrj-nsbh-sktr-eko-lvl-2-ts-wira').html('');
-                        $('#err-slc-pkrj-nsbh-sktr-eko-lvl-2-ts-wira').prop("hidden", true);
-                        $('.error-slc-pkrj-nsbh-sktr-eko-lvl-2-ts-wira').css({"border-color": ""});
+            else if($('#slc-pkrj-nsbh-sktr-eko-lvl-1-ss-wira option:selected').val() != null || 
+                    $('#slc-pkrj-nsbh-sktr-eko-lvl-1-ss-wira option:selected').val() != ''){
+                        $('#err-slc-pkrj-nsbh-sktr-eko-lvl-1-ss-wira').html('');
+                        $('#err-slc-pkrj-nsbh-sktr-eko-lvl-1-ss-wira').prop("hidden", true);
+                        $('.error-slc-pkrj-nsbh-sktr-eko-lvl-1-ss-wira').css({"border-color": ""});
             }
 
-            if($('#slc-pkrj-nsbh-sktr-eko-lvl-3-ts-wira option:selected').val() == null || 
-               $('#slc-pkrj-nsbh-sktr-eko-lvl-3-ts-wira option:selected').val() == ''){
-                $('#err-slc-pkrj-nsbh-sktr-eko-lvl-3-ts-wira').html('Sektor Ekonomi Level 3 Wajib Diisi');
-                $('#err-slc-pkrj-nsbh-sktr-eko-lvl-3-ts-wira').prop("hidden", false);
-                $('.error-slc-pkrj-nsbh-sktr-eko-lvl-3-ts-wira').css({"border-color": "red"});
+            if($('#slc-pkrj-nsbh-sktr-eko-lvl-2-ss-wira option:selected').val() == null || 
+               $('#slc-pkrj-nsbh-sktr-eko-lvl-2-ss-wira option:selected').val() == ''){
+                $('#err-slc-pkrj-nsbh-sktr-eko-lvl-2-ss-wira').html('Sektor Ekonomi Level 2 Wajib Diisi');
+                $('#err-slc-pkrj-nsbh-sktr-eko-lvl-2-ss-wira').prop("hidden", false);
+                $('.error-slc-pkrj-nsbh-sktr-eko-lvl-2-ss-wira').css({"border-color": "red"});
             }
-            else if($('#slc-pkrj-nsbh-sktr-eko-lvl-3-ts-wira option:selected').val() != null || 
-                    $('#slc-pkrj-nsbh-sktr-eko-lvl-3-ts-wira option:selected').val() != ''){
-                        $('#err-slc-pkrj-nsbh-sktr-eko-lvl-3-ts-wira').html('');
-                        $('#err-slc-pkrj-nsbh-sktr-eko-lvl-3-ts-wira').prop("hidden", true);
-                        $('.error-slc-pkrj-nsbh-sktr-eko-lvl-3-ts-wira').css({"border-color": ""});
-            }
-
-            if($('#pkrj-nsbh-doc-bkt-ush-ts-wira').val() == ''){
-                $('#err-pkrj-nsbh-doc-bkt-ush-ts-wira').html('Dokumen Bukti Usaha Wajib Diisi');
-                $('#err-pkrj-nsbh-doc-bkt-ush-ts-wira').prop("hidden", false);
-                $('.error-pkrj-nsbh-doc-bkt-ush-ts-wira').css({"border-color": "red"});
-            }
-            else if($('#pkrj-nsbh-doc-bkt-ush-ts-wira').val() != ''){
-                        $('#err-pkrj-nsbh-doc-bkt-ush-ts-wira').html('');
-                        $('#err-pkrj-nsbh-doc-bkt-ush-ts-wira').prop("hidden", true);
-                        $('.error-pkrj-nsbh-doc-bkt-ush-ts-wira').css({"border-color": ""});
+            else if($('#slc-pkrj-nsbh-sktr-eko-lvl-2-ss-wira option:selected').val() != null || 
+                    $('#slc-pkrj-nsbh-sktr-eko-lvl-2-ss-wira option:selected').val() != ''){
+                        $('#err-slc-pkrj-nsbh-sktr-eko-lvl-2-ss-wira').html('');
+                        $('#err-slc-pkrj-nsbh-sktr-eko-lvl-2-ss-wira').prop("hidden", true);
+                        $('.error-slc-pkrj-nsbh-sktr-eko-lvl-2-ss-wira').css({"border-color": ""});
             }
 
-            if($('#pkrj-nsbh-doc-bkt-kungn-ts-wira').val() == ''){
-                $('#err-pkrj-nsbh-doc-bkt-kungn-ts-wira').html('Dokumen Bukti Keuangan Wajib Diisi');
-                $('#err-pkrj-nsbh-doc-bkt-kungn-ts-wira').prop("hidden", false);
-                $('.error-pkrj-nsbh-doc-bkt-kungn-ts-wira').css({"border-color": "red"});
+            if($('#slc-pkrj-nsbh-sktr-eko-lvl-3-ss-wira option:selected').val() == null || 
+               $('#slc-pkrj-nsbh-sktr-eko-lvl-3-ss-wira option:selected').val() == ''){
+                $('#err-slc-pkrj-nsbh-sktr-eko-lvl-3-ss-wira').html('Sektor Ekonomi Level 3 Wajib Diisi');
+                $('#err-slc-pkrj-nsbh-sktr-eko-lvl-3-ss-wira').prop("hidden", false);
+                $('.error-slc-pkrj-nsbh-sktr-eko-lvl-3-ss-wira').css({"border-color": "red"});
             }
-            else if($('#pkrj-nsbh-doc-bkt-kungn-ts-wira').val() != ''){
-                        $('#err-pkrj-nsbh-doc-bkt-kungn-ts-wira').html('');
-                        $('#err-pkrj-nsbh-doc-bkt-kungn-ts-wira').prop("hidden", true);
-                        $('.error-pkrj-nsbh-doc-bkt-kungn-ts-wira').css({"border-color": ""});
-            }
-
-            if($('#pkrj-nsbh-ft-tmpt-ush-ts-wira').val() == ''){
-                $('#err-pkrj-nsbh-ft-tmpt-ush-ts-wira').html('Foto Tempat Usaha Wajib Diisi');
-                $('#err-pkrj-nsbh-ft-tmpt-ush-ts-wira').prop("hidden", false);
-                $('.error-pkrj-nsbh-ft-tmpt-ush-ts-wira').css({"border-color": "red"});
-            }
-            else if($('#pkrj-nsbh-ft-tmpt-ush-ts-wira').val() != ''){
-                        $('#err-pkrj-nsbh-ft-tmpt-ush-ts-wira').html('');
-                        $('#err-pkrj-nsbh-ft-tmpt-ush-ts-wira').prop("hidden", true);
-                        $('.error-pkrj-nsbh-ft-tmpt-ush-ts-wira').css({"border-color": ""});
+            else if($('#slc-pkrj-nsbh-sktr-eko-lvl-3-ss-wira option:selected').val() != null || 
+                    $('#slc-pkrj-nsbh-sktr-eko-lvl-3-ss-wira option:selected').val() != ''){
+                        $('#err-slc-pkrj-nsbh-sktr-eko-lvl-3-ss-wira').html('');
+                        $('#err-slc-pkrj-nsbh-sktr-eko-lvl-3-ss-wira').prop("hidden", true);
+                        $('.error-slc-pkrj-nsbh-sktr-eko-lvl-3-ss-wira').css({"border-color": ""});
             }
 
-            if($('#pkrj-nsbh-ft-slf-ts-wira').val() == ''){
-                $('#err-pkrj-nsbh-ft-slf-ts-wira').html('Foto Selfie Wajib Diisi');
-                $('#err-pkrj-nsbh-ft-slf-ts-wira').prop("hidden", false);
-                $('.error-pkrj-nsbh-ft-slf-ts-wira').css({"border-color": "red"});
+            if($('#pkrj-nsbh-doc-bkt-ush-ss-wira').val() == ''){
+                $('#err-pkrj-nsbh-doc-bkt-ush-ss-wira').html('Dokumen Bukti Usaha Wajib Diisi');
+                $('#err-pkrj-nsbh-doc-bkt-ush-ss-wira').prop("hidden", false);
+                $('.error-pkrj-nsbh-doc-bkt-ush-ss-wira').css({"border-color": "red"});
             }
-            else if($('#pkrj-nsbh-ft-slf-ts-wira').val() != ''){
-                        $('#err-pkrj-nsbh-ft-slf-ts-wira').html('');
-                        $('#err-pkrj-nsbh-ft-slf-ts-wira').prop("hidden", true);
-                        $('.error-pkrj-nsbh-ft-slf-ts-wira').css({"border-color": ""});
-            }
-
-            if($('#inp-pkrj-nsbh-jrk-nsbh-ke-muf-ts-wira').val() == ''){
-                $('#err-inp-pkrj-nsbh-jrk-nsbh-ke-muf-ts-wira').html('Jarak Tempat Nasabah ke MUF Wajib Diisi');
-                $('#err-inp-pkrj-nsbh-jrk-nsbh-ke-muf-ts-wira').prop("hidden", false);
-                $('input[id=inp-pkrj-nsbh-jrk-nsbh-ke-muf-ts-wira]').css({"border-color": "red"});
-            }
-            else if($('#inp-pkrj-nsbh-jrk-nsbh-ke-muf-ts-wira').val() != ''){
-                        $('#err-inp-pkrj-nsbh-jrk-nsbh-ke-muf-ts-wira').html('');
-                        $('#err-inp-pkrj-nsbh-jrk-nsbh-ke-muf-ts-wira').prop("hidden", true);
-                        $('input[id=inp-pkrj-nsbh-jrk-nsbh-ke-muf-ts-wira]').css({"border-color": ""});
+            else if($('#pkrj-nsbh-doc-bkt-ush-ss-wira').val() != ''){
+                        $('#err-pkrj-nsbh-doc-bkt-ush-ss-wira').html('');
+                        $('#err-pkrj-nsbh-doc-bkt-ush-ss-wira').prop("hidden", true);
+                        $('.error-pkrj-nsbh-doc-bkt-ush-ss-wira').css({"border-color": ""});
             }
 
-            file.insertTeleSurveyWiraswasta();
+            if($('#pkrj-nsbh-doc-bkt-kungn-ss-wira').val() == ''){
+                $('#err-pkrj-nsbh-doc-bkt-kungn-ss-wira').html('Dokumen Bukti Keuangan Wajib Diisi');
+                $('#err-pkrj-nsbh-doc-bkt-kungn-ss-wira').prop("hidden", false);
+                $('.error-pkrj-nsbh-doc-bkt-kungn-ss-wira').css({"border-color": "red"});
+            }
+            else if($('#pkrj-nsbh-doc-bkt-kungn-ss-wira').val() != ''){
+                        $('#err-pkrj-nsbh-doc-bkt-kungn-ss-wira').html('');
+                        $('#err-pkrj-nsbh-doc-bkt-kungn-ss-wira').prop("hidden", true);
+                        $('.error-pkrj-nsbh-doc-bkt-kungn-ss-wira').css({"border-color": ""});
+            }
+
+            if($('#pkrj-nsbh-ft-tmpt-ush-ss-wira').val() == ''){
+                $('#err-pkrj-nsbh-ft-tmpt-ush-ss-wira').html('Foto Tempat Usaha Wajib Diisi');
+                $('#err-pkrj-nsbh-ft-tmpt-ush-ss-wira').prop("hidden", false);
+                $('.error-pkrj-nsbh-ft-tmpt-ush-ss-wira').css({"border-color": "red"});
+            }
+            else if($('#pkrj-nsbh-ft-tmpt-ush-ss-wira').val() != ''){
+                        $('#err-pkrj-nsbh-ft-tmpt-ush-ss-wira').html('');
+                        $('#err-pkrj-nsbh-ft-tmpt-ush-ss-wira').prop("hidden", true);
+                        $('.error-pkrj-nsbh-ft-tmpt-ush-ss-wira').css({"border-color": ""});
+            }
+
+            if($('#pkrj-nsbh-ft-slf-ss-wira').val() == ''){
+                $('#err-pkrj-nsbh-ft-slf-ss-wira').html('Foto Selfie Wajib Diisi');
+                $('#err-pkrj-nsbh-ft-slf-ss-wira').prop("hidden", false);
+                $('.error-pkrj-nsbh-ft-slf-ss-wira').css({"border-color": "red"});
+            }
+            else if($('#pkrj-nsbh-ft-slf-ss-wira').val() != ''){
+                        $('#err-pkrj-nsbh-ft-slf-ss-wira').html('');
+                        $('#err-pkrj-nsbh-ft-slf-ss-wira').prop("hidden", true);
+                        $('.error-pkrj-nsbh-ft-slf-ss-wira').css({"border-color": ""});
+            }
+
+            if($('#inp-pkrj-nsbh-jrk-nsbh-ke-muf-ss-wira').val() == ''){
+                $('#err-inp-pkrj-nsbh-jrk-nsbh-ke-muf-ss-wira').html('Jarak Tempat Nasabah ke MUF Wajib Diisi');
+                $('#err-inp-pkrj-nsbh-jrk-nsbh-ke-muf-ss-wira').prop("hidden", false);
+                $('input[id=inp-pkrj-nsbh-jrk-nsbh-ke-muf-ss-wira]').css({"border-color": "red"});
+            }
+            else if($('#inp-pkrj-nsbh-jrk-nsbh-ke-muf-ss-wira').val() != ''){
+                        $('#err-inp-pkrj-nsbh-jrk-nsbh-ke-muf-ss-wira').html('');
+                        $('#err-inp-pkrj-nsbh-jrk-nsbh-ke-muf-ss-wira').prop("hidden", true);
+                        $('input[id=inp-pkrj-nsbh-jrk-nsbh-ke-muf-ss-wira]').css({"border-color": ""});
+            }
+
+            file.insertSilentSurveyWiraswasta();
+            
         });
 
-		//Onchange Upload File in Tele Survey
-        $('#pkrj-nsbh-doc-bkt-ush-ts-wira').on('change', function(){
-            if($('#pkrj-nsbh-doc-bkt-ush-ts-wira').val() != undefined){
-                var BuktiUsahaTeleSurvey1 = $('#pkrj-nsbh-doc-bkt-ush-ts-wira')[0].files[0];
+		//Onchange Upload File in Silent Survey
+        $('#pkrj-nsbh-doc-bkt-ush-ss-wira').on('change', function(){
+            if($('#pkrj-nsbh-doc-bkt-ush-ss-wira').val() != undefined){
+                var BuktiUsahaSilentSurvey1 = $('#pkrj-nsbh-doc-bkt-ush-ss-wira')[0].files[0];
                 
-                if(BuktiUsahaTeleSurvey1 != undefined){
-                    var fileUploadDocument = BuktiUsahaTeleSurvey1;
+                if(BuktiUsahaSilentSurvey1 != undefined){
+                    var fileUploadDocument = BuktiUsahaSilentSurvey1;
                     if(fileUploadDocument.size > 5120000){
-                        alert_error("Ukuran file terlalu besar. Maksimal 5 MB");
+                        Swal.fire(
+                            'ERROR',
+                            'Ukuran file terlalu besar. Maksimal 5 MB',
+                            'error'
+                        )
                     }
                     
                     else if(fileUploadDocument != undefined && fileUploadDocument.size <= 5120000){
@@ -194,7 +199,11 @@ app.KycWiraswastaTeleSurvey = {
                         arrType = fileUploadDocument.type.split("/");
                     
                         if (arrType[1] != "jpg" && arrType[1] != "jpeg" && arrType[1] != "png" && arrType[1] == "pdf") {
-                            alert_error("Format foto tidak sesuai!");
+                            Swal.fire(
+                                'ERROR',
+                                'Format foto tidak sesuai!',
+                                'error'
+                            )
                         }
                     
                         else if(arrType[1] == "pdf"){
@@ -206,7 +215,7 @@ app.KycWiraswastaTeleSurvey = {
                                 //console.log("BASE PDF BU 1",base64);
                             };
                             fileReader.readAsDataURL(fileToLoad);
-                            localStorage.setItem("bukti_usaha_tele_survey_wiraswasta", base64);
+                            localStorage.setItem("bukti_usaha_silent_survey_wiraswasta", base64);
                         }
                     
                         else {
@@ -228,11 +237,11 @@ app.KycWiraswastaTeleSurvey = {
                                         canvas.width,
                                         canvas.height
                                     );
-                                    base64BuktiUsahaTeleSurveyWiraswasta = canvas.toDataURL().replace("data:", "")
+                                    base64BuktiUsahaSilentSurveyWiraswasta = canvas.toDataURL().replace("data:", "")
                                     .replace(/^.+,/, "");
-                                    imageBase64BuktiUsahaTeleSurveyWiraswasta = base64BuktiUsahaTeleSurveyWiraswasta;
-                                    localStorage.setItem("bukti_usaha_tele_survey_wiraswasta", base64BuktiUsahaTeleSurveyWiraswasta);
-                                    //console.log("BASE JPG BU 1",base64BuktiUsahaTeleSurveyWiraswasta);
+                                    imageBase64BuktiUsahaSilentSurveyWiraswasta = base64BuktiUsahaSilentSurveyWiraswasta;
+                                    localStorage.setItem("bukti_usaha_silent_survey_wiraswasta", base64BuktiUsahaSilentSurveyWiraswasta);
+                                    //console.log("BASE JPG BU 1",base64BuktiUsahaSilentSurveyWiraswasta);
                                 }
                                 image.src = event.target.result;
                             }
@@ -244,14 +253,18 @@ app.KycWiraswastaTeleSurvey = {
             }
         });
         
-        $('#newdokbuktiusahatelesurvey').on('change', '.pkrj-nsbh-doc-bkt-ush-ts-wira-2', function () {
-            if($('.pkrj-nsbh-doc-bkt-ush-ts-wira-2').val() != undefined){
-                var BuktiUsahaTeleSurvey2 = $('.pkrj-nsbh-doc-bkt-ush-ts-wira-2')[0].files[0];
+        $('#newdokbuktiusahasilentsurvey').on('change', '.pkrj-nsbh-doc-bkt-ush-ss-wira-2', function () {
+            if($('.pkrj-nsbh-doc-bkt-ush-ss-wira-2').val() != undefined){
+                var BuktiUsahaSilentSurvey2 = $('.pkrj-nsbh-doc-bkt-ush-ss-wira-2')[0].files[0];
 
-                if(BuktiUsahaTeleSurvey2 != undefined){
-                    var fileUploadDocument = BuktiUsahaTeleSurvey2;
+                if(BuktiUsahaSilentSurvey2 != undefined){
+                    var fileUploadDocument = BuktiUsahaSilentSurvey2;
                     if(fileUploadDocument.size > 5120000){
-                        alert_error("Ukuran file terlalu besar. Maksimal 5 MB");
+                        Swal.fire(
+                            'ERROR',
+                            'Ukuran file terlalu besar. Maksimal 5 MB',
+                            'error'
+                        )
                     }
                     
                     else if(fileUploadDocument != undefined && fileUploadDocument.size <= 5120000){
@@ -259,7 +272,11 @@ app.KycWiraswastaTeleSurvey = {
                         arrType = fileUploadDocument.type.split("/");
                     
                         if (arrType[1] != "jpg" && arrType[1] != "jpeg" && arrType[1] != "png" && arrType[1] == "pdf") {
-                            alert_error("Format foto tidak sesuai!");
+                            Swal.fire(
+                                'ERROR',
+                                'Format foto tidak sesuai!',
+                                'error'
+                            )
                         }
                     
                         else if(arrType[1] == "pdf"){
@@ -271,7 +288,7 @@ app.KycWiraswastaTeleSurvey = {
                             };
                             fileReader.readAsDataURL(fileToLoad);
                             //console.log("BASE PDF BU 2",base64);
-                            localStorage.setItem("bukti_usaha_tele_survey_wiraswasta_2", base64);
+                            localStorage.setItem("bukti_usaha_silent_survey_wiraswasta_2", base64);
                             
                         }
                     
@@ -294,11 +311,11 @@ app.KycWiraswastaTeleSurvey = {
                                         canvas.width,
                                         canvas.height
                                     );
-                                    base64BuktiUsahaTeleSurveyWiraswasta = canvas.toDataURL().replace("data:", "")
+                                    base64BuktiUsahaSilentSurveyWiraswasta = canvas.toDataURL().replace("data:", "")
                                     .replace(/^.+,/, "");
-                                    imageBase64BuktiUsahaTeleSurveyWiraswasta = base64BuktiUsahaTeleSurveyWiraswasta;
-                                    localStorage.setItem("bukti_usaha_tele_survey_wiraswasta_2", base64BuktiUsahaTeleSurveyWiraswasta);
-                                    //console.log("BASE JPG BU 2",base64BuktiUsahaTeleSurveyWiraswasta);
+                                    imageBase64BuktiUsahaSilentSurveyWiraswasta = base64BuktiUsahaSilentSurveyWiraswasta;
+                                    localStorage.setItem("bukti_usaha_silent_survey_wiraswasta_2", base64BuktiUsahaSilentSurveyWiraswasta);
+                                    //console.log("BASE JPG BU 2",base64BuktiUsahaSilentSurveyWiraswasta);
                                 }
                                 image.src = event.target.result;
                             }
@@ -310,15 +327,19 @@ app.KycWiraswastaTeleSurvey = {
             }
         });
 
-        $('#pkrj-nsbh-doc-bkt-kungn-ts-wira').on('change', function(){
-            if($('#pkrj-nsbh-doc-bkt-kungn-ts-wira').val() != undefined){
-                var BuktiKeuanganTeleSurvey1 = $('#pkrj-nsbh-doc-bkt-kungn-ts-wira')[0].files[0];
+        $('#pkrj-nsbh-doc-bkt-kungn-ss-wira').on('change', function(){
+            if($('#pkrj-nsbh-doc-bkt-kungn-ss-wira').val() != undefined){
+                var BuktiKeuanganSilentSurvey1 = $('#pkrj-nsbh-doc-bkt-kungn-ss-wira')[0].files[0];
 
-                if(BuktiKeuanganTeleSurvey1 != undefined){
+                if(BuktiKeuanganSilentSurvey1 != undefined){
                     //Bukti keuangan Instant Approval 1
-                    var fileUploadDocument = BuktiKeuanganTeleSurvey1;
+                    var fileUploadDocument = BuktiKeuanganSilentSurvey1;
                     if(fileUploadDocument.size > 5120000){
-                        alert_error("Ukuran file terlalu besar. Maksimal 5 MB");
+                        Swal.fire(
+                            'ERROR',
+                            'Ukuran file terlalu besar. Maksimal 5 MB',
+                            'error'
+                        )
                     }
         
                     else if(fileUploadDocument != undefined && fileUploadDocument.size <= 5120000){
@@ -326,7 +347,11 @@ app.KycWiraswastaTeleSurvey = {
                         arrType = fileUploadDocument.type.split("/");
         
                         if (arrType[1] != "jpg" && arrType[1] != "jpeg" && arrType[1] != "png" && arrType[1] == "pdf") {
-                            alert_error("Format foto tidak sesuai!");
+                            Swal.fire(
+                                'ERROR',
+                                'Format foto tidak sesuai!',
+                                'error'
+                            )
                         }
         
                         else if(arrType[1] == "pdf"){
@@ -338,7 +363,7 @@ app.KycWiraswastaTeleSurvey = {
                                 //console.log("BASE PDF BK 1", base64);
                             };
                             fileReader.readAsDataURL(fileToLoad);
-                            localStorage.setItem("bukti_keuangan_tele_survey_wiraswasta", base64);
+                            localStorage.setItem("bukti_keuangan_silent_survey_wiraswasta", base64);
                         }
         
                         else {
@@ -360,11 +385,11 @@ app.KycWiraswastaTeleSurvey = {
                                         canvas.width,
                                         canvas.height
                                     );
-                                    base64BuktiKeuanganTeleSurveyWiraswasta = canvas.toDataURL().replace("data:", "")
+                                    base64BuktiKeuanganSilentSurveyWiraswasta = canvas.toDataURL().replace("data:", "")
                                     .replace(/^.+,/, "");
-                                    imageBase64BuktiKeuanganTeleSurveyWiraswasta = base64BuktiKeuanganTeleSurveyWiraswasta;
-                                    localStorage.setItem("bukti_keuangan_tele_survey_wiraswasta", base64BuktiKeuanganTeleSurveyWiraswasta);
-                                    //console.log("BASE JPG BK 1", base64BuktiKeuanganTeleSurveyWiraswasta);
+                                    imageBase64BuktiKeuanganSilentSurveyWiraswasta = base64BuktiKeuanganSilentSurveyWiraswasta;
+                                    localStorage.setItem("bukti_keuangan_silent_survey_wiraswasta", base64BuktiKeuanganSilentSurveyWiraswasta);
+                                    //console.log("BASE JPG BK 1", base64BuktiKeuanganSilentSurveyWiraswasta);
                                 }
                                 image.src = event.target.result;
                             }
@@ -375,14 +400,18 @@ app.KycWiraswastaTeleSurvey = {
             }
         });
 
-        $('#newdokbuktikeuangantelesurvey').on('change', '.pkrj-nsbh-doc-bkt-kungn-ts-wira-2', function () {
-            if($('.pkrj-nsbh-doc-bkt-kungn-ts-wira-2').val() != undefined){
-                var BuktiKeuanganTeleSurvey2 = $('.pkrj-nsbh-doc-bkt-kungn-ts-wira-2')[0].files[0];
-                if(BuktiKeuanganTeleSurvey2 != undefined){
+        $('#newdokbuktikeuangansilentsurvey').on('change', '.pkrj-nsbh-doc-bkt-kungn-ss-wira-2', function () {
+            if($('.pkrj-nsbh-doc-bkt-kungn-ss-wira-2').val() != undefined){
+                var BuktiKeuanganSilentSurvey2 = $('.pkrj-nsbh-doc-bkt-kungn-ss-wira-2')[0].files[0];
+                if(BuktiKeuanganSilentSurvey2 != undefined){
                     //Bukti Keuangan Instant Approval 2
-                    var fileUploadDocument = BuktiKeuanganTeleSurvey2;
+                    var fileUploadDocument = BuktiKeuanganSilentSurvey2;
                     if(fileUploadDocument.size > 5120000){
-                        alert_error("Ukuran file terlalu besar. Maksimal 5 MB");
+                        Swal.fire(
+                            'ERROR',
+                            'Ukuran file terlalu besar. Maksimal 5 MB',
+                            'error'
+                        )
                     }
         
                     else if(fileUploadDocument != undefined && fileUploadDocument.size <= 5120000){
@@ -390,7 +419,11 @@ app.KycWiraswastaTeleSurvey = {
                         arrType = fileUploadDocument.type.split("/");
         
                         if (arrType[1] != "jpg" && arrType[1] != "jpeg" && arrType[1] != "png" && arrType[1] == "pdf") {
-                            alert_error("Format foto tidak sesuai!");
+                            Swal.fire(
+                                'ERROR',
+                                'Format foto tidak sesuai!',
+                                'error'
+                            )
                         }
         
                         else if(arrType[1] == "pdf"){
@@ -402,7 +435,7 @@ app.KycWiraswastaTeleSurvey = {
                             };
                             fileReader.readAsDataURL(fileToLoad);
                             //console.log("BASE PDF BK 2", base64);
-                            localStorage.setItem("bukti_keuangan_tele_survey_wiraswasta_2", base64);
+                            localStorage.setItem("bukti_keuangan_silent_survey_wiraswasta_2", base64);
                         }
         
                         else {
@@ -424,11 +457,11 @@ app.KycWiraswastaTeleSurvey = {
                                         canvas.width,
                                         canvas.height
                                     );
-                                    base64BuktiKeuanganTeleSurveyWiraswasta2 = canvas.toDataURL().replace("data:", "")
+                                    base64BuktiKeuanganSilentSurveyWiraswasta2 = canvas.toDataURL().replace("data:", "")
                                     .replace(/^.+,/, "");
-                                    imageBase64BuktiKeuanganTeleSurveyWiraswasta2 = base64BuktiKeuanganTeleSurveyWiraswasta2;
-                                    localStorage.setItem("bukti_keuangan_tele_survey_wiraswasta_2", base64BuktiKeuanganTeleSurveyWiraswasta2);
-                                    //console.log("BASE JPG BK 2", base64BuktiKeuanganTeleSurveyWiraswasta2);
+                                    imageBase64BuktiKeuanganSilentSurveyWiraswasta2 = base64BuktiKeuanganSilentSurveyWiraswasta2;
+                                    localStorage.setItem("bukti_keuangan_silent_survey_wiraswasta_2", base64BuktiKeuanganSilentSurveyWiraswasta2);
+                                    //console.log("BASE JPG BK 2", base64BuktiKeuanganSilentSurveyWiraswasta2);
                                 }
                                 image.src = event.target.result;
                             }
@@ -439,15 +472,19 @@ app.KycWiraswastaTeleSurvey = {
             }
         });
 
-        $('#newdokbuktikeuangantelesurvey').on('change', '.pkrj-nsbh-doc-bkt-kungn-ts-wira-3', function () {
-            if($('.pkrj-nsbh-doc-bkt-kungn-ts-wira-3').val() != undefined){
-                var BuktiKeuanganTeleSurvey3 = $('.pkrj-nsbh-doc-bkt-kungn-ts-wira-3')[0].files[0];
+        $('#newdokbuktikeuangansilentsurvey').on('change', '.pkrj-nsbh-doc-bkt-kungn-ss-wira-3', function () {
+            if($('.pkrj-nsbh-doc-bkt-kungn-ss-wira-3').val() != undefined){
+                var BuktiKeuanganSilentSurvey3 = $('.pkrj-nsbh-doc-bkt-kungn-ss-wira-3')[0].files[0];
                 
-                if(BuktiKeuanganTeleSurvey3 != undefined){
+                if(BuktiKeuanganSilentSurvey3 != undefined){
                     //Bukti Keuangan Instant Approval 3
-                    var fileUploadDocument = BuktiKeuanganTeleSurvey3;
+                    var fileUploadDocument = BuktiKeuanganSilentSurvey3;
                     if(fileUploadDocument.size > 5120000){
-                        alert_error("Ukuran file terlalu besar. Maksimal 5 MB");
+                        Swal.fire(
+                            'ERROR',
+                            'Ukuran file terlalu besar. Maksimal 5 MB',
+                            'error'
+                        )
                     }
         
                     else if(fileUploadDocument != undefined && fileUploadDocument.size <= 5120000){
@@ -455,7 +492,11 @@ app.KycWiraswastaTeleSurvey = {
                         arrType = fileUploadDocument.type.split("/");
         
                         if (arrType[1] != "jpg" && arrType[1] != "jpeg" && arrType[1] != "png" && arrType[1] == "pdf") {
-                            alert_error("Format foto tidak sesuai!");
+                            Swal.fire(
+                                'ERROR',
+                                'Format foto tidak sesuai!',
+                                'error'
+                            )
                         }
         
                         else if(arrType[1] == "pdf"){
@@ -467,7 +508,7 @@ app.KycWiraswastaTeleSurvey = {
                             };
                             fileReader.readAsDataURL(fileToLoad);
                             //console.log("BASE PDF BK 3", base64);
-                            localStorage.setItem("bukti_keuangan_tele_survey_wiraswasta_3", base64);
+                            localStorage.setItem("bukti_keuangan_silent_survey_wiraswasta_3", base64);
                         }
         
                         else {
@@ -489,11 +530,11 @@ app.KycWiraswastaTeleSurvey = {
                                         canvas.width,
                                         canvas.height
                                     );
-                                    base64BuktiKeuanganTeleSurveyWiraswasta3 = canvas.toDataURL().replace("data:", "")
+                                    base64BuktiKeuanganSilentSurveyWiraswasta3 = canvas.toDataURL().replace("data:", "")
                                     .replace(/^.+,/, "");
-                                    imageBase64BuktiKeuanganTeleSurveyWiraswasta3 = base64BuktiKeuanganTeleSurveyWiraswasta3;
-                                    localStorage.setItem("bukti_keuangan_tele_survey_wiraswasta_3", base64BuktiKeuanganTeleSurveyWiraswasta3);
-                                    //console.log("BASE JPG BK 3", base64BuktiKeuanganTeleSurveyWiraswasta3);
+                                    imageBase64BuktiKeuanganSilentSurveyWiraswasta3 = base64BuktiKeuanganSilentSurveyWiraswasta3;
+                                    localStorage.setItem("bukti_keuangan_silent_survey_wiraswasta_3", base64BuktiKeuanganSilentSurveyWiraswasta3);
+                                    //console.log("BASE JPG BK 3", base64BuktiKeuanganSilentSurveyWiraswasta3);
                                 }
                                 image.src = event.target.result;
                             }
@@ -504,15 +545,19 @@ app.KycWiraswastaTeleSurvey = {
             }
         });
 
-        $('#newdokbuktikeuangantelesurvey').on('change', '.pkrj-nsbh-doc-bkt-kungn-ts-wira-4', function () {
-            if($('.pkrj-nsbh-doc-bkt-kungn-ts-wira-4').val() != undefined){
-                var BuktiKeuanganTeleSurvey4 = $('.pkrj-nsbh-doc-bkt-kungn-ts-wira-4')[0].files[0];
+        $('#newdokbuktikeuangansilentsurvey').on('change', '.pkrj-nsbh-doc-bkt-kungn-ss-wira-4', function () {
+            if($('.pkrj-nsbh-doc-bkt-kungn-ss-wira-4').val() != undefined){
+                var BuktiKeuanganSilentSurvey4 = $('.pkrj-nsbh-doc-bkt-kungn-ss-wira-4')[0].files[0];
 
-                if(BuktiKeuanganTeleSurvey4 != undefined){
+                if(BuktiKeuanganSilentSurvey4 != undefined){
                     //Bukti Keuangan Instant Approval 4
-                    var fileUploadDocument = BuktiKeuanganTeleSurvey4;
+                    var fileUploadDocument = BuktiKeuanganSilentSurvey4;
                     if(fileUploadDocument.size > 5120000){
-                        alert_error("Ukuran file terlalu besar. Maksimal 5 MB");
+                        Swal.fire(
+                            'ERROR',
+                            'Ukuran file terlalu besar. Maksimal 5 MB',
+                            'error'
+                        )
                     }
         
                     else if(fileUploadDocument != undefined && fileUploadDocument.size <= 5120000){
@@ -520,7 +565,11 @@ app.KycWiraswastaTeleSurvey = {
                         arrType = fileUploadDocument.type.split("/");
         
                         if (arrType[1] != "jpg" && arrType[1] != "jpeg" && arrType[1] != "png" && arrType[1] == "pdf") {
-                            alert_error("Format foto tidak sesuai!");
+                            Swal.fire(
+                                'ERROR',
+                                'Format foto tidak sesuai!',
+                                'error'
+                            )
                         }
         
                         else if(arrType[1] == "pdf"){
@@ -532,7 +581,7 @@ app.KycWiraswastaTeleSurvey = {
                             };
                             fileReader.readAsDataURL(fileToLoad);
                             //console.log("BASE PDF BK 4", base64);
-                            localStorage.setItem("bukti_keuangan_tele_survey_wiraswasta_4", base64);
+                            localStorage.setItem("bukti_keuangan_silent_survey_wiraswasta_4", base64);
                         }
         
                         else {
@@ -554,11 +603,11 @@ app.KycWiraswastaTeleSurvey = {
                                         canvas.width,
                                         canvas.height
                                     );
-                                    base64BuktiKeuanganTeleSurveyWiraswasta4 = canvas.toDataURL().replace("data:", "")
+                                    base64BuktiKeuanganSilentSurveyWiraswasta4 = canvas.toDataURL().replace("data:", "")
                                     .replace(/^.+,/, "");
-                                    imageBase64BuktiKeuanganTeleSurveyWiraswasta4 = base64BuktiKeuanganTeleSurveyWiraswasta4;
-                                    localStorage.setItem("bukti_keuangan_tele_survey_wiraswasta_4", base64BuktiKeuanganTeleSurveyWiraswasta4);
-                                    //console.log("BASE JPG BK 4", base64BuktiKeuanganTeleSurveyWiraswasta4);
+                                    imageBase64BuktiKeuanganSilentSurveyWiraswasta4 = base64BuktiKeuanganSilentSurveyWiraswasta4;
+                                    localStorage.setItem("bukti_keuangan_silent_survey_wiraswasta_4", base64BuktiKeuanganSilentSurveyWiraswasta4);
+                                    //console.log("BASE JPG BK 4", base64BuktiKeuanganSilentSurveyWiraswasta4);
                                 }
                                 image.src = event.target.result;
                             }
@@ -569,15 +618,19 @@ app.KycWiraswastaTeleSurvey = {
             }
         });
 
-        $('#newdokbuktikeuangantelesurvey').on('change', '.pkrj-nsbh-doc-bkt-kungn-ts-wira-5', function () {
-            if($('.pkrj-nsbh-doc-bkt-kungn-ts-wira-5').val() != undefined){
-                var BuktiKeuanganTeleSurvey5 = $('.pkrj-nsbh-doc-bkt-kungn-ts-wira-5')[0].files[0];
+        $('#newdokbuktikeuangansilentsurvey').on('change', '.pkrj-nsbh-doc-bkt-kungn-ss-wira-5', function () {
+            if($('.pkrj-nsbh-doc-bkt-kungn-ss-wira-5').val() != undefined){
+                var BuktiKeuanganSilentSurvey5 = $('.pkrj-nsbh-doc-bkt-kungn-ss-wira-5')[0].files[0];
 
-                if(BuktiKeuanganTeleSurvey5 != undefined){
+                if(BuktiKeuanganSilentSurvey5 != undefined){
                     //Bukti Keuangan Instant Approval 5
-                    var fileUploadDocument = BuktiKeuanganTeleSurvey5;
+                    var fileUploadDocument = BuktiKeuanganSilentSurvey5;
                     if(fileUploadDocument.size > 5120000){
-                        alert_error("Ukuran file terlalu besar. Maksimal 5 MB");
+                        Swal.fire(
+                            'ERROR',
+                            'Ukuran file terlalu besar. Maksimal 5 MB',
+                            'error'
+                        )
                     }
         
                     else if(fileUploadDocument != undefined && fileUploadDocument.size <= 5120000){
@@ -585,7 +638,11 @@ app.KycWiraswastaTeleSurvey = {
                         arrType = fileUploadDocument.type.split("/");
         
                         if (arrType[1] != "jpg" && arrType[1] != "jpeg" && arrType[1] != "png" && arrType[1] == "pdf") {
-                            alert_error("Format foto tidak sesuai!");
+                            Swal.fire(
+                                'ERROR',
+                                'Format foto tidak sesuai!',
+                                'error'
+                            )
                         }
         
                         else if(arrType[1] == "pdf"){
@@ -597,7 +654,7 @@ app.KycWiraswastaTeleSurvey = {
                             };
                             fileReader.readAsDataURL(fileToLoad);
                             //console.log("BASE PDF BK 5", base64);
-                            localStorage.setItem("bukti_keuangan_tele_survey_wiraswasta_5", base64);
+                            localStorage.setItem("bukti_keuangan_silent_survey_wiraswasta_5", base64);
                         }
         
                         else {
@@ -619,11 +676,11 @@ app.KycWiraswastaTeleSurvey = {
                                         canvas.width,
                                         canvas.height
                                     );
-                                    base64BuktiKeuanganTeleSurveyWiraswasta5 = canvas.toDataURL().replace("data:", "")
+                                    base64BuktiKeuanganSilentSurveyWiraswasta5 = canvas.toDataURL().replace("data:", "")
                                     .replace(/^.+,/, "");
-                                    imageBase64BuktiKeuanganTeleSurveyWiraswasta5 = base64BuktiKeuanganTeleSurveyWiraswasta5;
-                                    localStorage.setItem("bukti_keuangan_tele_survey_wiraswasta_5", base64BuktiKeuanganTeleSurveyWiraswasta5);
-                                    //console.log("BASE JPG BK 5", base64BuktiKeuanganTeleSurveyWiraswasta5);
+                                    imageBase64BuktiKeuanganSilentSurveyWiraswasta5 = base64BuktiKeuanganSilentSurveyWiraswasta5;
+                                    localStorage.setItem("bukti_keuangan_silent_survey_wiraswasta_5", base64BuktiKeuanganSilentSurveyWiraswasta5);
+                                    //console.log("BASE JPG BK 5", base64BuktiKeuanganSilentSurveyWiraswasta5);
                                 }
                                 image.src = event.target.result;
                             }
@@ -634,16 +691,20 @@ app.KycWiraswastaTeleSurvey = {
             }
         });
 
-        $('#newdokbuktikeuangantelesurvey').on('change', '.pkrj-nsbh-doc-bkt-kungn-ts-wira-6', function () {
-            if($('.pkrj-nsbh-doc-bkt-kungn-ts-wira-6').val() != undefined){
-                var BuktiKeuanganTeleSurvey6 = $('.pkrj-nsbh-doc-bkt-kungn-ts-wira-6')[0].files[0];
+        $('#newdokbuktikeuangansilentsurvey').on('change', '.pkrj-nsbh-doc-bkt-kungn-ss-wira-6', function () {
+            if($('.pkrj-nsbh-doc-bkt-kungn-ss-wira-6').val() != undefined){
+                var BuktiKeuanganSilentSurvey6 = $('.pkrj-nsbh-doc-bkt-kungn-ss-wira-6')[0].files[0];
             }
             
-            if(BuktiKeuanganTeleSurvey6 != undefined){
+            if(BuktiKeuanganSilentSurvey6 != undefined){
                 //Bukti Keuangan Instant Approval 6
-                var fileUploadDocument = BuktiKeuanganTeleSurvey6;
+                var fileUploadDocument = BuktiKeuanganSilentSurvey6;
                 if(fileUploadDocument.size > 5120000){
-                    alert_error("Ukuran file terlalu besar. Maksimal 5 MB");
+                    Swal.fire(
+                            'ERROR',
+                            'Ukuran file terlalu besar. Maksimal 5 MB',
+                            'error'
+                        )
                 }
     
                 else if(fileUploadDocument != undefined && fileUploadDocument.size <= 5120000){
@@ -651,7 +712,11 @@ app.KycWiraswastaTeleSurvey = {
                     arrType = fileUploadDocument.type.split("/");
     
                     if (arrType[1] != "jpg" && arrType[1] != "jpeg" && arrType[1] != "png" && arrType[1] == "pdf") {
-                        alert_error("Format foto tidak sesuai!");
+                        Swal.fire(
+                                'ERROR',
+                                'Format foto tidak sesuai!',
+                                'error'
+                            )
                     }
     
                     else if(arrType[1] == "pdf"){
@@ -663,7 +728,7 @@ app.KycWiraswastaTeleSurvey = {
                         };
                         fileReader.readAsDataURL(fileToLoad);
                         //console.log("BASE PDF BK 6", base64);
-                        localStorage.setItem("bukti_keuangan_tele_survey_wiraswasta_6", base64);
+                        localStorage.setItem("bukti_keuangan_silent_survey_wiraswasta_6", base64);
                     }
     
                     else {
@@ -685,11 +750,11 @@ app.KycWiraswastaTeleSurvey = {
                                     canvas.width,
                                     canvas.height
                                 );
-                                base64BuktiKeuanganTeleSurveyWiraswasta6 = canvas.toDataURL().replace("data:", "")
+                                base64BuktiKeuanganSilentSurveyWiraswasta6 = canvas.toDataURL().replace("data:", "")
                                 .replace(/^.+,/, "");
-                                imageBase64BuktiKeuanganTeleSurveyWiraswasta6 = base64BuktiKeuanganTeleSurveyWiraswasta6;
-                                localStorage.setItem("bukti_keuangan_tele_survey_wiraswasta_6", base64BuktiKeuanganTeleSurveyWiraswasta6);
-                                //console.log("BASE JPG BK 6", base64BuktiKeuanganTeleSurveyWiraswasta6);
+                                imageBase64BuktiKeuanganSilentSurveyWiraswasta6 = base64BuktiKeuanganSilentSurveyWiraswasta6;
+                                localStorage.setItem("bukti_keuangan_silent_survey_wiraswasta_6", base64BuktiKeuanganSilentSurveyWiraswasta6);
+                                //console.log("BASE JPG BK 6", base64BuktiKeuanganSilentSurveyWiraswasta6);
                             }
                             image.src = event.target.result;
                         }
@@ -700,14 +765,18 @@ app.KycWiraswastaTeleSurvey = {
 
         });
         
-        $('#pkrj-nsbh-ft-tmpt-ush-ts-wira').on('change', function(){
-            if($('#pkrj-nsbh-ft-tmpt-ush-ts-wira').val() != undefined){
-                var TempatUsahaInstanApproval = $('#pkrj-nsbh-ft-tmpt-ush-ts-wira')[0].files[0];
+        $('#pkrj-nsbh-ft-tmpt-ush-ss-wira').on('change', function(){
+            if($('#pkrj-nsbh-ft-tmpt-ush-ss-wira').val() != undefined){
+                var TempatUsahaInstanApproval = $('#pkrj-nsbh-ft-tmpt-ush-ss-wira')[0].files[0];
                 if(TempatUsahaInstanApproval != undefined){
                     //Foto Tempat Usaha Instant Approval
                     var fileUploadDocument = TempatUsahaInstanApproval;
                     if(fileUploadDocument.size > 5120000){
-                        alert_error("Ukuran file terlalu besar. Maksimal 5 MB");
+                        Swal.fire(
+                            'ERROR',
+                            'Ukuran file terlalu besar. Maksimal 5 MB',
+                            'error'
+                        )
                     }
         
                     else if(fileUploadDocument != undefined && fileUploadDocument.size <= 5120000){
@@ -715,7 +784,11 @@ app.KycWiraswastaTeleSurvey = {
                         arrType = fileUploadDocument.type.split("/");
         
                         if (arrType[1] != "jpg" && arrType[1] != "jpeg" && arrType[1] != "png" && arrType[1] == "pdf") {
-                            alert_error("Format foto tidak sesuai!");
+                            Swal.fire(
+                                'ERROR',
+                                'Format foto tidak sesuai!',
+                                'error'
+                            )
                         }
         
                         else if(arrType[1] == "pdf"){
@@ -727,7 +800,7 @@ app.KycWiraswastaTeleSurvey = {
                                 //console.log("BASE PDF FTU", base64);
                             };
                             fileReader.readAsDataURL(fileToLoad);
-                            localStorage.setItem("foto_tempat_usaha_tele_survey_wiraswasta", base64);
+                            localStorage.setItem("foto_tempat_usaha_silent_survey_wiraswasta", base64);
                         }
         
                         else {
@@ -749,11 +822,11 @@ app.KycWiraswastaTeleSurvey = {
                                         canvas.width,
                                         canvas.height
                                     );
-                                    base64FotoTempatUsahaTeleSurveyWiraswasta = canvas.toDataURL().replace("data:", "")
+                                    base64FotoTempatUsahaSilentSurveyWiraswasta = canvas.toDataURL().replace("data:", "")
                                     .replace(/^.+,/, "");
-                                    imageBase64FotoTempatUsahaTeleSurveyWiraswasta = base64FotoTempatUsahaTeleSurveyWiraswasta;
-                                    localStorage.setItem("foto_tempat_usaha_tele_survey_wiraswasta", base64FotoTempatUsahaTeleSurveyWiraswasta);
-                                    //console.log("BASE JPG FTU", base64FotoTempatUsahaTeleSurveyWiraswasta);
+                                    imageBase64FotoTempatUsahaSilentSurveyWiraswasta = base64FotoTempatUsahaSilentSurveyWiraswasta;
+                                    localStorage.setItem("foto_tempat_usaha_silent_survey_wiraswasta", base64FotoTempatUsahaSilentSurveyWiraswasta);
+                                    //console.log("BASE JPG FTU", base64FotoTempatUsahaSilentSurveyWiraswasta);
                                 }
                                 image.src = event.target.result;
                             }
@@ -765,14 +838,18 @@ app.KycWiraswastaTeleSurvey = {
             }
         });
 
-        $('#pkrj-nsbh-ft-slf-ts-wira').on('change', function(){
-            if($('#pkrj-nsbh-ft-slf-ts-wira').val() != undefined){
-                var SelfieInstanApproval = $('#pkrj-nsbh-ft-slf-ts-wira')[0].files[0];
+        $('#pkrj-nsbh-ft-slf-ss-wira').on('change', function(){
+            if($('#pkrj-nsbh-ft-slf-ss-wira').val() != undefined){
+                var SelfieInstanApproval = $('#pkrj-nsbh-ft-slf-ss-wira')[0].files[0];
                 if(SelfieInstanApproval != undefined){
                     //Foto Tempat Usaha Instant Approval
                     var fileUploadDocument = SelfieInstanApproval;
                     if(fileUploadDocument.size > 5120000){
-                        alert_error("Ukuran file terlalu besar. Maksimal 5 MB");
+                        Swal.fire(
+                            'ERROR',
+                            'Ukuran file terlalu besar. Maksimal 5 MB',
+                            'error'
+                        )
                     }
         
                     else if(fileUploadDocument != undefined && fileUploadDocument.size <= 5120000){
@@ -780,7 +857,11 @@ app.KycWiraswastaTeleSurvey = {
                         arrType = fileUploadDocument.type.split("/");
         
                         if (arrType[1] != "jpg" && arrType[1] != "jpeg" && arrType[1] != "png" && arrType[1] == "pdf") {
-                            alert_error("Format foto tidak sesuai!");
+                            Swal.fire(
+                                'ERROR',
+                                'Format foto tidak sesuai!',
+                                'error'
+                            )
                         }
         
                         else if(arrType[1] == "pdf"){
@@ -792,7 +873,7 @@ app.KycWiraswastaTeleSurvey = {
                                 //console.log("BASE PDF FS", base64);
                             };
                             fileReader.readAsDataURL(fileToLoad);
-                            localStorage.setItem("foto_selfie_tele_survey_wiraswasta", base64);
+                            localStorage.setItem("foto_selfie_silent_survey_wiraswasta", base64);
                         }
         
                         else {
@@ -814,11 +895,11 @@ app.KycWiraswastaTeleSurvey = {
                                         canvas.width,
                                         canvas.height
                                     );
-                                    base64FotoSelfieTeleSurveyWiraswasta = canvas.toDataURL().replace("data:", "")
+                                    base64FotoSelfieSilentSurveyWiraswasta = canvas.toDataURL().replace("data:", "")
                                     .replace(/^.+,/, "");
-                                    imageBase64FotoSelfieTeleSurveyWiraswasta = base64FotoSelfieTeleSurveyWiraswasta;
-                                    localStorage.setItem("foto_selfie_tele_survey_wiraswasta", base64FotoSelfieTeleSurveyWiraswasta);
-                                    //console.log("BASE JPG FS", base64FotoSelfieTeleSurveyWiraswasta);
+                                    imageBase64FotoSelfieSilentSurveyWiraswasta = base64FotoSelfieSilentSurveyWiraswasta;
+                                    localStorage.setItem("foto_selfie_silent_survey_wiraswasta", base64FotoSelfieSilentSurveyWiraswasta);
+                                    //console.log("BASE JPG FS", base64FotoSelfieSilentSurveyWiraswasta);
                                 }
                                 image.src = event.target.result;
                             }
@@ -832,14 +913,14 @@ app.KycWiraswastaTeleSurvey = {
 
     },
 
-	getEconomicSectorLevel1TeleSurvey: function () {
-        var file = app.KycWiraswastaTeleSurvey;
-        $("#slc-pkrj-nsbh-sktr-eko-lvl-1-ts-wira").select2({
+	getEconomicSectorLevel1SilentSurvey: function () {
+        var file = app.KycWiraswastaSilentSurvey;
+        $("#slc-pkrj-nsbh-sktr-eko-lvl-1-ss-wira").select2({
             theme: 'bootstrap4',
             placeholder: "PILIH SEKTOR EKONOMI (LEVEL 1)",
             allowClear: true,
             minimumInputLength: 4,
-            containerCssClass: "error-slc-pkrj-nsbh-sktr-eko-lvl-1-ts-wira",
+            containerCssClass: "error-slc-pkrj-nsbh-sktr-eko-lvl-1-ss-wira",
             language: {
                 inputTooShort: function () {
                     return file.message_hint
@@ -873,20 +954,20 @@ app.KycWiraswastaTeleSurvey = {
         })
     },
 
-	getEconomicSectorLevel2TeleSurvey: function () {
-        var file = app.KycWiraswastaTeleSurvey;
-        var param_1 = $('#slc-pkrj-nsbh-sktr-eko-lvl-1-ts-wira').val();
+	getEconomicSectorLevel2SilentSurvey: function () {
+        var file = app.KycWiraswastaSilentSurvey;
+        var param_1 = $('#slc-pkrj-nsbh-sktr-eko-lvl-1-ss-wira').val();
 
         if (param_1 == null || param_1 == '') {
             param_1 = '';
         }
 
-        $("#slc-pkrj-nsbh-sktr-eko-lvl-2-ts-wira").select2({
+        $("#slc-pkrj-nsbh-sktr-eko-lvl-2-ss-wira").select2({
             theme: 'bootstrap4',
             placeholder: "PILIH SEKTOR EKONOMI (LEVEL 2)",
             allowClear: true,
             minimumInputLength: 4,
-            containerCssClass: "error-slc-pkrj-nsbh-sktr-eko-lvl-2-ts-wira",
+            containerCssClass: "error-slc-pkrj-nsbh-sktr-eko-lvl-2-ss-wira",
             language: {
                 inputTooShort: function () {
                     return file.message_hint
@@ -922,10 +1003,10 @@ app.KycWiraswastaTeleSurvey = {
         })
     },
 
-    getEconomicSectorLevel3TeleSurvey: function () {
-        var file = app.KycWiraswastaTeleSurvey;
-        var param_1 = $('#slc-pkrj-nsbh-sktr-eko-lvl-1-ts-wira').val();
-        var param_2 = $('#slc-pkrj-nsbh-sktr-eko-lvl-2-ts-wira').val();
+    getEconomicSectorLevel3SilentSurvey: function () {
+        var file = app.KycWiraswastaSilentSurvey;
+        var param_1 = $('#slc-pkrj-nsbh-sktr-eko-lvl-1-ss-wira').val();
+        var param_2 = $('#slc-pkrj-nsbh-sktr-eko-lvl-2-ss-wira').val();
 
         if (param_1 == null || param_1 == '') {
             param_1 = '';
@@ -936,13 +1017,13 @@ app.KycWiraswastaTeleSurvey = {
         }
 
         if (param_1 != '' || param_1 != null && param_2 != '' || param_2 != null){
-
-            $("#slc-pkrj-nsbh-sktr-eko-lvl-3-ts-wira").select2({
+        
+            $("#slc-pkrj-nsbh-sktr-eko-lvl-3-ss-wira").select2({
                 theme: 'bootstrap4',
                 placeholder: "PILIH SEKTOR EKONOMI (LEVEL 3)",
                 allowClear: true,
                 minimumInputLength: 4,
-                containerCssClass: "error-slc-pkrj-nsbh-sktr-eko-lvl-3-ts-wira",
+                containerCssClass: "error-slc-pkrj-nsbh-sktr-eko-lvl-3-ss-wira",
                 language: {
                     inputTooShort: function () {
                         return file.message_hint
@@ -980,12 +1061,12 @@ app.KycWiraswastaTeleSurvey = {
         }
 
         if (param_1 == '' || param_1 == null && param_2 == '' || param_2 == null){
-            $("#slc-pkrj-nsbh-sktr-eko-lvl-3-ts-wira").select2({
+            $("#slc-pkrj-nsbh-sktr-eko-lvl-3-ss-wira").select2({
                 theme: 'bootstrap4',
                 placeholder: "PILIH SEKTOR EKONOMI (LEVEL 3)",
                 allowClear: true,
                 minimumInputLength: 4,
-                containerCssClass: "error-slc-pkrj-nsbh-sktr-eko-lvl-3-ts-wira",
+                containerCssClass: "error-slc-pkrj-nsbh-sktr-eko-lvl-3-ss-wira",
                 language: {
                     inputTooShort: function () {
                         return file.message_hint
@@ -1022,9 +1103,9 @@ app.KycWiraswastaTeleSurvey = {
 
     },
 
-    getEconomicSectorFromLevel3ToLevel2andLevel1TeleSurvey: function () {
-        var file = app.KycWiraswastaTeleSurvey;
-        var param = $('#slc-pkrj-nsbh-sktr-eko-lvl-3-ts-wira').select2('data')[0]['text'];
+    getEconomicSectorFromLevel3ToLevel2andLevel1SilentSurvey: function () {
+        var file = app.KycWiraswastaSilentSurvey;
+        var param = $('#slc-pkrj-nsbh-sktr-eko-lvl-3-ss-wira').select2('data')[0]['text'];
         if(param != '' && param != ''){
             $.ajax({
                 url: app.base_url + file.api + "getEconomicSectorFromLevel3",
@@ -1044,42 +1125,42 @@ app.KycWiraswastaTeleSurvey = {
                                 text_2: obj.eco_sector_desc_level_2,
                             }
                         });
-                        $("#slc-pkrj-nsbh-sktr-eko-lvl-1-ts-wira").append("<option value='"+data[0].id_1+"' selected>"+data[0].text_1+"</option>");
-                        $("#slc-pkrj-nsbh-sktr-eko-lvl-1-ts-wira").val(data[0].id_1);
-                        $("#slc-pkrj-nsbh-sktr-eko-lvl-2-ts-wira").append("<option value='"+data[0].id_2+"' selected>"+data[0].text_2+"</option>");
-                        $("#slc-pkrj-nsbh-sktr-eko-lvl-2-ts-wira").val(data[0].id_2);
+                        $("#slc-pkrj-nsbh-sktr-eko-lvl-1-ss-wira").append("<option value='"+data[0].id_1+"' selected>"+data[0].text_1+"</option>");
+                        $("#slc-pkrj-nsbh-sktr-eko-lvl-1-ss-wira").val(data[0].id_1);
+                        $("#slc-pkrj-nsbh-sktr-eko-lvl-2-ss-wira").append("<option value='"+data[0].id_2+"' selected>"+data[0].text_2+"</option>");
+                        $("#slc-pkrj-nsbh-sktr-eko-lvl-2-ss-wira").val(data[0].id_2);
                 }
             });
         }
     },
 
-	insertTeleSurveyWiraswasta: function() {
-        var that = app.KycWiraswastaTeleSurvey;
-        var pekerjaan_nasabah_tele_survey_wiraswasta = {};
-        var pekerjaan_nasabah = $('#inp-pkrj-nsbh-ts-wira').val();
-        var pekerjaan_nasabah_sesuai_tidak_sesuai = document.querySelector('input[name="pkrjnsbhtswira"]:checked').value;
-        var jenis_tempat_usaha = $('#slc-pkrj-nsbh-jns-tmpt-ush-ts-wira').find(':selected').text();
-        var nama_tempat_usaha = $('#inp-pkrj-nsbh-nm-tmpt-ush-ts-wira').val();
-        var nama_tempat_usaha_sesuai_tidak_sesuai = document.querySelector('input[name="nmtmptushtswira"]:checked').value;
-        var bidang_usaha = $('#inp-pkrj-nsbh-bdng-ush-ts-wira').val();
-        var bidang_usaha_sesuai_tidak_sesuai = document.querySelector('input[name="bdngushtswira"]:checked').value;
-        var sektor_tempat_usaha = $('#inp-pkrj-nsbh-sktr-tmpt-ush-ts-wira').val();
-        var sektor_ekonomi_level_1 = $('#slc-pkrj-nsbh-sktr-eko-lvl-1-ts-wira').find(':selected').text();
-        var sektor_ekonomi_level_2 = $('#slc-pkrj-nsbh-sktr-eko-lvl-2-ts-wira').find(':selected').text();
-        var sektor_ekonomi_level_3 = $('#slc-pkrj-nsbh-sktr-eko-lvl-3-ts-wira').find(':selected').text();
-        var dokumen_bukti_usaha_1 = localStorage.getItem('bukti_usaha_tele_survey_wiraswasta');
-        var dokumen_bukti_usaha_2 = localStorage.getItem('bukti_usaha_tele_survey_wiraswasta_2');
-        var dokumen_bukti_keuangan_1 = localStorage.getItem('bukti_keuangan_tele_survey_wiraswasta');
-        var dokumen_bukti_keuangan_2 = localStorage.getItem('bukti_keuangan_tele_survey_wiraswasta_2');
-        var dokumen_bukti_keuangan_3 = localStorage.getItem('bukti_keuangan_tele_survey_wiraswasta_3');
-        var dokumen_bukti_keuangan_4 = localStorage.getItem('bukti_keuangan_tele_survey_wiraswasta_4');
-        var dokumen_bukti_keuangan_5 = localStorage.getItem('bukti_keuangan_tele_survey_wiraswasta_5');
-        var dokumen_bukti_keuangan_6 = localStorage.getItem('bukti_keuangan_tele_survey_wiraswasta_6');
-        var foto_tempat_usaha = localStorage.getItem('foto_tempat_usaha_tele_survey_wiraswasta');
-        var selfie_pic_survey = localStorage.getItem('foto_selfie_tele_survey_wiraswasta');
-        var jarak_tempat_usaha = $('#inp-pkrj-nsbh-jrk-nsbh-ke-muf-ts-wira').val();
+	insertSilentSurveyWiraswasta: function() {
+        var that = app.KycWiraswastaSilentSurvey;
+        var pekerjaan_nasabah_silent_survey_wiraswasta = {};
+        var pekerjaan_nasabah = $('#inp-pkrj-nsbh-ss-wira').val();
+        var pekerjaan_nasabah_sesuai_tidak_sesuai = document.querySelector('input[name="pkrjnsbhsswira"]:checked').value;
+        var jenis_tempat_usaha = $('#slc-pkrj-nsbh-jns-tmpt-ush-ss-wira').find(':selected').text();
+        var nama_tempat_usaha = $('#inp-pkrj-nsbh-nm-tmpt-ush-ss-wira').val();
+        var nama_tempat_usaha_sesuai_tidak_sesuai = document.querySelector('input[name="nmtmptushsswira"]:checked').value;
+        var bidang_usaha = $('#inp-pkrj-nsbh-bdng-ush-ss-wira').val();
+        var bidang_usaha_sesuai_tidak_sesuai = document.querySelector('input[name="bdngushsswira"]:checked').value;
+        var sektor_tempat_usaha = $('#inp-pkrj-nsbh-sktr-tmpt-ush-ss-wira').val();
+        var sektor_ekonomi_level_1 = $('#slc-pkrj-nsbh-sktr-eko-lvl-1-ss-wira').find(':selected').text();
+        var sektor_ekonomi_level_2 = $('#slc-pkrj-nsbh-sktr-eko-lvl-2-ss-wira').find(':selected').text();
+        var sektor_ekonomi_level_3 = $('#slc-pkrj-nsbh-sktr-eko-lvl-3-ss-wira').find(':selected').text();
+        var dokumen_bukti_usaha_1 = localStorage.getItem('bukti_usaha_silent_survey_wiraswasta');
+        var dokumen_bukti_usaha_2 = localStorage.getItem('bukti_usaha_silent_survey_wiraswasta_2');
+        var dokumen_bukti_keuangan_1 = localStorage.getItem('bukti_keuangan_silent_survey_wiraswasta');
+        var dokumen_bukti_keuangan_2 = localStorage.getItem('bukti_keuangan_silent_survey_wiraswasta_2');
+        var dokumen_bukti_keuangan_3 = localStorage.getItem('bukti_keuangan_silent_survey_wiraswasta_3');
+        var dokumen_bukti_keuangan_4 = localStorage.getItem('bukti_keuangan_silent_survey_wiraswasta_4');
+        var dokumen_bukti_keuangan_5 = localStorage.getItem('bukti_keuangan_silent_survey_wiraswasta_5');
+        var dokumen_bukti_keuangan_6 = localStorage.getItem('bukti_keuangan_silent_survey_wiraswasta_6');
+        var foto_tempat_usaha = localStorage.getItem('foto_tempat_usaha_silent_survey_wiraswasta');
+        var selfie_pic_survey = localStorage.getItem('foto_selfie_silent_survey_wiraswasta');
+        var jarak_tempat_usaha = $('#inp-pkrj-nsbh-jrk-nsbh-ke-muf-ss-wira').val();
             
-        pekerjaan_nasabah_tele_survey_wiraswasta = {
+        pekerjaan_nasabah_silent_survey_wiraswasta = {
             pekerjaan_nasabah: pekerjaan_nasabah,
             pekerjaan_nasabah_sesuai_tidak_sesuai: pekerjaan_nasabah_sesuai_tidak_sesuai,
             jenis_tempat_usaha: jenis_tempat_usaha,
@@ -1103,14 +1184,14 @@ app.KycWiraswastaTeleSurvey = {
             selfie_pic_survey: selfie_pic_survey,
             jarak_tempat_usaha: jarak_tempat_usaha
         }
-        // console.log(pekerjaan_nasabah_tele_survey_wiraswasta);
+        // console.log(pekerjaan_nasabah_silent_survey_wiraswasta);
 
         $.ajax({
 			type: "post",
 			async: false,
-			url: app.base_url + that.api + "submitTeleSurveyWiraswasta",
+			url: app.base_url + that.api + "submitSilentSurveyWiraswasta",
 			data: {
-                pekerjaan_nasabah_tele_survey_wiraswasta: pekerjaan_nasabah_tele_survey_wiraswasta,
+                pekerjaan_nasabah_silent_survey_wiraswasta: pekerjaan_nasabah_silent_survey_wiraswasta,
             },
 			dataType: "json",
 			cache: false,
@@ -1127,4 +1208,5 @@ app.KycWiraswastaTeleSurvey = {
 		})
 
     },
+
 }

@@ -186,7 +186,11 @@ app.IPNWiraswastaInstantApproval = {
                 if(BuktiUsahaInstantApproval1 != undefined){
                     var fileUploadDocument = BuktiUsahaInstantApproval1;
                     if(fileUploadDocument.size > 5120000){
-                        alert_error("Ukuran file terlalu besar. Maksimal 5 MB");
+                        Swal.fire(
+                            'ERROR',
+                            'Ukuran file terlalu besar. Maksimal 5 MB',
+                            'error'
+                        )
                     }
                     
                     else if(fileUploadDocument != undefined && fileUploadDocument.size <= 5120000){
@@ -194,7 +198,11 @@ app.IPNWiraswastaInstantApproval = {
                         arrType = fileUploadDocument.type.split("/");
                     
                         if (arrType[1] != "jpg" && arrType[1] != "jpeg" && arrType[1] != "png" && arrType[1] == "pdf") {
-                            alert_error("Format foto tidak sesuai!");
+                            Swal.fire(
+                                'ERROR',
+                                'Format foto tidak sesuai!',
+                                'error'
+                            )
                         }
                     
                         else if(arrType[1] == "pdf"){
@@ -251,7 +259,11 @@ app.IPNWiraswastaInstantApproval = {
                 if(BuktiUsahaInstantApproval2 != undefined){
                     var fileUploadDocument = BuktiUsahaInstantApproval2;
                     if(fileUploadDocument.size > 5120000){
-                        alert_error("Ukuran file terlalu besar. Maksimal 5 MB");
+                        Swal.fire(
+                            'ERROR',
+                            'Ukuran file terlalu besar. Maksimal 5 MB',
+                            'error'
+                        )
                     }
                     
                     else if(fileUploadDocument != undefined && fileUploadDocument.size <= 5120000){
@@ -259,7 +271,11 @@ app.IPNWiraswastaInstantApproval = {
                         arrType = fileUploadDocument.type.split("/");
                     
                         if (arrType[1] != "jpg" && arrType[1] != "jpeg" && arrType[1] != "png" && arrType[1] == "pdf") {
-                            alert_error("Format foto tidak sesuai!");
+                            Swal.fire(
+                                'ERROR',
+                                'Format foto tidak sesuai!',
+                                'error'
+                            )
                         }
                     
                         else if(arrType[1] == "pdf"){
@@ -318,7 +334,11 @@ app.IPNWiraswastaInstantApproval = {
                     //Bukti keuangan Instant Approval 1
                     var fileUploadDocument = BuktiKeuanganInstantApproval1;
                     if(fileUploadDocument.size > 5120000){
-                        alert_error("Ukuran file terlalu besar. Maksimal 5 MB");
+                        Swal.fire(
+                            'ERROR',
+                            'Ukuran file terlalu besar. Maksimal 5 MB',
+                            'error'
+                        )
                     }
         
                     else if(fileUploadDocument != undefined && fileUploadDocument.size <= 5120000){
@@ -326,7 +346,11 @@ app.IPNWiraswastaInstantApproval = {
                         arrType = fileUploadDocument.type.split("/");
         
                         if (arrType[1] != "jpg" && arrType[1] != "jpeg" && arrType[1] != "png" && arrType[1] == "pdf") {
-                            alert_error("Format foto tidak sesuai!");
+                            Swal.fire(
+                                'ERROR',
+                                'Format foto tidak sesuai!',
+                                'error'
+                            )
                         }
         
                         else if(arrType[1] == "pdf"){
@@ -382,7 +406,11 @@ app.IPNWiraswastaInstantApproval = {
                     //Bukti Keuangan Instant Approval 2
                     var fileUploadDocument = BuktiKeuanganInstantApproval2;
                     if(fileUploadDocument.size > 5120000){
-                        alert_error("Ukuran file terlalu besar. Maksimal 5 MB");
+                        Swal.fire(
+                            'ERROR',
+                            'Ukuran file terlalu besar. Maksimal 5 MB',
+                            'error'
+                        )
                     }
         
                     else if(fileUploadDocument != undefined && fileUploadDocument.size <= 5120000){
@@ -390,7 +418,11 @@ app.IPNWiraswastaInstantApproval = {
                         arrType = fileUploadDocument.type.split("/");
         
                         if (arrType[1] != "jpg" && arrType[1] != "jpeg" && arrType[1] != "png" && arrType[1] == "pdf") {
-                            alert_error("Format foto tidak sesuai!");
+                            Swal.fire(
+                                'ERROR',
+                                'Format foto tidak sesuai!',
+                                'error'
+                            )
                         }
         
                         else if(arrType[1] == "pdf"){
@@ -447,7 +479,11 @@ app.IPNWiraswastaInstantApproval = {
                     //Bukti Keuangan Instant Approval 3
                     var fileUploadDocument = BuktiKeuanganInstantApproval3;
                     if(fileUploadDocument.size > 5120000){
-                        alert_error("Ukuran file terlalu besar. Maksimal 5 MB");
+                        Swal.fire(
+                            'ERROR',
+                            'Ukuran file terlalu besar. Maksimal 5 MB',
+                            'error'
+                        )
                     }
         
                     else if(fileUploadDocument != undefined && fileUploadDocument.size <= 5120000){
@@ -455,7 +491,11 @@ app.IPNWiraswastaInstantApproval = {
                         arrType = fileUploadDocument.type.split("/");
         
                         if (arrType[1] != "jpg" && arrType[1] != "jpeg" && arrType[1] != "png" && arrType[1] == "pdf") {
-                            alert_error("Format foto tidak sesuai!");
+                            Swal.fire(
+                                'ERROR',
+                                'Format foto tidak sesuai!',
+                                'error'
+                            )
                         }
         
                         else if(arrType[1] == "pdf"){
@@ -512,7 +552,11 @@ app.IPNWiraswastaInstantApproval = {
                     //Bukti Keuangan Instant Approval 4
                     var fileUploadDocument = BuktiKeuanganInstantApproval4;
                     if(fileUploadDocument.size > 5120000){
-                        alert_error("Ukuran file terlalu besar. Maksimal 5 MB");
+                        Swal.fire(
+                            'ERROR',
+                            'Ukuran file terlalu besar. Maksimal 5 MB',
+                            'error'
+                        )
                     }
         
                     else if(fileUploadDocument != undefined && fileUploadDocument.size <= 5120000){
@@ -520,7 +564,11 @@ app.IPNWiraswastaInstantApproval = {
                         arrType = fileUploadDocument.type.split("/");
         
                         if (arrType[1] != "jpg" && arrType[1] != "jpeg" && arrType[1] != "png" && arrType[1] == "pdf") {
-                            alert_error("Format foto tidak sesuai!");
+                            Swal.fire(
+                                'ERROR',
+                                'Format foto tidak sesuai!',
+                                'error'
+                            )
                         }
         
                         else if(arrType[1] == "pdf"){
@@ -577,7 +625,11 @@ app.IPNWiraswastaInstantApproval = {
                     //Bukti Keuangan Instant Approval 5
                     var fileUploadDocument = BuktiKeuanganInstantApproval5;
                     if(fileUploadDocument.size > 5120000){
-                        alert_error("Ukuran file terlalu besar. Maksimal 5 MB");
+                        Swal.fire(
+                            'ERROR',
+                            'Ukuran file terlalu besar. Maksimal 5 MB',
+                            'error'
+                        )
                     }
         
                     else if(fileUploadDocument != undefined && fileUploadDocument.size <= 5120000){
@@ -585,7 +637,11 @@ app.IPNWiraswastaInstantApproval = {
                         arrType = fileUploadDocument.type.split("/");
         
                         if (arrType[1] != "jpg" && arrType[1] != "jpeg" && arrType[1] != "png" && arrType[1] == "pdf") {
-                            alert_error("Format foto tidak sesuai!");
+                            Swal.fire(
+                                'ERROR',
+                                'Format foto tidak sesuai!',
+                                'error'
+                            )
                         }
         
                         else if(arrType[1] == "pdf"){
@@ -643,7 +699,11 @@ app.IPNWiraswastaInstantApproval = {
                 //Bukti Keuangan Instant Approval 6
                 var fileUploadDocument = BuktiKeuanganInstantApproval6;
                 if(fileUploadDocument.size > 5120000){
-                    alert_error("Ukuran file terlalu besar. Maksimal 5 MB");
+                    Swal.fire(
+                            'ERROR',
+                            'Ukuran file terlalu besar. Maksimal 5 MB',
+                            'error'
+                        )
                 }
     
                 else if(fileUploadDocument != undefined && fileUploadDocument.size <= 5120000){
@@ -651,7 +711,11 @@ app.IPNWiraswastaInstantApproval = {
                     arrType = fileUploadDocument.type.split("/");
     
                     if (arrType[1] != "jpg" && arrType[1] != "jpeg" && arrType[1] != "png" && arrType[1] == "pdf") {
-                        alert_error("Format foto tidak sesuai!");
+                        Swal.fire(
+                                'ERROR',
+                                'Format foto tidak sesuai!',
+                                'error'
+                            )
                     }
     
                     else if(arrType[1] == "pdf"){
@@ -707,7 +771,11 @@ app.IPNWiraswastaInstantApproval = {
                     //Foto Tempat Usaha Instant Approval
                     var fileUploadDocument = TempatUsahaInstanApproval;
                     if(fileUploadDocument.size > 5120000){
-                        alert_error("Ukuran file terlalu besar. Maksimal 5 MB");
+                        Swal.fire(
+                            'ERROR',
+                            'Ukuran file terlalu besar. Maksimal 5 MB',
+                            'error'
+                        )
                     }
         
                     else if(fileUploadDocument != undefined && fileUploadDocument.size <= 5120000){
@@ -715,7 +783,11 @@ app.IPNWiraswastaInstantApproval = {
                         arrType = fileUploadDocument.type.split("/");
         
                         if (arrType[1] != "jpg" && arrType[1] != "jpeg" && arrType[1] != "png" && arrType[1] == "pdf") {
-                            alert_error("Format foto tidak sesuai!");
+                            Swal.fire(
+                                'ERROR',
+                                'Format foto tidak sesuai!',
+                                'error'
+                            )
                         }
         
                         else if(arrType[1] == "pdf"){
@@ -772,7 +844,11 @@ app.IPNWiraswastaInstantApproval = {
                     //Foto Tempat Usaha Instant Approval
                     var fileUploadDocument = SelfieInstanApproval;
                     if(fileUploadDocument.size > 5120000){
-                        alert_error("Ukuran file terlalu besar. Maksimal 5 MB");
+                        Swal.fire(
+                            'ERROR',
+                            'Ukuran file terlalu besar. Maksimal 5 MB',
+                            'error'
+                        )
                     }
         
                     else if(fileUploadDocument != undefined && fileUploadDocument.size <= 5120000){
@@ -780,7 +856,11 @@ app.IPNWiraswastaInstantApproval = {
                         arrType = fileUploadDocument.type.split("/");
         
                         if (arrType[1] != "jpg" && arrType[1] != "jpeg" && arrType[1] != "png" && arrType[1] == "pdf") {
-                            alert_error("Format foto tidak sesuai!");
+                            Swal.fire(
+                                'ERROR',
+                                'Format foto tidak sesuai!',
+                                'error'
+                            )
                         }
         
                         else if(arrType[1] == "pdf"){

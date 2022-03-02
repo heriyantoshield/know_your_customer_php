@@ -63,10 +63,14 @@
   <script src="<?php echo base_url(); ?>assets/plugins/accounting/accounting.min.js"></script>
   <script src="<?php echo base_url(); ?>assets/js_acq/function.js"></script> <!-- JS Semua (incl alert, dll secara umum) -->
   <script src="<?php echo base_url(); ?>assets/plugins/sweet-alert/sweetalert2.min.js"></script>
+  <script src="<?php echo base_url(); ?>assets/plugins/aes/aes.js"></script>
 
   <script>
     var app = {
-      base_url: "<?php echo base_url() ?>",
+      base_url      : "<?php echo base_url() ?>",
+      aes128key     : "<?php echo $this->config->item('aes128key') ?>",
+      aes128iv      : "<?php echo $this->config->item('aes128iv') ?>",
+      paramUrl      : "<?php echo $data ?>"
     }
   </script>
 

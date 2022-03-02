@@ -9,32 +9,35 @@ class Kyc extends CI_Controller {
 		$this->load->model('models');
 	}
 
-	public function to_do_list_kyc()
+	public function to_do_list_kyc($param)
 	{
+		$session_data['data'] = $param;
 		$session_data['menu'] = [
 			'kyc/to_do_list_kyc'
 		];
 		$this->load->view('page/kyc/to_do_list_kyc', $session_data);
 	}
 
-	public function kyc_non_wiraswasta()
+	public function kyc_non_wiraswasta($param)
 	{
+		$session_data['data'] = $param;
 		$session_data['menu'] = [
 			'kyc/kyc_non_wiraswasta',
-			'kyc/informasi_pekerjaan_nasabah/non_wiraswasta/tab_instant_approval',
-			'kyc/informasi_pekerjaan_nasabah/non_wiraswasta/tab_silent_survey',
-			'kyc/informasi_pekerjaan_nasabah/non_wiraswasta/tab_tele_survey'
+			'kyc/non_wiraswasta/informasi_pekerjaan_nasabah/tab_instant_approval',
+			'kyc/non_wiraswasta/informasi_pekerjaan_nasabah/tab_silent_survey',
+			'kyc/non_wiraswasta/informasi_pekerjaan_nasabah/tab_tele_survey'
 		];
 		$this->load->view('page/kyc/kyc_non_wiraswasta', $session_data);
 	}
 
-	public function kyc_wiraswasta()
+	public function kyc_wiraswasta($param)
 	{
+		$session_data['data'] = $param;
 		$session_data['menu'] = [
 			'kyc/kyc_wiraswasta',
-			'kyc/informasi_pekerjaan_nasabah/wiraswasta/tab_instant_approval',
-			'kyc/informasi_pekerjaan_nasabah/wiraswasta/tab_silent_survey',
-			'kyc/informasi_pekerjaan_nasabah/wiraswasta/tab_tele_survey'
+			'kyc/wiraswasta/informasi_pekerjaan_nasabah/tab_instant_approval',
+			'kyc/wiraswasta/informasi_pekerjaan_nasabah/tab_silent_survey',
+			'kyc/wiraswasta/informasi_pekerjaan_nasabah/tab_tele_survey'
 		];
 		$this->load->view('page/kyc/kyc_wiraswasta', $session_data);
 	}
