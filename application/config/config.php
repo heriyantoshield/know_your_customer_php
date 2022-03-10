@@ -39,6 +39,19 @@ $config['aes128key'] = "12345abc67890def";//getenv('AES128KEY');
 $config['aes128iv'] = "abc12345def67890";//getenv('AES128IV');
 $config['java_detail_kyc'] = 'http://detail-kyc-java-dev.apps.ocp4dev.muf.co.id/';
 
+
+$config['java_postgre_warna_plat'] = 'http://master-warna-plat-java-dev.apps.ocp4dev.muf.co.id/';
+$config['java_postgre_marketing_product'] = 'http://master-marketing-product-java-dev.apps.ocp4dev.muf.co.id/';
+$config['java_postgre_zip_code'] = 'http://master-zip-code-java-dev.apps.ocp4dev.muf.co.id/';
+$config['java_postgre_pencairan_dana'] = 'http://master-pencairan-dana-java-dev.apps.ocp4dev.muf.co.id/';
+$config['java_postgre_down_payment_dp'] = 'http://master-down-payment-source-java-dev.apps.ocp4dev.muf.co.id/';
+$config['java_postgre_relation_cust'] = 'http://master-relation-with-nasabah-java-dev.apps.ocp4dev.muf.co.id/';
+$config['java_postgre_tempat_penyimpanan_kend'] = 'http://master-tempat-penyimpanan-kendaraan-java-dev.apps.ocp4dev.muf.co.id/';
+$config['java_postgre_jenis_doc_kepemilikan_rmh'] = 'http://master-jenis-dokumen-kepemilikan-rumah-java-dev.apps.ocp4dev.muf.co.id/';
+$config['java_postgre_bank'] = 'http://master-bank-survey-java-dev.apps.ocp4dev.muf.co.id/';
+$config['java_postgre_payment_methode'] = 'http://master-payment-methode-java-dev.apps.ocp4dev.muf.co.id/';
+
+
 /*
 |--------------------------------------------------------------------------
 | Index File

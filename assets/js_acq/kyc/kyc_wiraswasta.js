@@ -20,6 +20,14 @@ app.KycWiraswasta = {
         $('#content-info-pkrj-nsbh-ts-wira').hide();
         $('#content-info-pkrj-nsbh-ss-wira').hide();
 
+        $('#content-tmpt-tinggal-ia-wira').hide();
+		$('#content-obj-pembiayaan-ia-wira').hide();
+		$('#content-tmpt-tinggal-ss-wira').hide();
+		$('#content-obj-pembiayaan-ss-wira').hide();
+		$('#content-tmpt-tinggal-ts-wira').hide();
+		$('#content-obj-pembiayaan-ts-wira').hide();
+		
+
         $('#tittle-info-pkrj-nsbh-ia-wira').click(function () {
 			condition = !condition;
 			if (condition == false) {
@@ -65,6 +73,100 @@ app.KycWiraswasta = {
 			}
 		});
 
+        $('#tittle-info-tmpt-tinggal-nas-ia-wira').click(function () {	
+			condition = !condition;
+			if (condition == false) {
+				$('#content-tmpt-tinggal-ia-wira').slideUp("slow");
+				$('#span-info-tmpt-tinggal-nas-ia-wira').html('Informasi Tempat Tinggal Nasabah <i class="fas fa-angle-right ml-2"></i>')
+				$('#span-info-tmpt-tinggal-nas-ia-wira').removeClass('use-bottom-border-span');
+
+			}
+			else if (condition == true) {
+				$('#content-tmpt-tinggal-ia-wira').slideDown("slow");
+				$('#span-info-tmpt-tinggal-nas-ia-wira').html('Informasi Tempat Tinggal Nasabah <i class="fas fa-angle-down ml-2"></i>')
+				$('#span-info-tmpt-tinggal-nas-ia-wira').addClass('use-bottom-border-span');
+			}
+		});
+
+		$('#tittle-info-obj-pembiayaan-ia-wira').click(function () {	
+			condition = !condition;
+			if (condition == false) {
+				$('#content-obj-pembiayaan-ia-wira').slideUp("slow");
+				$('#span-info-obj-pembiayaan-ia-wira').html('Informasi Object Pembiayaan <i class="fas fa-angle-right ml-2"></i>')
+				$('#span-info-obj-pembiayaan-ia-wira').removeClass('use-bottom-border-span');
+
+			}
+			else if (condition == true) {
+				$('#content-obj-pembiayaan-ia-wira').slideDown("slow");
+				$('#span-info-obj-pembiayaan-ia-wira').html('Informasi Object Pembiayaan <i class="fas fa-angle-down ml-2"></i>')
+				$('#span-info-obj-pembiayaan-ia-wira').addClass('use-bottom-border-span');
+			}
+		});
+		
+		
+		
+
+		$('#tittle-info-tmpt-tinggal-nas-ts-wira').click(function () {	
+			condition = !condition;
+			if (condition == false) {
+				$('#content-tmpt-tinggal-ts-wira').slideUp("slow");
+				$('#span-info-tmpt-tinggal-nas-ts-wira').html('Informasi Tempat Tinggal Nasabah <i class="fas fa-angle-right ml-2"></i>')
+				$('#span-info-tmpt-tinggal-nas-ts-wira').removeClass('use-bottom-border-span');
+
+			}
+			else if (condition == true) {
+				$('#content-tmpt-tinggal-ts-wira').slideDown("slow");
+				$('#span-info-tmpt-tinggal-nas-ts-wira').html('Informasi Tempat Tinggal Nasabah <i class="fas fa-angle-down ml-2"></i>')
+				$('#span-info-tmpt-tinggal-nas-ts-wira').addClass('use-bottom-border-span');
+			}
+		});
+
+		$('#tittle-info-obj-pembiayaan-ts-wira').click(function () {	
+			condition = !condition;
+			if (condition == false) {
+				$('#content-obj-pembiayaan-ts-wira').slideUp("slow");
+				$('#span-info-obj-pembiayaan-ss-wira').html('Informasi Object Pembiayaan <i class="fas fa-angle-right ml-2"></i>')
+				$('#span-info-obj-pembiayaan-ss-wira').removeClass('use-bottom-border-span');
+
+			}
+			else if (condition == true) {
+				$('#content-obj-pembiayaan-ts-wira').slideDown("slow");
+				$('#span-info-obj-pembiayaan-ss-wira').html('Informasi Object Pembiayaan <i class="fas fa-angle-down ml-2"></i>')
+				$('#span-info-obj-pembiayaan-ss-wira').addClass('use-bottom-border-span');
+			}
+		});
+		
+       
+		$('#tittle-info-tmpt-tinggal-nas-ss-wira').click(function () {	
+			condition = !condition;
+			if (condition == false) {
+				$('#content-tmpt-tinggal-ss-wira').slideUp("slow");
+				$('#span-info-tmpt-tinggal-nas-ss-wira').html('Informasi Tempat Tinggal Nasabah <i class="fas fa-angle-right ml-2"></i>')
+				$('#span-info-tmpt-tinggal-nas-ss-wira').removeClass('use-bottom-border-span');
+
+			}
+			else if (condition == true) {
+				$('#content-tmpt-tinggal-ss-wira').slideDown("slow");
+				$('#span-info-tmpt-tinggal-nas-ss-wira').html('Informasi Tempat Tinggal Nasabah <i class="fas fa-angle-down ml-2"></i>')
+				$('#span-info-tmpt-tinggal-nas-ss-wira').addClass('use-bottom-border-span');
+			}
+		});
+
+		$('#tittle-info-obj-pembiayaan-ss-wira').click(function () {	
+			condition = !condition;
+			if (condition == false) {
+				$('#content-obj-pembiayaan-ss-wira').slideUp("slow");
+				$('#span-info-obj-pembiayaan-ss-wira').html('Informasi Object Pembiayaan <i class="fas fa-angle-right ml-2"></i>')
+				$('#span-info-obj-pembiayaan-ss-wira').removeClass('use-bottom-border-span');
+
+			}
+			else if (condition == true) {
+				$('#content-obj-pembiayaan-ss-wira').slideDown("slow");
+				$('#span-info-obj-pembiayaan-ss-wira').html('Informasi Object Pembiayaan <i class="fas fa-angle-down ml-2"></i>')
+				$('#span-info-obj-pembiayaan-ss-wira').addClass('use-bottom-border-span');
+			}
+		});
+
         file.getDetailKyc(order_id);
         
     },
@@ -88,6 +190,10 @@ app.KycWiraswasta = {
                     // if(data.screening_2 == "NON-IA SILENT SURVEY"){
                     //     data.screening_2 = "NON-IA TELE SURVEY";
                     // }
+
+                   // data.screening_2 = "INSTANT APPROVAL";
+                    // data.screening_2 = "NON-IA SILENT SURVEY";
+                    // data.screening_2 = "PHONE / TELE SURVEY";
 
                     if(data.screening_2 == "INSTANT APPROVAL"){
 
@@ -120,6 +226,28 @@ app.KycWiraswasta = {
                         $("#inp-pkrj-nsbh-nm-tmpt-ush-ia-wira").val(nama_tempat_usaha.toUpperCase());
                         $("#inp-pkrj-nsbh-bdng-ush-ia-wira").val(bidang_usaha_wiraswasta);
                         $("#inp-pkrj-nsbh-sktr-tmpt-ush-ia-wira").val(sektor_tempat_usaha_wiraswasta);
+                   
+                        var data_alamat = data.detail.debitur.personal.alamat_debitur.alamat_domisili;
+                        $("#txtarea-alamat-dom-nas-ia-wira").append(data_alamat.alamat); 
+						$("#inp-rt-dom-nas-ia-wira").val(data_alamat.rt);
+						$("#inp-rw-dom-nas-ia-wira").val(data_alamat.rw);
+						$("#inp-kode-pos-dom-nas-ia-wira").val(data_alamat.kode_pos);
+                        $("#inp-kel-code-dom-nas-ia-wira").val(data_alamat.kode_kelurahan);
+						$("#inp-kel-dom-nas-ia-wira").val(data_alamat.desc_kelurahan);
+                        $("#inp-kec-code-dom-nas-ia-wira").val(data_alamat.kode_kecamatan);
+						$("#inp-kec-dom-nas-ia-wira").val(data_alamat.desc_kecamatan);
+                        $("#inp-kota-code-dom-nas-ia-wira").val(data_alamat.kode_kab_kot);
+						$("#inp-kota-dom-nas-ia-wira").val(data_alamat.desc_kab_kot);
+                        $("#inp-prov-code-dom-nas-ia-wira").val(data_alamat.kode_provinsi);
+						$("#inp-prov-dom-nas-ia-wira").val(data_alamat.desc_provinsi);
+						var hub_kepemilikan_rumah = $("<option selected='selected'></option>").val(data.detail.data_kepemilikan.house_of_status_id).text(data.detail.data_kepemilikan.house_of_status_desc);
+						$("#slc-sts-kepemilikan-rmh-ia-wira").append(hub_kepemilikan_rumah).trigger('change');
+						$("#inp-sts-kepemilikan-rmh-code-ia-wira").val(data.detail.data_kepemilikan.house_of_status_id);
+						$("#inp-type-obj-pembiayaan-code-ia-wira").val("F002"); // data.financing_obj_code
+						$("#inp-flag-the-road-ia-wira").val("Y"); // data.detail.object_pembiayaan.flag_off_the_road
+						$("#inp-source-form-code-ia-wira").val("EFDIG"); // data.source_form_code
+						$("#inp-obj-code-ia-wira").val("002"); // data.detail.object_pembiayaan.obj_code
+						$("#inp-current-form-code-ia-wira").val("F002"); // data.current_form_code
                     }
 
                     else if(data.screening_2 == "NON-IA SILENT SURVEY"){
@@ -152,6 +280,29 @@ app.KycWiraswasta = {
                         $("#inp-pkrj-nsbh-bdng-ush-ss-wira").val(bidang_usaha_wiraswasta);
                         $("#inp-pkrj-nsbh-sktr-tmpt-ush-ss-wira").val(sektor_tempat_usaha_wiraswasta);
 
+                        var data_alamat = data.detail.debitur.personal.alamat_debitur.alamat_domisili;
+                        $("#txtarea-alamat-dom-nas-ss-wira").append(data_alamat.alamat); 
+						$("#inp-rt-dom-nas-ss-wira").val(data_alamat.rt);
+						$("#inp-rw-dom-nas-ss-wira").val(data_alamat.rw);
+						$("#inp-kode-pos-dom-nas-ss-wira").val(data_alamat.kode_pos);
+                        $("#inp-kel-code-dom-nas-ss-wira").val(data_alamat.kode_kelurahan);
+						$("#inp-kel-dom-nas-ss-wira").val(data_alamat.desc_kelurahan);
+                        $("#inp-kec-code-dom-nas-ss-wira").val(data_alamat.kode_kecamatan);
+						$("#inp-kec-dom-nas-ss-wira").val(data_alamat.desc_kecamatan);
+                        $("#inp-kota-code-dom-nas-ss-wira").val(data_alamat.kode_kab_kot);
+						$("#inp-kota-dom-nas-ia-wira").val(data_alamat.desc_kab_kot);
+                        $("#inp-prov-code-dom-nas-ss-wira").val(data_alamat.kode_provinsi);
+						$("#inp-prov-dom-nas-ss-wira").val(data_alamat.desc_provinsi);
+						var hub_kepemilikan_rumah = $("<option selected='selected'></option>").val(data.detail.data_kepemilikan.house_of_status_id).text(data.detail.data_kepemilikan.house_of_status_desc);
+						$("#slc-sts-kepemilikan-rmh-ss-wira").append(hub_kepemilikan_rumah).trigger('change');
+					
+						$("#inp-sts-kepemilikan-rmh-code-ss-wira").val(data.detail.data_kepemilikan.house_of_status_id);
+						$("#inp-type-obj-pembiayaan-code-ss-wira").val("F002"); // data.financing_obj_code
+						$("#inp-flag-the-road-ss-wira").val("Y"); // data.detail.object_pembiayaan.flag_off_the_road
+						$("#inp-source-form-code-ss-wira").val("EFDIG"); // data.source_form_code
+						$("#inp-obj-code-ss-wira").val("002"); // data.detail.object_pembiayaan.obj_code
+						$("#inp-current-form-code-ss-wira").val("F002"); // data.current_form_code
+
                     }
 
                     else if(data.screening_2 == "PHONE / TELE SURVEY"){
@@ -183,6 +334,27 @@ app.KycWiraswasta = {
                         $("#inp-pkrj-nsbh-nm-tmpt-ush-ts-wira").val(nama_tempat_usaha_wiraswasta);
                         $("#inp-pkrj-nsbh-bdng-ush-ts-wira").val(bidang_usaha_wiraswasta);
                         $("#inp-pkrj-nsbh-sktr-tmpt-ush-ts-wira").val(sektor_tempat_usaha_wiraswasta);
+
+                        var data_alamat = data.detail.debitur.personal.alamat_debitur.alamat_domisili;
+                        $("#txtarea-alamat-dom-nas-ts-wira").append(data_alamat.alamat); 
+						$("#inp-rw-dom-nas-ts-wira").val(data_alamat.rw);
+						$("#inp-kode-pos-dom-nas-ts-wira").val(data_alamat.kode_pos);
+                        $("#inp-kel-code-dom-nas-ts-wira").val(data_alamat.kode_kelurahan);
+						$("#inp-kel-dom-nas-ts-wira").val(data_alamat.desc_kelurahan);
+                        $("#inp-kec-code-dom-nas-ts-wira").val(data_alamat.kode_kecamatan);
+						$("#inp-kec-dom-nas-ts-wira").val(data_alamat.desc_kecamatan);
+                        $("#inp-kota-code-dom-nas-ts-wira").val(data_alamat.kode_kab_kot);
+						$("#inp-kota-dom-nas-ts-wira").val(data_alamat.desc_kab_kot);
+                        $("#inp-prov-code-dom-nas-ts-wira").val(data_alamat.kode_provinsi);
+						$("#inp-prov-dom-nas-ts-wira").val(data_alamat.desc_provinsi);
+						var hub_kepemilikan_rumah = $("<option selected='selected'></option>").val(data.detail.data_kepemilikan.house_of_status_id).text(data.detail.data_kepemilikan.house_of_status_desc);
+						$("#slc-sts-kepemilikan-rmh-ts-wira").append(hub_kepemilikan_rumah).trigger('change');
+						$("#inp-sts-kepemilikan-rmh-code-ts-wira").val(data.detail.data_kepemilikan.house_of_status_id);
+						$("#inp-type-obj-pembiayaan-code-ts-wira").val("F002"); // data.financing_obj_code
+						$("#inp-flag-the-road-ts-wira").val("Y"); // data.detail.object_pembiayaan.flag_off_the_road
+						$("#inp-source-form-code-ts-wira").val("EFDIG"); // data.source_form_code
+						$("#inp-obj-code-ts-wira").val("002"); // data.detail.object_pembiayaan.obj_code
+						$("#inp-current-form-code-ts-wira").val("F002"); // data.current_form_code
 
                     }
 
